@@ -9,5 +9,8 @@
     "mode": "preview",
     "renderTemplate": "./banner.php"
   },
-  "align": "full"
+  "align": "full",
+  "supports": {
+    "jsx": true
+  }
 }

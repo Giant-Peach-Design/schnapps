@@ -1,43 +1,29 @@
-<section class="banner relative">
+<section class="banner relative aspect-video overflow-hidden">
 
+    <div class="blaze-slider">
+        <div class="blaze-container">
+            <div class="blaze-track-container">
+                <div class="blaze-track">
+                    <?php while (have_rows('slides')) : ?>
+                        <?php the_row(); ?>
+                        <div class="relative">
+                            <?php if (get_sub_field('image')) : ?>
+                                <?php $image = get_sub_field('image'); ?>
+                                <picture class="aspect-video block">
+                                    <img class="w-full !h-full object-cover" src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
+                                </picture>
+                            <?php endif; ?>
 
-
-    <?php if (get_field('image')) : ?>
-        <?php $image = get_field('image'); ?>
-        <div class="max-w-[672px] rounded-t-[60px] overflow-hidden lg:rounded-tl-none lg:mt-16">
-            <picture class="aspect-[672/989] block">
-                <img class="w-full !h-full object-cover" src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
-            </picture>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="container py-8 bg-red-100">
+                                    <?php the_sub_field('caption'); ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
+            </div>
         </div>
-    <?php endif; ?>
+    </div>
 
-    <?php if (get_field('title_lines')) : ?>
-        <div class="container absolute top-0 left-auto right-auto">
-            <h1 class="text-[170px] uppercase">
-                <?php $i = 0; ?>
-                <?php while (have_rows('title_lines')) : ?>
-                    <?php the_row(); ?>
-                    <?php
-                    $class = '';
-                    switch ($i) {
-                        case 0:
-                            $class = 'block text-center';
-                            break;
-                        case 1:
-                            $class = 'block text-left';
-                            break;
-                        case 2:
-                            $class = 'block text-right';
-                            break;
-                    }
-                    ?>
-                    <span class="<?php echo $class; ?>">
-                        <?php the_sub_field('line'); ?>
-                    </span>
-                    <?php $i++; ?>
-                <?php endwhile; ?>
-
-            </h1>
-        </div>
-    <?php endif; ?>
 </section>
