@@ -1,0 +1,8 @@
+name: wp-playground
+recipe: wordpress
+config:
+  php: '8.2'
+  via: nginx
+  webroot: web
+  database: mariadb
+  xdebug: true

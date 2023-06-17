@@ -1,0 +1,13 @@
+{
+  "name": "acf/banner",
+  "title": "Banner",
+  "description": "Banner Block",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": ["banner"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "./banner.php"
+  },
+  "align": "full"
+}
