@@ -1,0 +1,9 @@
+.wp-block-acf-column {
+  flex-grow: 1;
+  padding: 1rem;
+  border: 1px dashed #eee;
+}
+
+.wp-block-acf-column > div {
+  width: auto;
+}

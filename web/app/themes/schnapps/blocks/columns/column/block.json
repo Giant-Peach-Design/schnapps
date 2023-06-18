@@ -1,0 +1,18 @@
+{
+  "name": "acf/column",
+  "title": "Column",
+  "description": "Column",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": ["columns"],
+  "parent": ["acf/columns"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "./column.php"
+  },
+  "align": "full",
+  "supports": {
+    "jsx": true
+  },
+  "editorStyle": "file:./editor.css"
+}

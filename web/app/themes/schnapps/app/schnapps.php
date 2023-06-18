@@ -22,6 +22,8 @@ class Schnapps
   public function registerBlocks()
   {
     register_block_type(get_template_directory() . '/blocks/banner');
+    register_block_type(get_template_directory() . '/blocks/columns');
+    register_block_type(get_template_directory() . '/blocks/columns/column');
   }
 
   public function setupFilters()
@@ -52,7 +54,10 @@ class Schnapps
       'core/heading',
       'core/list',
       'core/list-item',
-      'acf/banner'
+      'core/columns',
+      'acf/banner',
+      'acf/columns',
+      'acf/column'
     );
   }
 }
