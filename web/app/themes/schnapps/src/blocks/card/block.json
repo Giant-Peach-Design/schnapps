@@ -1,0 +1,15 @@
+{
+  "name": "giantpeach/card",
+  "title": "Card",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": ["columns"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "./card.php"
+  },
+  "align": "full",
+  "supports": {
+    "jsx": true
+  }
+}

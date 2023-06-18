@@ -21,14 +21,18 @@ class Schnapps
 
   public function registerBlocks()
   {
-    register_block_type(get_template_directory() . '/blocks/banner');
-    register_block_type(get_template_directory() . '/blocks/columns');
-    register_block_type(get_template_directory() . '/blocks/columns/column');
+    register_block_type(get_template_directory() . '/src/blocks/banner');
+    register_block_type(get_template_directory() . '/src/blocks/columns');
+    register_block_type(get_template_directory() . '/src/blocks/columns/column');
+    register_block_type(get_template_directory() . '/src/blocks/card');
   }
 
   public function setupFilters()
   {
-    //add_filter('allowed_block_types_all', [$this, 'allowedBlockTypes'], 25, 2);
+    add_filter('allowed_block_types_all', [$this, 'allowedBlockTypes'], 25, 2);
+    add_filter('acf/blocks/no_fields_assigned_message', function () {
+      return 'This block contains no editable fields.';
+    });
   }
 
   public function stylesheets()
@@ -54,10 +58,10 @@ class Schnapps
       'core/heading',
       'core/list',
       'core/list-item',
-      'core/columns',
       'acf/banner',
       'acf/columns',
-      'acf/column'
+      'acf/column',
+      'giantpeach/card'
     );
   }
 }
