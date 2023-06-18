@@ -28,7 +28,7 @@ class Schnapps
 
   public function setupFilters()
   {
-    add_filter('allowed_block_types_all', [$this, 'allowedBlockTypes'], 25, 2);
+    //add_filter('allowed_block_types_all', [$this, 'allowedBlockTypes'], 25, 2);
   }
 
   public function stylesheets()
