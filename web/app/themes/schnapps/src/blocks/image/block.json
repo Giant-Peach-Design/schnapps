@@ -1,0 +1,15 @@
+{
+  "name": "giantpeach/image",
+  "title": "Image",
+  "category": "common",
+  "icon": "format-image",
+  "keywords": ["image", "photo", "picture", "media"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "./image.php"
+  },
+  "align": "full",
+  "supports": {
+    "jsx": true
+  }
+}

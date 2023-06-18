@@ -25,6 +25,7 @@ class Schnapps
     register_block_type(get_template_directory() . '/src/blocks/columns');
     register_block_type(get_template_directory() . '/src/blocks/columns/column');
     register_block_type(get_template_directory() . '/src/blocks/card');
+    register_block_type(get_template_directory() . '/src/blocks/image');
   }
 
   public function setupFilters()
@@ -53,7 +54,6 @@ class Schnapps
   public function allowedBlockTypes($allowed_blocks, $editor_context)
   {
     return array(
-      'core/image',
       'core/paragraph',
       'core/heading',
       'core/list',
@@ -61,7 +61,8 @@ class Schnapps
       'acf/banner',
       'acf/columns',
       'acf/column',
-      'giantpeach/card'
+      'giantpeach/card',
+      'giantpeach/image'
     );
   }
 }
