@@ -1,7 +1,7 @@
 .wp-block-acf-column {
   flex-grow: 1;
-  padding: 1rem;
-  border: 1px dashed #eee;
+  padding: 0.5rem;
+  border: 1px dashed #000;
 }
 
 .wp-block-acf-column > div {
