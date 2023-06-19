@@ -7,7 +7,7 @@
   "keywords": ["banner"],
   "acf": {
     "mode": "preview",
-    "renderTemplate": "./banner.php"
+    "renderCallback": "Giantpeach\\Blocks\\Banner\\Banner::display"
   },
   "align": "full",
   "supports": {

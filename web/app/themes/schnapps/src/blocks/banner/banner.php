@@ -1,29 +1,32 @@
-<section class="banner relative aspect-video overflow-hidden">
+<?php
 
-    <div class="blaze-slider">
-        <div class="blaze-container">
-            <div class="blaze-track-container">
-                <div class="blaze-track">
-                    <?php while (have_rows('slides')) : ?>
-                        <?php the_row(); ?>
-                        <div class="relative">
-                            <?php if (get_sub_field('image')) : ?>
-                                <?php $image = get_sub_field('image'); ?>
-                                <picture class="aspect-video block">
-                                    <img class="w-full !h-full object-cover" src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
-                                </picture>
-                            <?php endif; ?>
+namespace Giantpeach\Blocks\Banner;
 
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="container py-8 bg-red-100">
-                                    <?php the_sub_field('caption'); ?>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endwhile; ?>
-                </div>
-            </div>
-        </div>
-    </div>
+use Giantpeach\Blocks\BlockInterface;
 
-</section>
+class Banner implements BlockInterface
+{
+  public $slides;
+
+  public function __construct($slides)
+  {
+    $this->slides = $slides;
+  }
+
+  public function render()
+  {
+    echo include 'template.php';
+  }
+
+  public static function registerBlock()
+  {
+    register_block_type(__DIR__ . '/block.json');
+  }
+
+  public static function display()
+  {
+    $banner = new Banner(get_field('slides'));
+
+    $banner->render();
+  }
+}
