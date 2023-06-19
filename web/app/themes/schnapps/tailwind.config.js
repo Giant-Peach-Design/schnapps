@@ -5,6 +5,7 @@ module.exports = {
     './parts/**/*.{html,php,js}',
     './blocks/**/*.{html,php,js}',
     './src/blocks/**/*.{html,php,js}',
+    './src/Blocks/**/*.{html,php,js}',
     './patterns/**/*.{html,php,js}',
     './src/**/*.js',
   ],

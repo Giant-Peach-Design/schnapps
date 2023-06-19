@@ -29,6 +29,7 @@ class Schnapps
     //register_block_type(get_template_directory() . '/src/blocks/columns');
     //register_block_type(get_template_directory() . '/src/blocks/columns/column');
     //register_block_type(get_template_directory() . '/src/blocks/card');
+    register_block_type(get_template_directory() . '/build/Blocks/Column');
     Banner::registerBlock();
     Image::registerBlock();
   }
@@ -66,7 +67,7 @@ class Schnapps
       'core/block',
       'acf/banner',
       'acf/columns',
-      'acf/column',
+      'giantpeach/column',
       'giantpeach/card',
       'giantpeach/image',
       'giantpeach/button'

@@ -1,0 +1,17 @@
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/Blocks/Column/editor.css ***!
+  \**********************************************************************************************************************************************************************************/
+.wp-block-acf-column {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border: 1px dashed #000;
+  flex-shrink: 0;
+  flex: 1;
+}
+
+.wp-block-acf-column > div {
+  width: auto;
+}
+
+
+/*# sourceMappingURL=index.css.map*/
