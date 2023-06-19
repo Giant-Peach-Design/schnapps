@@ -4,6 +4,7 @@ namespace Giantpeach;
 
 use Giantpeach\Blocks\Banner\Banner;
 use Giantpeach\Blocks\Blocks;
+use Giantpeach\Blocks\Button\Button;
 use Giantpeach\Blocks\Columns\Columns;
 use Giantpeach\Blocks\Image\Image;
 
@@ -13,7 +14,8 @@ class Schnapps
   protected $blocks = [
     Banner::class,
     Image::class,
-    Columns::class
+    Columns::class,
+    Button::class,
   ];
 
   public function __construct()
@@ -45,7 +47,7 @@ class Schnapps
 
   public function setupFilters()
   {
-    //add_filter('allowed_block_types_all', [$this, 'allowedBlockTypes'], 25, 2);
+    add_filter('allowed_block_types_all', [$this, 'allowedBlockTypes'], 25, 2);
     add_filter('acf/blocks/no_fields_assigned_message', function () {
       return 'This block contains no editable fields.';
     });
@@ -74,7 +76,6 @@ class Schnapps
       'core/list',
       'core/list-item',
       'core/block',
-      'core/columns',
       'giantpeach/banner',
       'giantpeach/columns',
       'giantpeach/column',

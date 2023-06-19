@@ -1,0 +1,16 @@
+{
+  "name": "giantpeach/button",
+  "title": "Button",
+  "description": "Add a button",
+  "category": "cta",
+  "icon": "admin-comments",
+  "keywords": ["button", "link", "cta", "call to action"],
+  "acf": {
+    "mode": "preview",
+    "renderCallback": "Giantpeach\\Blocks\\Button\\Button::display"
+  },
+  "align": "full",
+  "supports": {
+    "jsx": true
+  }
+}
