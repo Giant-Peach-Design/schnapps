@@ -1,0 +1,21 @@
+{
+  "name": "acf/columns",
+  "title": "Columns",
+  "description": "Columns Block",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "columns"
+  ],
+  "allowedBlocks": [
+    "core/column"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "./columns.php"
+  },
+  "align": "full",
+  "supports": {
+    "jsx": true
+  }
+}

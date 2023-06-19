@@ -108,5 +108,10 @@
     "test": [
       "phpcs"
     ]
+  },
+  "autoload": {
+    "psr-4": {
+      "Giantpeach\\": "web/app/themes/schnapps/src/"
+    }
   }
 }

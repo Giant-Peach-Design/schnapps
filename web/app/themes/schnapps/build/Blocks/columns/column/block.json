@@ -4,8 +4,9 @@
   "description": "Column",
   "category": "formatting",
   "icon": "admin-comments",
-  "keywords": ["columns"],
-
+  "keywords": [
+    "columns"
+  ],
   "acf": {
     "mode": "preview",
     "renderTemplate": "./column.php"
