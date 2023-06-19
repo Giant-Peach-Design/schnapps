@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "title": "Column",
   "category": "widgets",
-  "icon": "column",
+  "icon": "columns",
   "description": "Example block scaffolded with Create Block tool.",
   "parent": [
     "giantpeach/columns"

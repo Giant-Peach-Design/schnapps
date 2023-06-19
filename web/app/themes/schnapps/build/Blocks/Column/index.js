@@ -298,7 +298,7 @@ module.exports = window["wp"]["i18n"];
   \**************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"giantpeach/column","version":"0.1.0","title":"Column","category":"widgets","icon":"column","description":"Example block scaffolded with Create Block tool.","parent":["giantpeach/columns"],"supports":{"anchor":true,"html":false,"layout":true},"textdomain":"test","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"columnWidth":{"type":"number","default":6}}}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"giantpeach/column","version":"0.1.0","title":"Column","category":"widgets","icon":"columns","description":"Example block scaffolded with Create Block tool.","parent":["giantpeach/columns"],"supports":{"anchor":true,"html":false,"layout":true},"textdomain":"test","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"columnWidth":{"type":"number","default":6}}}');
 
 /***/ })
 

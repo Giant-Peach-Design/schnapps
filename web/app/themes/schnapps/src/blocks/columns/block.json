@@ -3,7 +3,7 @@
   "title": "Columns",
   "description": "Display content in multiple columns, with blocks added to each column.",
   "category": "formatting",
-  "icon": "admin-comments",
+  "icon": "columns",
   "keywords": ["columns"],
   "allowedBlocks": ["giantpeach/column"],
   "acf": {
