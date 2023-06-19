@@ -5,7 +5,7 @@
   "icon": "format-image",
   "keywords": ["image", "photo", "picture", "media"],
   "acf": {
-    "mode": "preview",
+    "mode": "edit",
     "renderCallback": "\\Giantpeach\\Blocks\\Image\\Image::display"
   },
   "align": "full",

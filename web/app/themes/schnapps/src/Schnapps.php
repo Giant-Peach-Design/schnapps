@@ -4,10 +4,17 @@ namespace Giantpeach;
 
 use Giantpeach\Blocks\Banner\Banner;
 use Giantpeach\Blocks\Blocks;
+use Giantpeach\Blocks\Columns\Columns;
 use Giantpeach\Blocks\Image\Image;
 
 class Schnapps
 {
+
+  protected $blocks = [
+    Banner::class,
+    Image::class,
+    Columns::class
+  ];
 
   public function __construct()
   {
@@ -30,13 +37,15 @@ class Schnapps
     //register_block_type(get_template_directory() . '/src/blocks/columns/column');
     //register_block_type(get_template_directory() . '/src/blocks/card');
     register_block_type(get_template_directory() . '/build/Blocks/Column');
-    Banner::registerBlock();
-    Image::registerBlock();
+
+    foreach ($this->blocks as $block) {
+      $block::registerBlock();
+    }
   }
 
   public function setupFilters()
   {
-    add_filter('allowed_block_types_all', [$this, 'allowedBlockTypes'], 25, 2);
+    //add_filter('allowed_block_types_all', [$this, 'allowedBlockTypes'], 25, 2);
     add_filter('acf/blocks/no_fields_assigned_message', function () {
       return 'This block contains no editable fields.';
     });
@@ -65,8 +74,9 @@ class Schnapps
       'core/list',
       'core/list-item',
       'core/block',
-      'acf/banner',
-      'acf/columns',
+      'core/columns',
+      'giantpeach/banner',
+      'giantpeach/columns',
       'giantpeach/column',
       'giantpeach/card',
       'giantpeach/image',

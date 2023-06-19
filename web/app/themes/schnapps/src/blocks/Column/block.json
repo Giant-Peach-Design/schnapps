@@ -5,10 +5,13 @@
   "version": "0.1.0",
   "title": "Column",
   "category": "widgets",
-  "icon": "smiley",
+  "icon": "column",
   "description": "Example block scaffolded with Create Block tool.",
+  "parent": ["giantpeach/columns"],
   "supports": {
-    "html": false
+    "anchor": true,
+    "html": false,
+    "layout": true
   },
   "textdomain": "test",
   "editorScript": "file:./index.js",

@@ -1,0 +1,1 @@
+{"version":3,"file":"Blocks/Column/style-index.css","mappings":";;;AAAA;EACE,iBAAiB;AACnB","sources":["webpack://schnapps/./src/Blocks/Column/style.css"],"sourcesContent":[".wp-block-giantpeach-column {\n  font-weight: bold;\n}\n"],"names":[],"sourceRoot":""}

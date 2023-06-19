@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
  */
-import { __ } from '@wordpress/i18n';
+import { sprintf, __ } from '@wordpress/i18n';
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -15,9 +15,14 @@ import {
   useBlockProps,
   useInnerBlocksProps,
   InspectorControls,
+  InnerBlocks,
+  BlockControls,
+  store as blockEditorStore,
 } from '@wordpress/block-editor';
 
 import { PanelBody, RangeControl } from '@wordpress/components';
+
+import { useSelect } from '@wordpress/data';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -35,11 +40,21 @@ import './editor.css';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit({ attributes, setAttributes }) {
-  const blockProps = useBlockProps();
-  const innerBlockProps = useInnerBlocksProps({
-    ...blockProps,
-  });
+export default function Edit({ attributes, setAttributes, clientId }) {
+  const { columnsIds, hasChildBlocks, rootClientId } = useSelect(
+    (select) => {
+      const { getBlockOrder, getBlockRootClientId } = select(blockEditorStore);
+
+      const rootId = getBlockRootClientId(clientId);
+
+      return {
+        hasChildBlocks: getBlockOrder(clientId).length > 0,
+        rootClientId: rootId,
+        columnsIds: getBlockOrder(rootId),
+      };
+    },
+    [clientId],
+  );
 
   const widthClasses = [
     'w-1/12',
@@ -56,8 +71,39 @@ export default function Edit({ attributes, setAttributes }) {
     'w-12/12',
   ];
 
+  const blockProps = useBlockProps({
+    className: `outline-1 outline-dashed ${
+      widthClasses[attributes.columnWidth - 1]
+    }`,
+  });
+
+  const columnsCount = columnsIds.length;
+  const currentColumnPosition = columnsIds.indexOf(clientId) + 1;
+
+  const label = sprintf(
+    /* translators: 1: Block label (i.e. "Block: Column"), 2: Position of the selected block, 3: Total number of sibling blocks of the same type */
+    __('%1$s (%2$d of %3$d)'),
+    blockProps['aria-label'],
+    currentColumnPosition,
+    columnsCount,
+  );
+
+  const innerBlockProps = useInnerBlocksProps(
+    {
+      ...blockProps,
+      'aria-label': label,
+    },
+    {
+      templateLock: attributes.templateLock,
+      renderAppender: hasChildBlocks
+        ? undefined
+        : InnerBlocks.ButtonBlockAppender,
+    },
+  );
+
   return (
     <>
+      <BlockControls></BlockControls>
       <InspectorControls>
         <PanelBody title={__('Column Settings', 'schnapps')}>
           <RangeControl
@@ -70,12 +116,7 @@ export default function Edit({ attributes, setAttributes }) {
           />
         </PanelBody>
       </InspectorControls>
-      <div
-        {...innerBlockProps}
-        className={`py-8 bg-red-500 ${
-          widthClasses[attributes.columnWidth - 1]
-        }`}
-      />
+      <div {...innerBlockProps} />
     </>
   );
 }

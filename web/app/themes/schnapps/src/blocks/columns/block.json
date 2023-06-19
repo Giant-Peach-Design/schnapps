@@ -1,14 +1,14 @@
 {
-  "name": "acf/columns",
+  "name": "giantpeach/columns",
   "title": "Columns",
-  "description": "Columns Block",
+  "description": "Display content in multiple columns, with blocks added to each column.",
   "category": "formatting",
   "icon": "admin-comments",
   "keywords": ["columns"],
-  "allowedBlocks": ["core/column"],
+  "allowedBlocks": ["giantpeach/column"],
   "acf": {
-    "mode": "edit",
-    "renderTemplate": "./columns.php"
+    "mode": "preview",
+    "renderCallback": "Giantpeach\\Blocks\\Columns\\Columns::display"
   },
   "align": "full",
   "supports": {

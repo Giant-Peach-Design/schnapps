@@ -26,7 +26,6 @@ class Banner implements BlockInterface
   public static function display()
   {
     $banner = new Banner(get_field('slides'));
-
     $banner->render();
   }
 }

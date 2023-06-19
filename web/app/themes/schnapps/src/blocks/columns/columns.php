@@ -1,5 +1,24 @@
-<section class="columns">
-  <div class="container py-4">
-    <InnerBlocks className="flex justify-center -mx-4 gap-4" allowedBlocks="<?php echo esc_attr(wp_json_encode(['acf/column'])); ?>" />
-  </div>
-</section>
+<?php
+
+namespace Giantpeach\Blocks\Columns;
+
+use Giantpeach\Blocks\BlockInterface;
+
+class Columns implements BlockInterface
+{
+  public function render()
+  {
+    include 'template.php';
+  }
+
+  public static function registerBlock()
+  {
+    register_block_type(__DIR__ . '/block.json');
+  }
+
+  public static function display()
+  {
+    $columns = new Columns();
+    $columns->render();
+  }
+}

@@ -79,7 +79,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/banner"
+                "value": "giantpeach\/banner"
             }
         ]
     ],
@@ -92,5 +92,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687027159
+    "modified": 1687184081
 }

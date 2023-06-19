@@ -15,8 +15,25 @@ import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
  *
  * @return {WPElement} Element to render.
  */
-export default function save() {
-  const blockProps = useBlockProps.save();
+export default function save({ attributes }) {
+  const widthClasses = [
+    'w-1/12',
+    'w-2/12',
+    'w-3/12',
+    'w-4/12',
+    'w-5/12',
+    'w-6/12',
+    'w-7/12',
+    'w-8/12',
+    'w-9/12',
+    'w-10/12',
+    'w-11/12',
+    'w-12/12',
+  ];
+
+  const blockProps = useBlockProps.save({
+    className: `${widthClasses[attributes.columnWidth - 1]}`,
+  });
   const innerBlockProps = useInnerBlocksProps.save(blockProps);
-  return <div {...innerBlockProps} className="py-8 bg-red-500" />;
+  return <div {...innerBlockProps} />;
 }
