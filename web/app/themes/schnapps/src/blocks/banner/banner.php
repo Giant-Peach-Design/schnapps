@@ -15,7 +15,7 @@ class Banner implements BlockInterface
 
   public function render()
   {
-    echo include 'template.php';
+    include 'template.php';
   }
 
   public static function registerBlock()
