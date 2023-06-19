@@ -3,7 +3,6 @@
 namespace Giantpeach;
 
 use Giantpeach\Blocks\Banner\Banner;
-use Giantpeach\Blocks\Blocks;
 use Giantpeach\Blocks\Button\Button;
 use Giantpeach\Blocks\Columns\Columns;
 use Giantpeach\Blocks\Image\Image;
@@ -81,7 +80,8 @@ class Schnapps
       'giantpeach/column',
       'giantpeach/card',
       'giantpeach/image',
-      'giantpeach/button'
+      'giantpeach/button',
+      'giantpeach/altcolumn'
     );
   }
 }

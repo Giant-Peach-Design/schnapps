@@ -3,11 +3,11 @@
     "title": "Column Block",
     "fields": [
         {
-            "key": "field_648ea7ece86c5",
+            "key": "field_64909bfee93d5",
             "label": "Width",
             "name": "width",
             "aria-label": "",
-            "type": "select",
+            "type": "range",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,19 +16,12 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "1\/3": "1\/3",
-                "1\/4": "1\/4",
-                "1\/2": "1\/2",
-                "Full": "Full"
-            },
-            "default_value": false,
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
+            "default_value": 6,
+            "min": 1,
+            "max": 12,
+            "step": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -36,7 +29,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/column"
+                "value": "giantpeach\/altcolumn"
             }
         ]
     ],
@@ -49,5 +42,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687071128
+    "modified": 1687198944
 }

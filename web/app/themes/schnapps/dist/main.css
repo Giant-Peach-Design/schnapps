@@ -392,9 +392,9 @@ img, video {
   background-color: rgb(254 226 226 / var(--tw-bg-opacity));
 }
 
-.bg-red-50 {
+.bg-slate-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(254 242 242 / var(--tw-bg-opacity));
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 .object-cover {
@@ -413,11 +413,6 @@ img, video {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
 }
 
 .text-xl {
