@@ -34,7 +34,7 @@ class Cli
     $blockJsonPath = $blockPath . '/block.json';
     $blockClassPath = $blockPath . '/' . $args[0] . '.php';
 
-    $renderCallback = sprintf("Giantpeach\\\Blocks\\\%s\\\%s::display", $className, $className);
+    $renderCallback = sprintf("\\\Giantpeach\\\Blocks\\\%s\\\%s::display", $className, $className);
 
     $displayFunc = sprintf(
       "public static function display() {
@@ -69,42 +69,19 @@ class Cli
       $json = <<<EOT
       {
         "name": "$blockName",
-        "title": "$blockName",
+        "title": "$className",
         "category": "giantpeach",
         "icon": "smiley",
         "keywords": [
           "giantpeach"
         ],
         "supports": {
-          "align": true,
-          "anchor": true,
-          "customClassName": true,
-          "html": false,
-          "inserter": true,
-          "multiple": true,
-          "reusable": true
+          "jsx": true,
         },
         "acf": {
           "mode": "preview",
           "renderCallback": "$renderCallback"
-        },
-        "example": {
-          "attributes": {
-            "className": "is-style-default"
-          }
-        },
-        "attributes": {
-          "className": {
-            "type": "string"
-          }
-        },
-        "styles": [
-          {
-            "name": "default",
-            "label": "Default",
-            "isDefault": true
-          }
-        ]
+        }
       }
       EOT;
 

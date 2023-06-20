@@ -6,6 +6,7 @@ use Giantpeach\Blocks\Banner\Banner;
 use Giantpeach\Blocks\Button\Button;
 use Giantpeach\Blocks\Columns\Columns;
 use Giantpeach\Blocks\Image\Image;
+use Giantpeach\Blocks\Logo\Logo;
 
 class Schnapps
 {
@@ -15,6 +16,7 @@ class Schnapps
     Image::class,
     Columns::class,
     Button::class,
+    Logo::class,
   ];
 
   public function __construct()
@@ -74,6 +76,8 @@ class Schnapps
     foreach ($this->blocks as $block) {
       $registeredCustomBlocks[] = $block::getBlockName();
     }
+
+    var_dump($registeredCustomBlocks);
 
     return array_merge([
       'core/paragraph',
