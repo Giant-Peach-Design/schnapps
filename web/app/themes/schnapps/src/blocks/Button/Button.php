@@ -1,9 +1,9 @@
 <?php
 
-namespace Giantpeach\Blocks\Button;
+namespace Giantpeach\Schnapps\Blocks\Button;
 
 use Giantpeach\Blocks\Block;
-use Giantpeach\Interfaces\Blocks\BlockInterface;
+use Giantpeach\Blocks\Interfaces\BlockInterface;
 
 
 class Button extends Block implements BlockInterface

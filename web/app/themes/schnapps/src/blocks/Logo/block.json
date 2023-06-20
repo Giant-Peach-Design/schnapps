@@ -10,7 +10,7 @@
   "align": "full",
   "acf": {
     "mode": "preview",
-    "renderCallback": "\\Giantpeach\\Blocks\\Logo\\Logo::display"
+    "renderCallback": "\\Giantpeach\\Schnapps\\Blocks\\Logo\\Logo::display"
   },
   "editorStyle": "file:./editor.css"
 }

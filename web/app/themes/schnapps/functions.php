@@ -1,9 +1,3 @@
 <?php
 
-//include 'app/schnapps.php';
-
-new Giantpeach\Schnapps();
-
-function renderBlockBanner()
-{
-}
+new Giantpeach\Schnapps\Schnapps();

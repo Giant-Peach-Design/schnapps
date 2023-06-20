@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8c68a96d3d9d940db575e26b9b7e9b55",
+    "content-hash": "f40fab2e89133e7c5464674bd2e0128e",
     "packages": [
         {
             "name": "composer/installers",
@@ -217,6 +217,30 @@
                 }
             ],
             "time": "2020-10-30T09:35:33+00:00"
+        },
+        {
+            "name": "giantpeach/blocks",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "../packages/giantpeach/blocks",
+                "reference": "b51afbf007b1be18a498a0c524cbd77676bcd34f"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Giantpeach\\Blocks\\": "src"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Giant Peach"
+                }
+            ],
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "gotoandplay/gravityforms-composer-installer",
@@ -1965,6 +1989,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "giantpeach/blocks": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,

@@ -1,10 +1,9 @@
 <?php
 
-namespace Giantpeach\Blocks\Banner;
+namespace Giantpeach\Schnapps\Blocks\Banner;
 
 use Giantpeach\Blocks\Block;
-use Giantpeach\Interfaces\Blocks\BlockInterface;
-
+use Giantpeach\Blocks\Interfaces\BlockInterface;
 
 class Banner extends Block implements BlockInterface
 {

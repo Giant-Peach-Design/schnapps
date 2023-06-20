@@ -6,7 +6,7 @@
   "keywords": ["image", "photo", "picture", "media"],
   "acf": {
     "mode": "edit",
-    "renderCallback": "\\Giantpeach\\Blocks\\Image\\Image::display"
+    "renderCallback": "\\Giantpeach\\Schnapps\\Blocks\\Image\\Image::display"
   },
   "align": "full",
   "supports": {

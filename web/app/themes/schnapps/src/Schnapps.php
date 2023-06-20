@@ -1,12 +1,13 @@
 <?php
 
-namespace Giantpeach;
+namespace Giantpeach\Schnapps;
 
-use Giantpeach\Blocks\Banner\Banner;
-use Giantpeach\Blocks\Button\Button;
-use Giantpeach\Blocks\Columns\Columns;
-use Giantpeach\Blocks\Image\Image;
-use Giantpeach\Blocks\Logo\Logo;
+use Giantpeach\Blocks\Blocks;
+use Giantpeach\Schnapps\Blocks\Banner\Banner;
+use Giantpeach\Schnapps\Blocks\Button\Button;
+use Giantpeach\Schnapps\Blocks\Columns\Columns;
+use Giantpeach\Schnapps\Blocks\Image\Image;
+use Giantpeach\Schnapps\Blocks\Logo\Logo;
 
 class Schnapps
 {
@@ -23,6 +24,8 @@ class Schnapps
   {
     $this->setupTheme();
     $this->setupFilters();
+
+    new Blocks();
   }
 
   public function setupTheme()
@@ -31,8 +34,6 @@ class Schnapps
     add_action('wp_enqueue_scripts', [$this, 'stylesheets']);
     add_action('wp_enqueue_scripts', [$this, 'scripts']);
     add_action('enqueue_block_editor_assets', [$this, 'blockEditorStylesheets']);
-
-    new Cli\Cli();
   }
 
   public function registerBlocks()

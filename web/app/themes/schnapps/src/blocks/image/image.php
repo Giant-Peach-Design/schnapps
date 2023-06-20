@@ -1,9 +1,9 @@
 <?php
 
-namespace Giantpeach\Blocks\Image;
+namespace Giantpeach\Schnapps\Blocks\Image;
 
 use Giantpeach\Blocks\Block;
-use Giantpeach\Interfaces\Blocks\BlockInterface;
+use Giantpeach\Blocks\Interfaces\BlockInterface;
 
 class Image extends Block implements BlockInterface
 {
