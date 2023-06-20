@@ -80,20 +80,5 @@ class Schnapps
       'core/list-item',
       'core/block',
     ], $registeredCustomBlocks);
-
-    return array(
-      'core/paragraph',
-      'core/heading',
-      'core/list',
-      'core/list-item',
-      'core/block',
-      'giantpeach/banner',
-      'giantpeach/columns',
-      'giantpeach/column',
-      'giantpeach/card',
-      'giantpeach/image',
-      'giantpeach/button',
-      'giantpeach/altcolumn'
-    );
   }
 }
