@@ -48,8 +48,14 @@ class Schnapps
   public function setupFilters()
   {
     add_filter('allowed_block_types_all', [$this, 'allowedBlockTypes'], 25, 2);
+
     add_filter('acf/blocks/no_fields_assigned_message', function () {
       return 'This block contains no editable fields.';
+    });
+
+    add_filter('upload_mimes', function ($mimes) {
+      $mimes['svg'] = 'image/svg+xml';
+      return $mimes;
     });
   }
 
