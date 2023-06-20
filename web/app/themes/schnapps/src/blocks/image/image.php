@@ -24,6 +24,11 @@ class Image implements BlockInterface
     include 'template.php';
   }
 
+  public static function getBlockName()
+  {
+    return 'giantpeach/image';
+  }
+
   public static function registerBlock()
   {
     register_block_type(__DIR__ . '/block.json');

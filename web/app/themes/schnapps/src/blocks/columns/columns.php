@@ -11,6 +11,11 @@ class Columns implements BlockInterface
     include 'template.php';
   }
 
+  public static function getBlockName()
+  {
+    return 'giantpeach/columns';
+  }
+
   public static function registerBlock()
   {
     register_block_type(__DIR__ . '/block.json');

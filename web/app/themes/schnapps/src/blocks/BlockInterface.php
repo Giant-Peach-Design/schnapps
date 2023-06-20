@@ -24,4 +24,6 @@ interface BlockInterface
    * @return void
    */
   public static function display();
+
+  public static function getBlockName();
 }

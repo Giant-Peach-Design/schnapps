@@ -6,7 +6,7 @@ use Giantpeach\Blocks\BlockInterface;
 
 class Banner implements BlockInterface
 {
-  public $slides;
+  public array $slides;
 
   public function __construct($slides)
   {
@@ -16,6 +16,11 @@ class Banner implements BlockInterface
   public function render()
   {
     include 'template.php';
+  }
+
+  public static function getBlockName()
+  {
+    return 'giantpeach/banner';
   }
 
   public static function registerBlock()

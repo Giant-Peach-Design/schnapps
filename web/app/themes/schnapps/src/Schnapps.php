@@ -33,9 +33,6 @@ class Schnapps
 
   public function registerBlocks()
   {
-    //register_block_type(get_template_directory() . '/src/blocks/banner');
-    //register_block_type(get_template_directory() . '/src/blocks/columns');
-    //register_block_type(get_template_directory() . '/src/blocks/columns/column');
     //register_block_type(get_template_directory() . '/src/blocks/card');
     register_block_type(get_template_directory() . '/build/Blocks/Column');
 
@@ -69,6 +66,21 @@ class Schnapps
 
   public function allowedBlockTypes($allowed_blocks, $editor_context)
   {
+
+    $registeredCustomBlocks = [];
+
+    foreach ($this->blocks as $block) {
+      $registeredCustomBlocks[] = $block::getBlockName();
+    }
+
+    return array_merge([
+      'core/paragraph',
+      'core/heading',
+      'core/list',
+      'core/list-item',
+      'core/block',
+    ], $registeredCustomBlocks);
+
     return array(
       'core/paragraph',
       'core/heading',
