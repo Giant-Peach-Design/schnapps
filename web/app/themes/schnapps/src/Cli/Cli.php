@@ -37,7 +37,7 @@ class Cli
     $renderCallback = sprintf("\\\Giantpeach\\\Blocks\\\%s\\\%s::display", $className, $className);
 
     $displayFunc = sprintf(
-      "public static function display() {
+      "public static function display(): void {
         %s = new %s();
         %s->render();
       }",
@@ -52,7 +52,6 @@ class Cli
 
     if (!file_exists($blockTemplatePath)) {
       $template = <<<EOT
-      <?php //test ?>
       <div class="block">
         <h1>Block</h1>
       </div>
@@ -98,23 +97,15 @@ class Cli
       
       namespace Giantpeach\Blocks\\$className;
       
-      use Giantpeach\Blocks\BlockInterface;
-      
-      class $className implements BlockInterface
+      use Giantpeach\Interfaces\Blocks\BlockInterface;
+      use Giantpeach\Blocks\Block;
+
+      class $className extends Block implements BlockInterface
       {
-        public function render()
-        {
-          include 'template.php';
-        }
       
-        public static function getBlockName()
+        public static function getBlockName(): string
         {
           return '$blockName';
-        }
-      
-        public static function registerBlock()
-        {
-          register_block_type(__DIR__ . '/block.json');
         }
 
         $displayFunc

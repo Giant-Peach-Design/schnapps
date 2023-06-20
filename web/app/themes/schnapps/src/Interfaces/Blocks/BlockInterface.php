@@ -1,6 +1,6 @@
 <?php
 
-namespace Giantpeach\Blocks;
+namespace Giantpeach\Interfaces\Blocks;
 
 interface BlockInterface
 {

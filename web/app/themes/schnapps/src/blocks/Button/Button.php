@@ -2,9 +2,11 @@
 
 namespace Giantpeach\Blocks\Button;
 
-use Giantpeach\Blocks\BlockInterface;
+use Giantpeach\Blocks\Block;
+use Giantpeach\Interfaces\Blocks\BlockInterface;
 
-class Button implements BlockInterface
+
+class Button extends Block implements BlockInterface
 {
   public $text;
   public $url;
@@ -21,22 +23,12 @@ class Button implements BlockInterface
     $this->size = $size;
   }
 
-  public function render()
-  {
-    include 'template.php';
-  }
-
-  public static function getBlockName()
+  public static function getBlockName(): string
   {
     return 'giantpeach/button';
   }
 
-  public static function registerBlock()
-  {
-    register_block_type(__DIR__ . '/block.json');
-  }
-
-  public static function display()
+  public static function display(): void
   {
     $button = new Button(
       get_field('text'),

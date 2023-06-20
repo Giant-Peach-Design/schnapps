@@ -11,5 +11,6 @@
   "acf": {
     "mode": "preview",
     "renderCallback": "\\Giantpeach\\Blocks\\Logo\\Logo::display"
-  }
+  },
+  "editorStyle": "file:./editor.css"
 }

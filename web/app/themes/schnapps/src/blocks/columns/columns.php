@@ -2,26 +2,17 @@
 
 namespace Giantpeach\Blocks\Columns;
 
-use Giantpeach\Blocks\BlockInterface;
+use Giantpeach\Blocks\Block;
+use Giantpeach\Interfaces\Blocks\BlockInterface;
 
-class Columns implements BlockInterface
+class Columns extends Block implements BlockInterface
 {
-  public function render()
-  {
-    include 'template.php';
-  }
-
-  public static function getBlockName()
+  public static function getBlockName(): string
   {
     return 'giantpeach/columns';
   }
 
-  public static function registerBlock()
-  {
-    register_block_type(__DIR__ . '/block.json');
-  }
-
-  public static function display()
+  public static function display(): void
   {
     $columns = new Columns();
     $columns->render();

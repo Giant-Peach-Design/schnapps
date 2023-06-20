@@ -2,9 +2,11 @@
 
 namespace Giantpeach\Blocks\Banner;
 
-use Giantpeach\Blocks\BlockInterface;
+use Giantpeach\Blocks\Block;
+use Giantpeach\Interfaces\Blocks\BlockInterface;
 
-class Banner implements BlockInterface
+
+class Banner extends Block implements BlockInterface
 {
   public array $slides;
 
@@ -13,22 +15,12 @@ class Banner implements BlockInterface
     $this->slides = $slides;
   }
 
-  public function render()
-  {
-    include 'template.php';
-  }
-
-  public static function getBlockName()
+  public static function getBlockName(): string
   {
     return 'giantpeach/banner';
   }
 
-  public static function registerBlock()
-  {
-    register_block_type(__DIR__ . '/block.json');
-  }
-
-  public static function display()
+  public static function display(): void
   {
     $banner = new Banner(get_field('slides'));
     $banner->render();

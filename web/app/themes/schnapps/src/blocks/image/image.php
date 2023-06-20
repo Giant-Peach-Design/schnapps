@@ -2,9 +2,10 @@
 
 namespace Giantpeach\Blocks\Image;
 
-use Giantpeach\Blocks\BlockInterface;
+use Giantpeach\Blocks\Block;
+use Giantpeach\Interfaces\Blocks\BlockInterface;
 
-class Image implements BlockInterface
+class Image extends Block implements BlockInterface
 {
   public $url;
   public $alt;
@@ -19,22 +20,12 @@ class Image implements BlockInterface
     $this->height = $height;
   }
 
-  public function render()
-  {
-    include 'template.php';
-  }
-
-  public static function getBlockName()
+  public static function getBlockName(): string
   {
     return 'giantpeach/image';
   }
 
-  public static function registerBlock()
-  {
-    register_block_type(__DIR__ . '/block.json');
-  }
-
-  public static function display()
+  public static function display(): void
   {
     $image = new Image(
       get_field('image')['url'],
