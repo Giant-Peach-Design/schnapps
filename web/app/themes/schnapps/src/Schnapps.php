@@ -77,8 +77,6 @@ class Schnapps
       $registeredCustomBlocks[] = $block::getBlockName();
     }
 
-    var_dump($registeredCustomBlocks);
-
     return array_merge([
       'core/paragraph',
       'core/heading',
