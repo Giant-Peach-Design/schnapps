@@ -362,6 +362,10 @@ img, video {
   max-width: 63px;
 }
 
+.list-none {
+  list-style-type: none;
+}
+
 .items-center {
   align-items: center;
 }
@@ -395,6 +399,11 @@ img, video {
   padding: 1rem;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -403,6 +412,10 @@ img, video {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.pl-0 {
+  padding-left: 0;
 }
 
 .text-xl {
@@ -420,6 +433,10 @@ img, video {
 
 .outline-1 {
   outline-width: 1px;
+}
+
+.wp-block-force-loading {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */

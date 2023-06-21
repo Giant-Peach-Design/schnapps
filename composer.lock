@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a50ca5c4e0df5880f55031a9863e908b",
+    "content-hash": "d44ad6bb8761af92247eb4a10bff7a06",
     "packages": [
         {
             "name": "composer/installers",
@@ -251,7 +251,7 @@
             "dist": {
                 "type": "path",
                 "url": "../packages/giantpeach/navigation",
-                "reference": "b32646480ccb82177c3ebf1fa8cd2a6dbb1ddd7f"
+                "reference": "8408fe7874b3a3e60f9c1e81688ee0cb9596bdf8"
             },
             "type": "library",
             "autoload": {

@@ -1,12 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './templates/**/*.{html,php,js}',
-    './parts/**/*.{html,php,js}',
-    './blocks/**/*.{html,php,js}',
-    './src/blocks/**/*.{html,php,js}',
-    './src/Blocks/**/*.{html,php,js}',
-    './patterns/**/*.{html,php,js}',
+    './templates/**/*.{html,php,twig,js}',
+    './parts/**/*.{html,php,twig,js}',
+    './blocks/**/*.{html,php,twig,js}',
+    './src/blocks/**/*.{html,php,twig,js}',
+    './src/Blocks/**/*.{html,php,twig,js}',
+    './patterns/**/*.{html,php,twig,js}',
     './src/**/*.js',
   ],
   theme: {

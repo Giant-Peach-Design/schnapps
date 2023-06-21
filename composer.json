@@ -80,7 +80,7 @@
     "giantpeach/blocks": "@dev",
     "twig/twig": "^3.6",
     "giantpeach/twiglet": "dev-main",
-    "giantpeach/navigation": "@dev"
+    "giantpeach/navigation": "dev-main"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",
