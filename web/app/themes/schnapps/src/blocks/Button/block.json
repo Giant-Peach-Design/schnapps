@@ -7,7 +7,7 @@
   "keywords": ["button", "link", "cta", "call to action"],
   "acf": {
     "mode": "preview",
-    "renderCallback": "Giantpeach\\Schnapps\\Blocks\\Button\\Button::display"
+    "renderCallback": "Giantpeach\\Schnapps\\Theme\\Blocks\\Button\\Button::display"
   },
   "align": "full",
   "supports": {

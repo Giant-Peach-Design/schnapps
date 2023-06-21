@@ -1,9 +1,9 @@
 <?php
 
-namespace Giantpeach\Schnapps\Blocks\Logo;
+namespace Giantpeach\Schnapps\Theme\Blocks\Logo;
 
-use Giantpeach\Blocks\Block;
-use Giantpeach\Blocks\Interfaces\BlockInterface;
+use Giantpeach\Schnapps\Blocks\Block;
+use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 
 class Logo extends Block implements BlockInterface
 {

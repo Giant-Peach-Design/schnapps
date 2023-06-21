@@ -1,13 +1,13 @@
 <?php
 
-namespace Giantpeach\Schnapps;
+namespace Giantpeach\Schnapps\Theme;
 
-use Giantpeach\Blocks\Blocks;
-use Giantpeach\Schnapps\Blocks\Banner\Banner;
-use Giantpeach\Schnapps\Blocks\Button\Button;
-use Giantpeach\Schnapps\Blocks\Columns\Columns;
-use Giantpeach\Schnapps\Blocks\Image\Image;
-use Giantpeach\Schnapps\Blocks\Logo\Logo;
+use Giantpeach\Schnapps\Blocks\Blocks;
+use Giantpeach\Schnapps\Theme\Blocks\Banner\Banner;
+use Giantpeach\Schnapps\Theme\Blocks\Button\Button;
+use Giantpeach\Schnapps\Theme\Blocks\Columns\Columns;
+use Giantpeach\Schnapps\Theme\Blocks\Image\Image;
+use Giantpeach\Schnapps\Theme\Blocks\Logo\Logo;
 
 class Schnapps
 {

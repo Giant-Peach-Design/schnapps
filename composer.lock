@@ -224,12 +224,12 @@
             "dist": {
                 "type": "path",
                 "url": "../packages/giantpeach/blocks",
-                "reference": "b51afbf007b1be18a498a0c524cbd77676bcd34f"
+                "reference": "1c089b3dd9d46d43e988546d783ba21465ff5281"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Giantpeach\\Blocks\\": "src"
+                    "Giantpeach\\Schnapps\\Blocks\\": "src"
                 }
             },
             "authors": [

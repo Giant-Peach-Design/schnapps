@@ -119,7 +119,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Giantpeach\\Schnapps\\": "web/app/themes/schnapps/src/"
+      "Giantpeach\\Schnapps\\Theme\\": "web/app/themes/schnapps/src/"
     }
   }
 }

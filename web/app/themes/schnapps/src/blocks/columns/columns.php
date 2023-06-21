@@ -1,9 +1,9 @@
 <?php
 
-namespace Giantpeach\Schnapps\Blocks\Columns;
+namespace Giantpeach\Schnapps\Theme\Blocks\Columns;
 
-use Giantpeach\Blocks\Block;
-use Giantpeach\Blocks\Interfaces\BlockInterface;
+use Giantpeach\Schnapps\Blocks\Block;
+use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 
 class Columns extends Block implements BlockInterface
 {

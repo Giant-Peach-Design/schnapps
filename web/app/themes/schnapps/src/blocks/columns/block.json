@@ -8,7 +8,7 @@
   "allowedBlocks": ["giantpeach/column"],
   "acf": {
     "mode": "preview",
-    "renderCallback": "Giantpeach\\Schnapps\\Blocks\\Columns\\Columns::display"
+    "renderCallback": "Giantpeach\\Schnapps\\Theme\\Blocks\\Columns\\Columns::display"
   },
   "align": "full",
   "supports": {

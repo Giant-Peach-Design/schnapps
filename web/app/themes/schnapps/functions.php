@@ -1,3 +1,3 @@
 <?php
 
-new Giantpeach\Schnapps\Schnapps();
+new Giantpeach\Schnapps\Theme\Schnapps();
