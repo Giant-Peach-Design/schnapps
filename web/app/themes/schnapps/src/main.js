@@ -1,4 +1,9 @@
+import Alpine from 'alpinejs';
 import './main.css';
+
+window.Alpine = Alpine;
+
+Alpine.start();
 
 const domReady = () => {
   const banner = document.querySelectorAll('.banner');

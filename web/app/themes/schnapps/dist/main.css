@@ -302,6 +302,10 @@ img, video {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .aspect-video {
   aspect-ratio: 16 / 9;
 }
