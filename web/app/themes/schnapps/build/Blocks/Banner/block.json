@@ -9,7 +9,7 @@
   ],
   "acf": {
     "mode": "preview",
-    "renderCallback": "Giantpeach\\Blocks\\Banner\\Banner::display"
+    "renderCallback": "Giantpeach\\Schnapps\\Theme\\Blocks\\Banner\\Banner::display"
   },
   "align": "full",
   "supports": {

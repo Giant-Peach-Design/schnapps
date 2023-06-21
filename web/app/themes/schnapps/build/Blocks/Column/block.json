@@ -7,7 +7,9 @@
   "category": "widgets",
   "icon": "columns",
   "description": "Example block scaffolded with Create Block tool.",
-  "parent": ["giantpeach/columns"],
+  "parent": [
+    "giantpeach/columns"
+  ],
   "supports": {
     "anchor": true,
     "html": false,
@@ -21,6 +23,14 @@
     "columnWidth": {
       "type": "number",
       "default": 6
+    },
+    "tabletColumnWidth": {
+      "type": "number",
+      "default": 6
+    },
+    "mobileColumnWidth": {
+      "type": "number",
+      "default": 4
     }
   }
 }

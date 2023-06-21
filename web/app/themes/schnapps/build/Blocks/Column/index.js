@@ -78,9 +78,11 @@ function Edit({
       columnsIds: getBlockOrder(rootId)
     };
   }, [clientId]);
-  const widthClasses = ['w-1/12', 'w-2/12', 'w-3/12', 'w-4/12', 'w-5/12', 'w-6/12', 'w-7/12', 'w-8/12', 'w-9/12', 'w-10/12', 'w-11/12', 'w-12/12'];
+  const widthClasses = ['lg:w-1/12', 'lg:w-2/12', 'lg:w-3/12', 'lg:w-4/12', 'lg:w-5/12', 'lg:w-6/12', 'lg:w-7/12', 'lg:w-8/12', 'lg:w-9/12', 'lg:w-10/12', 'lg:w-11/12', 'lg:w-12/12'];
+  const tabletWidthClasses = ['sm:w-1/12', 'sm:w-2/12', 'sm:w-3/12', 'sm:w-4/12', 'sm:w-5/12', 'sm:w-6/12', 'sm:w-7/12', 'sm:w-8/12', 'sm:w-9/12', 'sm:w-10/12', 'sm:w-11/12', 'sm:w-12/12'];
+  const mobileWidthClasses = ['w-4/12', 'w-6/12', 'w-8/12', 'w-full'];
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
-    className: `outline-1 outline-dashed ${widthClasses[attributes.columnWidth - 1]}`
+    className: `outline-1 outline-dashed hover:bg-slate-50 px-4 ${widthClasses[attributes.columnWidth - 1]} ${tabletWidthClasses[attributes.tabletColumnWidth - 1]} ${mobileWidthClasses[attributes.mobileColumnWidth - 1]}`
   });
   const columnsCount = columnsIds.length;
   const currentColumnPosition = columnsIds.indexOf(clientId) + 1;
@@ -104,6 +106,24 @@ function Edit({
     min: 1,
     step: 1,
     max: 12
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Tablet Column Width', 'schnapps'),
+    value: attributes.tabletColumnWidth,
+    onChange: value => setAttributes({
+      tabletColumnWidth: value
+    }),
+    min: 1,
+    step: 1,
+    max: 12
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Column Width', 'schnapps'),
+    value: attributes.mobileColumnWidth,
+    onChange: value => setAttributes({
+      mobileColumnWidth: value
+    }),
+    min: 1,
+    step: 1,
+    max: 4
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", innerBlockProps));
 }
 
@@ -198,9 +218,11 @@ __webpack_require__.r(__webpack_exports__);
 function save({
   attributes
 }) {
-  const widthClasses = ['w-1/12', 'w-2/12', 'w-3/12', 'w-4/12', 'w-5/12', 'w-6/12', 'w-7/12', 'w-8/12', 'w-9/12', 'w-10/12', 'w-11/12', 'w-12/12'];
+  const widthClasses = ['lg:w-1/12', 'lg:w-2/12', 'lg:w-3/12', 'lg:w-4/12', 'lg:w-5/12', 'lg:w-6/12', 'lg:w-7/12', 'lg:w-8/12', 'lg:w-9/12', 'lg:w-10/12', 'lg:w-11/12', 'lg:w-12/12'];
+  const tabletWidthClasses = ['sm:w-1/12', 'sm:w-2/12', 'sm:w-3/12', 'sm:w-4/12', 'sm:w-5/12', 'sm:w-6/12', 'sm:w-7/12', 'sm:w-8/12', 'sm:w-9/12', 'sm:w-10/12', 'sm:w-11/12', 'sm:w-12/12'];
+  const mobileWidthClasses = ['w-4/12', 'w-6/12', 'w-8/12', 'w-full'];
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
-    className: `${widthClasses[attributes.columnWidth - 1]}`
+    className: `px-4 ${widthClasses[attributes.columnWidth - 1]} ${tabletWidthClasses[attributes.tabletColumnWidth - 1]} ${mobileWidthClasses[attributes.mobileColumnWidth - 1]}`
   });
   const innerBlockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useInnerBlocksProps.save(blockProps);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", innerBlockProps);
@@ -298,7 +320,7 @@ module.exports = window["wp"]["i18n"];
   \**************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"giantpeach/column","version":"0.1.0","title":"Column","category":"widgets","icon":"columns","description":"Example block scaffolded with Create Block tool.","parent":["giantpeach/columns"],"supports":{"anchor":true,"html":false,"layout":true},"textdomain":"test","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"columnWidth":{"type":"number","default":6}}}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"giantpeach/column","version":"0.1.0","title":"Column","category":"widgets","icon":"columns","description":"Example block scaffolded with Create Block tool.","parent":["giantpeach/columns"],"supports":{"anchor":true,"html":false,"layout":true},"textdomain":"test","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"columnWidth":{"type":"number","default":6},"tabletColumnWidth":{"type":"number","default":6},"mobileColumnWidth":{"type":"number","default":4}}}');
 
 /***/ })
 

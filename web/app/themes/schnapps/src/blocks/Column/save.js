@@ -17,22 +17,41 @@ import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
  */
 export default function save({ attributes }) {
   const widthClasses = [
-    'w-1/12',
-    'w-2/12',
-    'w-3/12',
-    'w-4/12',
-    'w-5/12',
-    'w-6/12',
-    'w-7/12',
-    'w-8/12',
-    'w-9/12',
-    'w-10/12',
-    'w-11/12',
-    'w-12/12',
+    'lg:w-1/12',
+    'lg:w-2/12',
+    'lg:w-3/12',
+    'lg:w-4/12',
+    'lg:w-5/12',
+    'lg:w-6/12',
+    'lg:w-7/12',
+    'lg:w-8/12',
+    'lg:w-9/12',
+    'lg:w-10/12',
+    'lg:w-11/12',
+    'lg:w-12/12',
   ];
 
+  const tabletWidthClasses = [
+    'sm:w-1/12',
+    'sm:w-2/12',
+    'sm:w-3/12',
+    'sm:w-4/12',
+    'sm:w-5/12',
+    'sm:w-6/12',
+    'sm:w-7/12',
+    'sm:w-8/12',
+    'sm:w-9/12',
+    'sm:w-10/12',
+    'sm:w-11/12',
+    'sm:w-12/12',
+  ];
+
+  const mobileWidthClasses = ['w-4/12', 'w-6/12', 'w-8/12', 'w-full'];
+
   const blockProps = useBlockProps.save({
-    className: `${widthClasses[attributes.columnWidth - 1]}`,
+    className: `px-4 ${widthClasses[attributes.columnWidth - 1]} ${
+      tabletWidthClasses[attributes.tabletColumnWidth - 1]
+    } ${mobileWidthClasses[attributes.mobileColumnWidth - 1]}`,
   });
   const innerBlockProps = useInnerBlocksProps.save(blockProps);
   return <div {...innerBlockProps} />;

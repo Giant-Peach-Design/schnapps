@@ -1,0 +1,20 @@
+{
+  "name": "giantpeach/logo",
+  "title": "Logo",
+  "category": "common",
+  "icon": "smiley",
+  "keywords": [
+    "giantpeach",
+    "image",
+    "logo"
+  ],
+  "supports": {
+    "jsx": true
+  },
+  "align": "full",
+  "acf": {
+    "mode": "preview",
+    "renderCallback": "\\Giantpeach\\Schnapps\\Theme\\Blocks\\Logo\\Logo::display"
+  },
+  "editorStyle": "file:./editor.css"
+}

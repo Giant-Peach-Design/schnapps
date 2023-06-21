@@ -11,6 +11,10 @@ Requires at least:  5.9
 @tailwind components;
 @tailwind utilities;
 
+.container .container {
+  @apply px-0;
+}
+
 .wp-block-force-loading {
   display: none;
 }

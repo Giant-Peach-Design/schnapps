@@ -12,7 +12,7 @@
   ],
   "acf": {
     "mode": "preview",
-    "renderCallback": "Giantpeach\\Blocks\\Columns\\Columns::display"
+    "renderCallback": "Giantpeach\\Schnapps\\Theme\\Blocks\\Columns\\Columns::display"
   },
   "align": "full",
   "supports": {

@@ -21,6 +21,14 @@
     "columnWidth": {
       "type": "number",
       "default": 6
+    },
+    "tabletColumnWidth": {
+      "type": "number",
+      "default": 6
+    },
+    "mobileColumnWidth": {
+      "type": "number",
+      "default": 4
     }
   }
 }

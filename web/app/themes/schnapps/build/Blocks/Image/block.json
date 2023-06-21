@@ -11,7 +11,7 @@
   ],
   "acf": {
     "mode": "edit",
-    "renderCallback": "\\Giantpeach\\Blocks\\Image\\Image::display"
+    "renderCallback": "\\Giantpeach\\Schnapps\\Theme\\Blocks\\Image\\Image::display"
   },
   "align": "full",
   "supports": {
