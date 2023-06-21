@@ -31,7 +31,7 @@
   "repositories": [
     {
       "type": "path",
-      "url": "../packages/giantpeach/blocks",
+      "url": "../packages/giantpeach/*",
       "options": {
         "symlink": false
       }
@@ -77,7 +77,9 @@
     "wpackagist-theme/twentytwentythree": "^1.0",
     "wpengine/advanced-custom-fields-pro": "*",
     "gravityforms/gravityforms": "2.4.21.3",
-    "giantpeach/blocks": "@dev"
+    "giantpeach/blocks": "@dev",
+    "twig/twig": "^3.6",
+    "giantpeach/twiglet": "dev-main"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",

@@ -1,0 +1,10 @@
+<a class="max-w-[63px] block" href="/">
+  <picture class="block">
+  {% if (mobileUrl) %}
+      <source media="(max-width: 767px)" srcset="{{ mobileUrl }} ?>" />
+    {% endif %}
+    {% if (url) %}
+      <img width="{{width}}" height="{{height}}" class="w-full !h-full object-cover" src="{{url}}" alt="{{alt}}" />
+    {% endif %}
+  </picture>
+</a>

@@ -4,6 +4,7 @@ namespace Giantpeach\Schnapps\Theme\Blocks\Logo;
 
 use Giantpeach\Schnapps\Blocks\Block;
 use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
+use Giantpeach\Schnapps\Twiglet\Twiglet;
 
 class Logo extends Block implements BlockInterface
 {
@@ -30,7 +31,6 @@ class Logo extends Block implements BlockInterface
     $this->mobileWidth = $mobileWidth;
     $this->mobileHeight = $mobileHeight;
   }
-
 
   public static function getBlockName(): string
   {
