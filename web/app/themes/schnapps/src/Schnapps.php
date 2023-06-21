@@ -3,9 +3,11 @@
 namespace Giantpeach\Schnapps\Theme;
 
 use Giantpeach\Schnapps\Blocks\Blocks;
+use Giantpeach\Schnapps\Navigation\Navigation;
 use Giantpeach\Schnapps\Theme\Blocks\Banner\Banner;
 use Giantpeach\Schnapps\Theme\Blocks\Button\Button;
 use Giantpeach\Schnapps\Theme\Blocks\Columns\Columns;
+use Giantpeach\Schnapps\Theme\Blocks\HeaderNavigation\HeaderNavigation;
 use Giantpeach\Schnapps\Theme\Blocks\Image\Image;
 use Giantpeach\Schnapps\Theme\Blocks\Logo\Logo;
 
@@ -18,6 +20,7 @@ class Schnapps
     Columns::class,
     Button::class,
     Logo::class,
+    HeaderNavigation::class,
   ];
 
   public function __construct()
@@ -31,6 +34,7 @@ class Schnapps
   public function setupTheme()
   {
     add_action('init', [$this, 'registerBlocks']);
+    add_action('init', [$this, 'registerMenus']);
     add_action('wp_enqueue_scripts', [$this, 'stylesheets']);
     add_action('wp_enqueue_scripts', [$this, 'scripts']);
     add_action('enqueue_block_editor_assets', [$this, 'blockEditorStylesheets']);
@@ -44,6 +48,11 @@ class Schnapps
     foreach ($this->blocks as $block) {
       $block::registerBlock();
     }
+  }
+
+  public function registerMenus()
+  {
+    Navigation::registerNav('primary');
   }
 
   public function setupFilters()
@@ -77,6 +86,8 @@ class Schnapps
 
   public function allowedBlockTypes($allowed_blocks, $editor_context)
   {
+
+    // TODO: Move this to giantpeach/blocks package, autoload if block.json file exists
 
     $registeredCustomBlocks = [];
 

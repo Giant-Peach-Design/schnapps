@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae72a14f7a531ab75bbcb64447e70692",
+    "content-hash": "a50ca5c4e0df5880f55031a9863e908b",
     "packages": [
         {
             "name": "composer/installers",
@@ -233,6 +233,30 @@
             "autoload": {
                 "psr-4": {
                     "Giantpeach\\Schnapps\\Blocks\\": "src"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Giant Peach"
+                }
+            ],
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "giantpeach/navigation",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "../packages/giantpeach/navigation",
+                "reference": "b32646480ccb82177c3ebf1fa8cd2a6dbb1ddd7f"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Giantpeach\\Schnapps\\Navigation\\": "src/"
                 }
             },
             "authors": [
@@ -2094,6 +2118,7 @@
     "stability-flags": {
         "giantpeach/blocks": 20,
         "giantpeach/twiglet": 20,
+        "giantpeach/navigation": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
