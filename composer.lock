@@ -224,7 +224,7 @@
             "dist": {
                 "type": "path",
                 "url": "../packages/giantpeach/blocks",
-                "reference": "b3ad8dd122cff8e11f6f058b1836dfd92202c5b9"
+                "reference": "589792fea29609460d0544e337e3c2f62a1db869"
             },
             "require": {
                 "giantpeach/twiglet": "@dev"
@@ -251,7 +251,7 @@
             "dist": {
                 "type": "path",
                 "url": "../packages/giantpeach/twiglet",
-                "reference": "3db2239070edfac485e83386c978750894c61055"
+                "reference": "644533c83474bacc18a44ef604c60a4f5453769b"
             },
             "require": {
                 "oscarotero/env": "^2.1",

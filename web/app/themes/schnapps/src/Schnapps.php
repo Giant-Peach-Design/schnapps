@@ -90,6 +90,7 @@ class Schnapps
       'core/list',
       'core/list-item',
       'core/block',
+      'giantpeach/column'
     ], $registeredCustomBlocks);
   }
 }

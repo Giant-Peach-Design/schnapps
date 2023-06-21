@@ -1,0 +1,27 @@
+<section class="relative overflow-hidden banner aspect-video">
+
+    <div class="blaze-slider">
+        <div class="blaze-container">
+            <div class="blaze-track-container">
+                <div class="blaze-track">
+                {% for slide in slides %}
+                        <div class="relative">
+                            {% if slide.image %}
+                                <picture class="block aspect-video">
+                                    <img class="w-full !h-full object-cover" src="{{ slide.image.url }}" alt="{{ slide.image.alt }}" />
+                                </picture>
+                            {% endif %}
+
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="container py-8 bg-red-100">
+                                    {{ slide.caption | raw }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

@@ -7,6 +7,15 @@ use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 
 class Columns extends Block implements BlockInterface
 {
+  public $allowedBlocks;
+
+  public function __construct()
+  {
+    $this->allowedBlocks = [
+      'giantpeach/column',
+    ];
+  }
+
   public static function getBlockName(): string
   {
     return 'giantpeach/columns';
