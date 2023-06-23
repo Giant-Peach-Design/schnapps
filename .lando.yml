@@ -3,6 +3,8 @@ recipe: wordpress
 config:
   php: '8.2'
   via: nginx
+  config:
+    vhosts: .vscode/default.conf.tpl
   webroot: web
   database: mariadb
   xdebug: true
