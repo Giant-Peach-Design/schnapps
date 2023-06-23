@@ -3,6 +3,7 @@
 namespace Giantpeach\Schnapps\Theme;
 
 use Giantpeach\Schnapps\Blocks\Blocks;
+use Giantpeach\Schnapps\Images\Images;
 use Giantpeach\Schnapps\Navigation\Navigation;
 use Giantpeach\Schnapps\Theme\Blocks\Banner\Banner;
 use Giantpeach\Schnapps\Theme\Blocks\Button\Button;
@@ -28,6 +29,7 @@ class Schnapps
     $this->setupTheme();
     $this->setupFilters();
 
+    Images::getInstance();
     new Blocks();
   }
 
