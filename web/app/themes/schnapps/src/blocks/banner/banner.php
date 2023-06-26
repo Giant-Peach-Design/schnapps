@@ -8,10 +8,19 @@ use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 class Banner extends Block implements BlockInterface
 {
   public array $slides;
+  public array $allowedBlocks;
 
-  public function __construct($slides)
+  public function __construct($slides = [])
   {
+    if (!$slides) {
+      $slides = [];
+    }
+    $this->allowedBlocks = [
+      'giantpeach/slide',
+    ];
     $this->slides = $slides;
+
+    parent::__construct();
   }
 
   public static function getBlockName(): string

@@ -1,0 +1,19 @@
+<div class="relative {% if isAdmin %} flex-shrink-0 {% endif %}">
+    {% if slide.image %}
+        <picture class="block aspect-video">
+            <img class="w-full !h-full object-cover" src="{{ slide.image.url }}" alt="{{ slide.image.alt }}" />
+        </picture>
+    {% endif %}
+
+    {% if slide.image is empty %}
+        <div class="block aspect-video">
+            <div class="w-full !h-full bg-gray-200"></div>
+        </div>
+    {% endif %}
+
+    <div class="absolute inset-0 flex items-center justify-center">
+        <div class="container py-8 bg-red-100">
+          <InnerBlocks />
+        </div>
+    </div>
+</div>

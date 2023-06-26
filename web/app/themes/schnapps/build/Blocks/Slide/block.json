@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "giantpeach/slide",
+  "version": "0.1.0",
+  "title": "Slide",
+  "parent": [
+    "giantpeach/banner"
+  ],
+  "category": "widgets",
+  "icon": "columns",
+  "description": "Example block scaffolded with Create Block tool.",
+  "supports": {
+    "anchor": true,
+    "html": false,
+    "layout": true
+  },
+  "textdomain": "test",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "mediaUrl": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "img",
+      "attribute": "src"
+    }
+  }
+}

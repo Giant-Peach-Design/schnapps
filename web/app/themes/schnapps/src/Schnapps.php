@@ -11,12 +11,14 @@ use Giantpeach\Schnapps\Theme\Blocks\Columns\Columns;
 use Giantpeach\Schnapps\Theme\Blocks\HeaderNavigation\HeaderNavigation;
 use Giantpeach\Schnapps\Theme\Blocks\Image\Image;
 use Giantpeach\Schnapps\Theme\Blocks\Logo\Logo;
+use Giantpeach\Schnapps\Theme\Blocks\Slide\Slide;
 
 class Schnapps
 {
 
   protected $blocks = [
     Banner::class,
+    Slide::class,
     Image::class,
     Columns::class,
     Button::class,

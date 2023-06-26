@@ -77,7 +77,7 @@
     "wpackagist-theme/twentytwentythree": "^1.0",
     "wpengine/advanced-custom-fields-pro": "*",
     "gravityforms/gravityforms": "2.4.21.3",
-    "giantpeach/blocks": "@dev",
+    "giantpeach/blocks": "dev-main",
     "twig/twig": "^3.6",
     "giantpeach/twiglet": "dev-main",
     "giantpeach/navigation": "dev-main",
