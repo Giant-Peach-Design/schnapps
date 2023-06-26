@@ -4,12 +4,23 @@ namespace Giantpeach\Schnapps\Theme\Blocks\Slide;
 
 use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 use Giantpeach\Schnapps\Blocks\Block;
+use Giantpeach\Schnapps\Images\Images;
 
 class Slide extends Block implements BlockInterface
 {
 
-  public function __construct()
+  public $image;
+  public $webp;
+  public $mobile;
+  public $alt;
+
+  public function __construct($image, $alt, $webp = null, $mobile = null)
   {
+    $this->image = $image;
+    $this->alt = $alt;
+    $this->webp = $webp;
+    $this->mobile = $mobile;
+
     parent::__construct();
   }
 
@@ -20,7 +31,31 @@ class Slide extends Block implements BlockInterface
 
   public static function display(): void
   {
-    $slide = new Slide();
+    $imgField = get_field('image');
+
+    if ($imgField) {
+
+      $imgUrl = Images::getInstance()->getGlideImageUrl($imgField['ID'], [
+        'w' => $imgField['width'],
+        'h' => $imgField['height'],
+        'fit' => 'crop',
+      ]);
+
+      $webp = Images::getInstance()->getGlideImageUrl($imgField['ID'], [
+        'w' => $imgField['width'],
+        'h' => $imgField['height'],
+        'fit' => 'crop',
+        'fm' => 'webp',
+      ]);
+    }
+
+    $slide = new Slide(
+      $imgUrl ?? null,
+      $imgField['alt'] ?? null,
+      $webp ?? null,
+      get_field('mobile')['url'] ?? null
+    );
+
     $slide->render();
   }
 }

@@ -7,18 +7,14 @@ use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 
 class Banner extends Block implements BlockInterface
 {
-  public array $slides;
   public array $allowedBlocks;
 
-  public function __construct($slides = [])
+  public function __construct()
   {
-    if (!$slides) {
-      $slides = [];
-    }
+
     $this->allowedBlocks = [
       'giantpeach/slide',
     ];
-    $this->slides = $slides;
 
     parent::__construct();
   }
@@ -30,7 +26,7 @@ class Banner extends Block implements BlockInterface
 
   public static function display(): void
   {
-    $banner = new Banner(get_field('slides'));
+    $banner = new Banner();
     $banner->render();
   }
 }

@@ -1,11 +1,17 @@
 <div class="relative {% if isAdmin %} flex-shrink-0 {% endif %}">
-    {% if slide.image %}
+    {% if image %}
         <picture class="block aspect-video">
-            <img class="w-full !h-full object-cover" src="{{ slide.image.url }}" alt="{{ slide.image.alt }}" />
+            {% if webp %}
+              <source srcset="{{ webp }}" type="image/webp" />
+            {% endif %}
+
+            {% if image %}
+              <img class="w-full !h-full object-cover" src="{{ image }}" alt="{{ alt }}" />
+            {% endif %}
         </picture>
     {% endif %}
 
-    {% if slide.image is empty %}
+    {% if image is empty %}
         <div class="block aspect-video">
             <div class="w-full !h-full bg-gray-200"></div>
         </div>
