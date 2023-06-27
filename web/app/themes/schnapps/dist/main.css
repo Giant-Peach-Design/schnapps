@@ -368,6 +368,10 @@ img, video {
   background-color: rgb(254 226 226 / var(--tw-bg-opacity));
 }
 
+.bg-black\/25 {
+  background-color: #00000040;
+}
+
 .object-cover {
   object-fit: cover;
 }
@@ -396,12 +400,27 @@ img, video {
   line-height: 1.75rem;
 }
 
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .outline-dashed {
   outline-style: dashed;
 }
 
 .outline-1 {
   outline-width: 1px;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-duration: .15s;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+}
+
+.duration-300 {
+  transition-duration: .3s;
 }
 
 .container .container {

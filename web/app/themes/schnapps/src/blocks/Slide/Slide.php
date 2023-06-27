@@ -8,7 +8,7 @@ use Giantpeach\Schnapps\Images\Images;
 
 class Slide extends Block implements BlockInterface
 {
-
+  public array $allowedBlocks;
   public $image;
   public $webp;
   public $mobile;
@@ -20,6 +20,14 @@ class Slide extends Block implements BlockInterface
     $this->alt = $alt;
     $this->webp = $webp;
     $this->mobile = $mobile;
+
+    $this->allowedBlocks = [
+      'giantpeach/columns',
+      'core/paragraph',
+      'core/heading',
+      'core/list',
+      'giantpeach/button'
+    ];
 
     parent::__construct();
   }
