@@ -251,7 +251,7 @@
             "dist": {
                 "type": "path",
                 "url": "../packages/giantpeach/images",
-                "reference": "b72867bc4fa6066d415264945ad6b883253a4ed6"
+                "reference": "f32c24581df5197cd6f47c17f2712ce06ed5fedc"
             },
             "require": {
                 "league/glide": "^2.2"
