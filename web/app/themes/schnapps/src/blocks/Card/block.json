@@ -1,0 +1,14 @@
+{
+  "name": "giantpeach/card",
+  "title": "Card",
+  "category": "giantpeach",
+  "icon": "smiley",
+  "keywords": ["giantpeach"],
+  "supports": {
+    "jsx": true
+  },
+  "acf": {
+    "mode": "preview",
+    "renderCallback": "\\Giantpeach\\Schnapps\\Theme\\Blocks\\Card\\Card::display"
+  }
+}

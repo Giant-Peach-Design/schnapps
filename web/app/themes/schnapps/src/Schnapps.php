@@ -7,6 +7,7 @@ use Giantpeach\Schnapps\Images\Images;
 use Giantpeach\Schnapps\Navigation\Navigation;
 use Giantpeach\Schnapps\Theme\Blocks\Banner\Banner;
 use Giantpeach\Schnapps\Theme\Blocks\Button\Button;
+use Giantpeach\Schnapps\Theme\Blocks\Card\Card;
 use Giantpeach\Schnapps\Theme\Blocks\Columns\Columns;
 use Giantpeach\Schnapps\Theme\Blocks\HeaderNavigation\HeaderNavigation;
 use Giantpeach\Schnapps\Theme\Blocks\Image\Image;
@@ -23,6 +24,7 @@ class Schnapps
     Columns::class,
     Button::class,
     Logo::class,
+    Card::class,
     HeaderNavigation::class,
   ];
 
@@ -61,7 +63,7 @@ class Schnapps
 
   public function setupFilters()
   {
-    //add_filter('allowed_block_types_all', [$this, 'allowedBlockTypes'], 25, 2);
+    add_filter('allowed_block_types_all', [$this, 'allowedBlockTypes'], 25, 2);
 
     add_filter('acf/blocks/no_fields_assigned_message', function () {
       return 'This block contains no editable fields.';
@@ -105,7 +107,8 @@ class Schnapps
       'core/list',
       'core/list-item',
       'core/block',
-      'giantpeach/column'
+      'giantpeach/column',
+      'gravityforms/form',
     ], $registeredCustomBlocks);
   }
 }
