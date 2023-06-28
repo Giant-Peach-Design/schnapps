@@ -1,0 +1,39 @@
+<section>
+  <div class="container relative">
+    <div class="w-full aspect-video">
+      {% if image %}
+        <picture class="block aspect-video">
+            {% if mobileWebp %}
+              <source srcset="{{ mobileWebp }}" media="(max-width: 767px)" type="image/webp" />
+            {% endif %}
+
+            {% if mobile %}
+              <source srcset="{{ mobile }}" media="(max-width: 767px)" type="image/jpeg" />
+            {% endif %}
+
+            {% if webp %}
+              <source media="(min-width: 768px)" srcset="{{ webp }}" type="image/webp" />
+            {% endif %}
+
+            {% if image %}
+              <source srcset="{{ image }}" media="(min-width: 768px)" type="image/jpeg" />
+            {% endif %}
+
+            {% if image %}
+              <img class="w-full !h-full object-cover" src="{{ image }}" alt="{{ alt }}" />
+            {% endif %}
+        </picture>
+    {% endif %}
+
+    {% if image is empty %}
+        <div class="block aspect-video">
+            <div class="w-full !h-full bg-gray-200"></div>
+        </div>
+    {% endif %}
+    </div>
+
+    <div class="absolute w-full -translate-y-1/2 top-1/2">
+      <InnerBlocks />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+{
+  "name": "giantpeach/hero",
+  "title": "Hero",
+  "category": "giantpeach",
+  "icon": "smiley",
+  "keywords": [
+    "giantpeach"
+  ],
+  "supports": {
+    "jsx": true
+  },
+  "acf": {
+    "mode": "preview",
+    "renderCallback": "\\Giantpeach\\Schnapps\\Theme\\Blocks\\Hero\\Hero::display"
+  }
+}

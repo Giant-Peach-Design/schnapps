@@ -10,6 +10,7 @@ use Giantpeach\Schnapps\Theme\Blocks\Button\Button;
 use Giantpeach\Schnapps\Theme\Blocks\Card\Card;
 use Giantpeach\Schnapps\Theme\Blocks\Columns\Columns;
 use Giantpeach\Schnapps\Theme\Blocks\HeaderNavigation\HeaderNavigation;
+use Giantpeach\Schnapps\Theme\Blocks\Hero\Hero;
 use Giantpeach\Schnapps\Theme\Blocks\Image\Image;
 use Giantpeach\Schnapps\Theme\Blocks\Logo\Logo;
 use Giantpeach\Schnapps\Theme\Blocks\Slide\Slide;
@@ -19,6 +20,7 @@ class Schnapps
 
   protected $blocks = [
     Banner::class,
+    Hero::class,
     Slide::class,
     Image::class,
     Columns::class,
@@ -48,7 +50,6 @@ class Schnapps
 
   public function registerBlocks()
   {
-    //register_block_type(get_template_directory() . '/src/blocks/card');
     register_block_type(get_template_directory() . '/build/Blocks/Column');
 
     foreach ($this->blocks as $block) {
@@ -92,8 +93,6 @@ class Schnapps
 
   public function allowedBlockTypes($allowed_blocks, $editor_context)
   {
-
-    // TODO: Move this to giantpeach/blocks package, autoload if block.json file exists
 
     $registeredCustomBlocks = [];
 
