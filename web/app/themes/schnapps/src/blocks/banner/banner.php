@@ -11,7 +11,6 @@ class Banner extends Block implements BlockInterface
 
   public function __construct()
   {
-
     $this->allowedBlocks = [
       'giantpeach/slide',
     ];

@@ -15,6 +15,7 @@
   "license": "ISC",
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.9",
     "@wordpress/icons": "^9.26.0",
     "@wordpress/scripts": "^26.6.0",
     "autoprefixer": "^10.4.14",

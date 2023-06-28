@@ -1,9 +1,9 @@
-<picture class="block">
+<picture class="block not-prose">
   {% if webp %}
     <source srcset="{{ webp }}" type="image/webp" />
   {% endif %}
 
   {% if url %}
-    <img class="w-full !h-full object-cover" src="{{ url }}" alt="{{ alt }}" />
+    <img class=" w-full !h-full object-cover" src="{{ url }}" alt="{{ alt }}" />
   {% endif %}
 </picture>

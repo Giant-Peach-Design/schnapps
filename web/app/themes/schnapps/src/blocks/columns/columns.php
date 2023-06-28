@@ -8,12 +8,19 @@ use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 class Columns extends Block implements BlockInterface
 {
   public $allowedBlocks;
+  public $justifyContent;
+  public $alignItems;
 
-  public function __construct()
+  public function __construct($justifyContent = 'center', $alignItems = 'flex-start')
   {
     $this->allowedBlocks = [
       'giantpeach/column',
     ];
+
+    $this->justifyContent = $justifyContent;
+    $this->alignItems = $alignItems;
+
+    parent::__construct();
   }
 
   public static function getBlockName(): string
@@ -23,7 +30,7 @@ class Columns extends Block implements BlockInterface
 
   public static function display(): void
   {
-    $columns = new Columns();
+    $columns = new Columns('center', 'flex-start');
     $columns->render();
   }
 }
