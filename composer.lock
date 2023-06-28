@@ -224,7 +224,7 @@
             "dist": {
                 "type": "path",
                 "url": "../packages/giantpeach/blocks",
-                "reference": "7d0f5cfbadc08bc918c22dc8dae126973e06a067"
+                "reference": "999a670954ba5faafb6a2d1d521ffebb1abc091e"
             },
             "require": {
                 "giantpeach/twiglet": "@dev"

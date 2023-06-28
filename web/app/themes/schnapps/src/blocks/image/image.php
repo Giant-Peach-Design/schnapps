@@ -8,6 +8,7 @@ use Giantpeach\Schnapps\Images\Images;
 
 class Image extends Block implements BlockInterface
 {
+  public static string $blockName = 'giantpeach/image';
   public $url;
   public $alt;
   public $width;
@@ -25,11 +26,6 @@ class Image extends Block implements BlockInterface
     $this->height = $height;
     $this->webp = $webp;
     $this->mobile = $mobile;
-  }
-
-  public static function getBlockName(): string
-  {
-    return 'giantpeach/image';
   }
 
   public static function display(): void

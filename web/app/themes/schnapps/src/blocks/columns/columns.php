@@ -7,6 +7,9 @@ use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 
 class Columns extends Block implements BlockInterface
 {
+
+  public static string $blockName = 'giantpeach/columns';
+
   public $allowedBlocks;
   public $justifyContent;
   public $alignItems;
@@ -21,11 +24,6 @@ class Columns extends Block implements BlockInterface
     $this->alignItems = $alignItems;
 
     parent::__construct();
-  }
-
-  public static function getBlockName(): string
-  {
-    return 'giantpeach/columns';
   }
 
   public static function display(): void

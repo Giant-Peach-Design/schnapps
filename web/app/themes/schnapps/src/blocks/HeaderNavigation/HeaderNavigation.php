@@ -8,17 +8,13 @@ use Giantpeach\Schnapps\Navigation\Navigation;
 
 class HeaderNavigation extends Block implements BlockInterface
 {
+  public static string $blockName = 'giantpeach/headernavigation';
 
   public $nav;
 
   public function __construct()
   {
     $this->nav = Navigation::buildNav(Navigation::getNav('primary'));
-  }
-
-  public static function getBlockName(): string
-  {
-    return 'giantpeach/headernavigation';
   }
 
   public static function display(): void

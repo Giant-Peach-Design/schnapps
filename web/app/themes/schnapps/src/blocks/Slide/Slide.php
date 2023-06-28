@@ -8,6 +8,8 @@ use Giantpeach\Schnapps\Images\Images;
 
 class Slide extends Block implements BlockInterface
 {
+  public static string $blockName = 'giantpeach/slide';
+
   public array $allowedBlocks;
   public string $proseColor;
   public $image;
@@ -15,6 +17,7 @@ class Slide extends Block implements BlockInterface
   public $mobile;
   public $mobileWebp;
   public $alt;
+
 
   public function __construct($image, $alt, $webp = null, $mobile = null, $mobileWebp = null)
   {
@@ -33,11 +36,6 @@ class Slide extends Block implements BlockInterface
     ];
 
     parent::__construct();
-  }
-
-  public static function getBlockName(): string
-  {
-    return 'giantpeach/slide';
   }
 
   public static function display(): void

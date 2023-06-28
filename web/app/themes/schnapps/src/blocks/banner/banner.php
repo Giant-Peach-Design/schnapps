@@ -7,6 +7,7 @@ use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 
 class Banner extends Block implements BlockInterface
 {
+  public static string $blockName = 'giantpeach/banner';
   public array $allowedBlocks;
 
   public function __construct()
@@ -16,11 +17,6 @@ class Banner extends Block implements BlockInterface
     ];
 
     parent::__construct();
-  }
-
-  public static function getBlockName(): string
-  {
-    return 'giantpeach/banner';
   }
 
   public static function display(): void

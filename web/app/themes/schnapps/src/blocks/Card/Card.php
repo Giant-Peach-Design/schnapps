@@ -7,14 +7,11 @@ use Giantpeach\Schnapps\Blocks\Block;
 
 class Card extends Block implements BlockInterface
 {
+  public static string $blockName = 'giantpeach/card';
 
-  public static function getBlockName(): string
+  public static function display(): void
   {
-    return 'giantpeach/card';
+    $card = new Card();
+    $card->render();
   }
-
-  public static function display(): void {
-        $card = new Card();
-        $card->render();
-      }
 }

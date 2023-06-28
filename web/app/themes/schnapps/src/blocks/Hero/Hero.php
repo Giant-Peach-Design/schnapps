@@ -8,6 +8,7 @@ use Giantpeach\Schnapps\Images\Images;
 
 class Hero extends Block implements BlockInterface
 {
+  public static string $blockName = 'giantpeach/hero';
 
   public $image;
   public $webp;
@@ -24,11 +25,6 @@ class Hero extends Block implements BlockInterface
     $this->alt = $alt;
 
     parent::__construct();
-  }
-
-  public static function getBlockName(): string
-  {
-    return 'giantpeach/hero';
   }
 
   public static function display(): void

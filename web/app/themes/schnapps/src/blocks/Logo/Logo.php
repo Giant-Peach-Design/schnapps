@@ -8,6 +8,7 @@ use Giantpeach\Schnapps\Twiglet\Twiglet;
 
 class Logo extends Block implements BlockInterface
 {
+  public static string $blockName = 'giantpeach/logo';
 
   public $url;
   public $alt;
@@ -30,11 +31,6 @@ class Logo extends Block implements BlockInterface
     $this->mobileAlt = $mobileAlt ?? '';
     $this->mobileWidth = $mobileWidth;
     $this->mobileHeight = $mobileHeight;
-  }
-
-  public static function getBlockName(): string
-  {
-    return 'giantpeach/logo';
   }
 
   public static function display(): void

@@ -8,6 +8,7 @@ use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 
 class Button extends Block implements BlockInterface
 {
+  public static string $blockName = 'giantpeach/button';
   public $text;
   public $url;
   public $target;
@@ -21,11 +22,6 @@ class Button extends Block implements BlockInterface
     $this->target = $target;
     $this->rel = $rel;
     $this->size = $size;
-  }
-
-  public static function getBlockName(): string
-  {
-    return 'giantpeach/button';
   }
 
   public static function display(): void
