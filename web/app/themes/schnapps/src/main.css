@@ -11,6 +11,30 @@ Requires at least:  5.9
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .fade-in-up {
+    @apply duration-500;
+    transition-property: opacity, transform;
+    transform: translateY(25px);
+    opacity: 0;
+  }
+
+  .fade-in-up--longer {
+    @apply duration-500;
+    transition-property: opacity, transform;
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  .is-visible.fade-in-up,
+  .is-visible.fade-in-up--longer,
+  .is-visible.fade-in-up--full,
+  .is-visible .fade-in-up--full {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .container .container {
   @apply px-0;
 }

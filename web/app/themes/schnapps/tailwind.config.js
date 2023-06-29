@@ -8,7 +8,9 @@ module.exports = {
     './src/Blocks/**/*.{html,php,twig,js}',
     './patterns/**/*.{html,php,twig,js}',
     './src/**/*.js',
+    '../../../../vendor/giantpeach/**/*.php',
   ],
+  safelist: ['prose-invert', 'prose-sm', 'prose-lg', 'prose-xl', 'prose-2xl'],
   theme: {
     extend: {
       container: {
