@@ -89,7 +89,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
   const mobileWidthClasses = ['w-4/12', 'w-6/12', 'w-8/12', 'w-full'];
 
   const blockProps = useBlockProps({
-    className: `outline-1 outline-dashed hover:bg-slate-50 px-4 ${
+    className: `outline-1 outline-dashed px-4 ${
       widthClasses[attributes.columnWidth - 1]
     } ${tabletWidthClasses[attributes.tabletColumnWidth - 1]} ${
       mobileWidthClasses[attributes.mobileColumnWidth - 1]

@@ -7,6 +7,9 @@
   "keywords": [
     "banner"
   ],
+  "allowedBlocks": [
+    "giantpeach/slide"
+  ],
   "acf": {
     "mode": "preview",
     "renderCallback": "Giantpeach\\Schnapps\\Theme\\Blocks\\Banner\\Banner::display"

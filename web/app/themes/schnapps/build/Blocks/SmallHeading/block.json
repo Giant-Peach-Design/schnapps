@@ -1,11 +1,8 @@
 {
-  "name": "giantpeach/slide",
-  "title": "Slide",
+  "name": "giantpeach/small-heading",
+  "title": "Small Heading",
   "category": "giantpeach",
   "icon": "smiley",
-  "parent": [
-    "giantpeach/banner"
-  ],
   "keywords": [
     "giantpeach"
   ],
@@ -14,7 +11,7 @@
   },
   "acf": {
     "mode": "preview",
-    "renderCallback": "\\Giantpeach\\Schnapps\\Theme\\Blocks\\Slide\\Slide::display"
+    "renderCallback": "\\Giantpeach\\Schnapps\\Theme\\Blocks\\SmallHeading\\SmallHeading::display"
   },
   "editorStyle": "file:./editor.css"
 }
