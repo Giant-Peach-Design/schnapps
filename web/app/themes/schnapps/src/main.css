@@ -42,3 +42,7 @@ Requires at least:  5.9
 .wp-block-force-loading {
   display: none;
 }
+
+.giantpeach-small-heading + * {
+  @apply !mt-0;
+}

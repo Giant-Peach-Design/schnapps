@@ -14,6 +14,7 @@ use Giantpeach\Schnapps\Theme\Blocks\Hero\Hero;
 use Giantpeach\Schnapps\Theme\Blocks\Image\Image;
 use Giantpeach\Schnapps\Theme\Blocks\Logo\Logo;
 use Giantpeach\Schnapps\Theme\Blocks\Slide\Slide;
+use Giantpeach\Schnapps\Theme\Blocks\SmallHeading\SmallHeading;
 
 class Schnapps
 {
@@ -27,6 +28,7 @@ class Schnapps
     Button::class,
     Logo::class,
     Card::class,
+    SmallHeading::class,
     HeaderNavigation::class,
   ];
 

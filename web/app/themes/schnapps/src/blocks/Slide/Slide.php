@@ -32,7 +32,8 @@ class Slide extends Block implements BlockInterface
       'core/paragraph',
       'core/heading',
       'core/list',
-      'giantpeach/button'
+      'giantpeach/button',
+      'giantpeach/small-heading'
     ];
 
     parent::__construct();
