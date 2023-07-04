@@ -19,7 +19,7 @@
 
     <div class="absolute inset-0 bg-black/25"></div>
 
-    <div class="absolute inset-0 flex items-center justify-center prose {{ classes.prose.color }} {{ classes.prose.size }} text-white max-w-none prose-h2:text-5xl">
+    <div class="absolute inset-0 flex items-center justify-center prose {{ classes.prose.color }} {{ classes.prose.size }} max-w-none">
         <div class=" container py-8 {% if isAdmin %}outline-1 outline-dashed transition-all duration-300{% endif %}">
           <InnerBlocks allowedBlocks="{{ allowedBlocks | wp_json_encode }}" />
         </div>
