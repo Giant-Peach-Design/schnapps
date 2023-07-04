@@ -42,7 +42,14 @@ Requires at least:  5.9
 .wp-block-force-loading {
   display: none;
 }
+/**
+ * Custom styles
+ */
 
-.giantpeach-small-heading + * {
+.is-style-small {
+  @apply !text-sm !uppercase tracking-wider;
+}
+
+.is-style-small + * {
   @apply !mt-0;
 }

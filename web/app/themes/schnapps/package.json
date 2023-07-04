@@ -9,23 +9,30 @@
     "build-blocks": "wp-scripts build",
     "dev-blocks": "wp-scripts start"
   },
-  "source": "src/main.js",
-  "main": "dist/main.js",
+  "source": [
+    "src/main.js",
+    "src/editor.js"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
-    "@wordpress/icons": "^9.26.0",
-    "@wordpress/scripts": "^26.6.0",
     "autoprefixer": "^10.4.14",
     "parcel": "^2.9.2",
     "postcss": "^8.4.24",
+    "process": "^0.11.10",
     "tailwindcss": "^3.3.2"
   },
   "dependencies": {
     "alpinejs": "^3.12.2",
     "blaze-slider": "^1.9.3",
-    "motion": "^10.16.2"
+    "motion": "^10.16.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@wordpress/dom-ready": "^3.36.0",
+    "@wordpress/hooks": "^3.36.0",
+    "@wordpress/icons": "^9.26.0",
+    "@wordpress/scripts": "^26.6.0"
   }
 }

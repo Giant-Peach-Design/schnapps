@@ -1,9 +1,26 @@
 {
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
   "version": 2,
   "settings": {
     "layout": {
       "contentSize": "1920px",
       "wideSize": "2560px"
+    },
+    "blocks": {
+      "core/paragraph": {
+        "typography": {
+          "fontStyle": false,
+          "fontSizes": [],
+          "fontWeight": false
+        }
+      },
+      "core/heading": {
+        "typography": {
+          "fontStyle": false,
+          "fontSizes": [],
+          "fontWeight": false
+        }
+      }
     }
   }
 }

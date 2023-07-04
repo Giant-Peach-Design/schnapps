@@ -14,7 +14,6 @@ use Giantpeach\Schnapps\Theme\Blocks\Hero\Hero;
 use Giantpeach\Schnapps\Theme\Blocks\Image\Image;
 use Giantpeach\Schnapps\Theme\Blocks\Logo\Logo;
 use Giantpeach\Schnapps\Theme\Blocks\Slide\Slide;
-use Giantpeach\Schnapps\Theme\Blocks\SmallHeading\SmallHeading;
 
 class Schnapps
 {
@@ -28,7 +27,6 @@ class Schnapps
     Button::class,
     Logo::class,
     Card::class,
-    SmallHeading::class,
     HeaderNavigation::class,
   ];
 
@@ -48,6 +46,7 @@ class Schnapps
     add_action('wp_enqueue_scripts', [$this, 'stylesheets']);
     add_action('wp_enqueue_scripts', [$this, 'scripts']);
     add_action('enqueue_block_editor_assets', [$this, 'blockEditorStylesheets']);
+    add_action('enqueue_block_editor_assets', [$this, 'blockEditorScripts']);
   }
 
   public function registerBlocks()
@@ -91,6 +90,17 @@ class Schnapps
   public function blockEditorStylesheets()
   {
     wp_enqueue_style('schnapps-editor', get_template_directory_uri() . '/dist/main.css', false, null);
+  }
+
+  public function blockEditorScripts()
+  {
+    wp_enqueue_script(
+      'schnapps-editor',
+      get_template_directory_uri() . '/dist/editor.js',
+      ['wp-blocks'],
+      filemtime(get_template_directory() . '/dist/editor.js'),
+      true
+    );
   }
 
   public function allowedBlockTypes($allowed_blocks, $editor_context)
