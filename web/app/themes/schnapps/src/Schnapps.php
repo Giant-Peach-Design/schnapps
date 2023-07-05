@@ -12,6 +12,7 @@ use Giantpeach\Schnapps\Theme\Blocks\Columns\Columns;
 use Giantpeach\Schnapps\Theme\Blocks\HeaderNavigation\HeaderNavigation;
 use Giantpeach\Schnapps\Theme\Blocks\Hero\Hero;
 use Giantpeach\Schnapps\Theme\Blocks\Image\Image;
+use Giantpeach\Schnapps\Theme\Blocks\LatestNews\LatestNews;
 use Giantpeach\Schnapps\Theme\Blocks\Logo\Logo;
 use Giantpeach\Schnapps\Theme\Blocks\Slide\Slide;
 
@@ -28,6 +29,7 @@ class Schnapps
     Logo::class,
     Card::class,
     HeaderNavigation::class,
+    LatestNews::class,
   ];
 
   public function __construct()

@@ -1,0 +1,11 @@
+<a class="block prose" href="{{post.link}}">
+  <div class="mb-4">
+    <picture class="block overflow-hidden aspect-video">
+      <source srcset="{{post.image}}" media="(min-width: 768px)">
+      <img class="object-cover object-center w-full h-full" src="{{post.image}}" alt="{{post.title}}">
+    </picture>
+  </div>
+  <h3>
+    {{post.title}}
+  </h3>
+</a>

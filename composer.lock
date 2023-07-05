@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7b3dec8e0495bdb7a321d08f6c15f8dc",
+    "content-hash": "cd909ba6885535815c49b3ebe814e836",
     "packages": [
         {
             "name": "composer/installers",
@@ -284,6 +284,30 @@
             "autoload": {
                 "psr-4": {
                     "Giantpeach\\Schnapps\\Navigation\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Giant Peach"
+                }
+            ],
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "giantpeach/query",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "../packages/giantpeach/query",
+                "reference": "eea62a2de27ee668c13df38ac8f6a41796c05139"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Giantpeach\\Schnapps\\Query\\": "src/"
                 }
             },
             "authors": [
@@ -2786,6 +2810,7 @@
         "giantpeach/twiglet": 20,
         "giantpeach/navigation": 20,
         "giantpeach/images": 20,
+        "giantpeach/query": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
