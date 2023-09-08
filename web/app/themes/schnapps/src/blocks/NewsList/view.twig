@@ -1,0 +1,30 @@
+  <section x-data="newsList" class="{{ classes.block.name }} {{ classes.block.spacing }}">
+    <div class="container ">
+      <div x-ref="list" class="flex flex-wrap -mx-4">
+        {% include "src/Blocks/NewsList/items.twig" %}
+      </div>
+      <div x-intersect:enter="enter"></div>
+    </div>
+  </section>
+
+  <script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('newsList', () => ({
+      currentPage: 1,
+      posts: null,
+      enter() {
+        this.currentPage++;
+
+        fetch(`/wp-json/schnapps/v1/news-items?page=${this.currentPage}`)
+          .then(response => response.text())
+          .then(data => {
+            this.posts = data;
+            this.$refs.list.insertAdjacentHTML('beforeend', data);
+            this.$dispatch('block:load');
+          })
+      },
+      leave() {
+      },
+    }))
+  });
+</script>

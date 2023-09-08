@@ -1,92 +1,127 @@
 {
-    "key": "group_649c38c646a4d",
-    "title": "Block Options",
-    "fields": [
-        {
-            "key": "field_649c38c69d2ae",
-            "label": "Block Options",
-            "name": "",
-            "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "new_lines": "wpautop",
-            "esc_html": 0
-        },
-        {
-            "key": "field_649c38e49d2af",
-            "label": "Block Spacing",
-            "name": "block_spacing",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "Adjust the spacing for the block",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "default": "Default",
-                "short": "Short",
-                "tall": "Tall",
-                "none": "None"
-            },
-            "default_value": "default",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        }
+  "key": "group_649c38c646a4d",
+  "title": "Block Options",
+  "fields": [
+    {
+      "key": "field_649c38c69d2ae",
+      "label": "Block Options",
+      "name": "",
+      "aria-label": "",
+      "type": "message",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "new_lines": "wpautop",
+      "esc_html": 0
+    },
+    {
+      "key": "field_649c38e49d2af",
+      "label": "Block Spacing",
+      "name": "block_spacing",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "Adjust the spacing for the block",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "default": "Default",
+        "short": "Short",
+        "tall": "Tall",
+        "none": "None"
+      },
+      "default_value": "default",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0,
+      "placeholder": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "giantpeach/banner"
+      }
     ],
-    "location": [
-        [
-            {
-                "param": "block",
-                "operator": "==",
-                "value": "giantpeach\/banner"
-            }
-        ],
-        [
-            {
-                "param": "block",
-                "operator": "==",
-                "value": "giantpeach\/hero"
-            }
-        ],
-        [
-            {
-                "param": "block",
-                "operator": "==",
-                "value": "giantpeach\/columns"
-            }
-        ],
-        [
-            {
-                "param": "block",
-                "operator": "==",
-                "value": "giantpeach\/columns"
-            }
-        ]
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "giantpeach/hero"
+      }
     ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": true,
-    "description": "",
-    "show_in_rest": 0,
-    "modified": 1687959878
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "giantpeach/columns"
+      }
+    ],
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "giantpeach/cta"
+      }
+    ],
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "giantpeach/group"
+      }
+    ],
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "giantpeach/card"
+      }
+    ],
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "giantpeach/hero"
+      }
+    ],
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "giantpeach/peachofthemonth"
+      }
+    ],
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "giantpeach/teamlist"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1694005678
 }

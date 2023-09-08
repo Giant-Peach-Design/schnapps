@@ -1,105 +1,131 @@
 {
-    "key": "group_649c28616ae7b",
-    "title": "Typography Options",
-    "fields": [
-        {
-            "key": "field_649c292def2b1",
-            "label": "Typography Options",
-            "name": "",
-            "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "new_lines": "wpautop",
-            "esc_html": 0
-        },
-        {
-            "key": "field_649c28613a461",
-            "label": "Colour",
-            "name": "colour",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "default": "Default",
-                "invert": "Inverted"
-            },
-            "default_value": "default",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_649d4b9e6631d",
-            "label": "Size",
-            "name": "size",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "sm": "Small",
-                "base": "Default",
-                "lg": "Large",
-                "xl": "Extra Large",
-                "2xl": "XXL"
-            },
-            "default_value": "base",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        }
-    ],
-    "location": [
+  "key": "group_649c28616ae7b",
+  "title": "Typography Options",
+  "fields": [
+    {
+      "key": "field_649c292def2b1",
+      "label": "Typography Options",
+      "name": "",
+      "aria-label": "",
+      "type": "message",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "new_lines": "wpautop",
+      "esc_html": 0
+    },
+    {
+      "key": "field_649c28613a461",
+      "label": "Colour",
+      "name": "colour",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "default": "Default",
+        "invert": "Inverted"
+      },
+      "default_value": "default",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0,
+      "placeholder": ""
+    },
+    {
+      "key": "field_649d4b9e6631d",
+      "label": "Size",
+      "name": "size",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "sm": "Small",
+        "base": "Default",
+        "lg": "Large",
+        "xl": "Extra Large",
+        "3xl": "the way we think of God's as big"
+      },
+      "default_value": "base",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0,
+      "placeholder": ""
+    },
+    {
+      "key": "field_64a5767937ba5",
+      "label": "",
+      "name": "",
+      "aria-label": "",
+      "type": "message",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
         [
-            {
-                "param": "block",
-                "operator": "==",
-                "value": "giantpeach\/slide"
-            }
-        ],
-        [
-            {
-                "param": "block",
-                "operator": "==",
-                "value": "giantpeach\/columns"
-            }
+          {
+            "field": "field_649d4b9e6631d",
+            "operator": "==",
+            "value": "3xl"
+          }
         ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "Dude, your references are out of control, everyone knows that.",
+      "new_lines": "wpautop",
+      "esc_html": 0
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "giantpeach/slide"
+      }
     ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": true,
-    "description": "",
-    "show_in_rest": 0,
-    "modified": 1688030194
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "giantpeach/column"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1688729101
 }

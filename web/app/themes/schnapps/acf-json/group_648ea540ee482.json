@@ -1,43 +1,270 @@
 {
-    "key": "group_648ea540ee482",
-    "title": "Columns Block",
-    "fields": [
-        {
-            "key": "field_648ea9a814ec9",
-            "label": "Note",
-            "name": "",
-            "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Add your columns in the editor.",
-            "new_lines": "wpautop",
-            "esc_html": 0
-        }
-    ],
-    "location": [
-        [
-            {
-                "param": "block",
-                "operator": "==",
-                "value": "giantpeach\/columns"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": true,
-    "description": "",
-    "show_in_rest": 0,
-    "modified": 1687184585
+  "key": "group_648ea540ee482",
+  "title": "Columns Block",
+  "fields": [
+    {
+      "key": "field_64c0fe8c4161e",
+      "label": "Note",
+      "name": "",
+      "aria-label": "",
+      "type": "message",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "This is an advanced block that exposes additional fields for spacing and alignment for desktop, mobile and tablet viewports. Before you use this block, there may already be a Pattern set up that can achieve the same thing under Add Block > Patterns.",
+      "new_lines": "wpautop",
+      "esc_html": 0
+    },
+    {
+      "key": "field_64c0db7f55d55",
+      "label": "Horizontal Alignment",
+      "name": "",
+      "aria-label": "",
+      "type": "message",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "new_lines": "wpautop",
+      "esc_html": 0
+    },
+    {
+      "key": "field_64a7facdb556b",
+      "label": "Desktop Horizontal Align",
+      "name": "desktop_justify_content",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "xl:justify-start": "Start",
+        "xl:justify-center": "Center",
+        "xl:justify-end": "End",
+        "xl:justify-between": "Space Between",
+        "xl:justify-around": "Space Around"
+      },
+      "default_value": "xl:justify-center",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0,
+      "placeholder": ""
+    },
+    {
+      "key": "field_64a7fd12d2467",
+      "label": "Tablet Horizontal Align",
+      "name": "tablet_justify_content",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "md:justify-start": "Start",
+        "md:justify-center": "Center",
+        "md:justify-end": "End",
+        "md:justify-between": "Space Between",
+        "md:justify-around": "Space Around"
+      },
+      "default_value": "md:justify-center",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0,
+      "placeholder": ""
+    },
+    {
+      "key": "field_64a7fd3cd2468",
+      "label": "Mobile Horizontal Align",
+      "name": "mobile_justify_content",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "justify-start": "Start",
+        "justify-center": "Center",
+        "justify-end": "End",
+        "justify-between": "Space Between",
+        "justify-around": "Space Around"
+      },
+      "default_value": "justify-center",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0,
+      "placeholder": ""
+    },
+    {
+      "key": "field_64c0dbb255d56",
+      "label": "Vertical Alignment",
+      "name": "",
+      "aria-label": "",
+      "type": "message",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "new_lines": "wpautop",
+      "esc_html": 0
+    },
+    {
+      "key": "field_64a801d68d6e8",
+      "label": "Desktop Vertical Align",
+      "name": "desktop_align_items",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "xl:items-start": "Start",
+        "xl:items-center": "Center",
+        "xl:items-end": "End",
+        "xl:items-stretch": "Stretch"
+      },
+      "default_value": "xl:items-center",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0,
+      "placeholder": ""
+    },
+    {
+      "key": "field_64a801f58d6e9",
+      "label": "Tablet Vertical Align",
+      "name": "tablet_align_items",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "md:items-start": "Start",
+        "md:items-center": "Center",
+        "md:items-end": "End",
+        "md:items-stretch": "Stretch"
+      },
+      "default_value": "md:items-center",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0,
+      "placeholder": ""
+    },
+    {
+      "key": "field_64a8020c8d6ea",
+      "label": "Mobile Vertical Align",
+      "name": "mobile_align_items",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "items-start": "Start",
+        "items-center": "Center",
+        "items-end": "End",
+        "items-stretch": "Stretch"
+      },
+      "default_value": "items-center",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0,
+      "placeholder": ""
+    },
+    {
+      "key": "field_64a80594d7887",
+      "label": "Wrap Columns",
+      "name": "wrap_columns",
+      "aria-label": "",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "Should columns wrap when total column size > 12",
+      "default_value": 1,
+      "ui": 0,
+      "ui_on_text": "",
+      "ui_off_text": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "giantpeach/columns"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1693903756
 }

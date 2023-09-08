@@ -13,3 +13,15 @@ function acf_load_post_types($field)
   // return the field
   return $field;
 }
+
+add_filter('acf/load_field/name=taxonomy', 'acf_load_taxonomies');
+
+function acf_load_taxonomies($field)
+{
+  foreach (get_taxonomies('', 'names') as $taxonomy) {
+    $field['choices'][$taxonomy] = $taxonomy;
+  }
+
+  // return the field
+  return $field;
+}

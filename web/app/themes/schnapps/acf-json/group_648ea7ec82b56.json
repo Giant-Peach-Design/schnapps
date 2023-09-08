@@ -1,46 +1,288 @@
 {
-    "key": "group_648ea7ec82b56",
-    "title": "Column Block",
-    "fields": [
+  "key": "group_648ea7ec82b56",
+  "title": "Column Block",
+  "fields": [
+    {
+      "key": "field_64a80c5747b9e",
+      "label": "Fill Space?",
+      "name": "fill_space",
+      "aria-label": "",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "default_value": 0,
+      "ui": 0,
+      "ui_on_text": "",
+      "ui_off_text": ""
+    },
+    {
+      "key": "field_64ae635f7f993",
+      "label": "Column Visibility",
+      "name": "column_visibility",
+      "aria-label": "",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "table",
+      "sub_fields": [
         {
-            "key": "field_64909bfee93d5",
-            "label": "Width",
-            "name": "width",
-            "aria-label": "",
-            "type": "range",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 6,
-            "min": 1,
-            "max": 12,
-            "step": "",
-            "prepend": "",
-            "append": ""
+          "key": "field_64ae63d77f994",
+          "label": "Mobile",
+          "name": "mobile",
+          "aria-label": "",
+          "type": "true_false",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "message": "",
+          "default_value": 1,
+          "ui": 0,
+          "ui_on_text": "",
+          "ui_off_text": ""
+        },
+        {
+          "key": "field_64ae63e07f995",
+          "label": "Tablet",
+          "name": "tablet",
+          "aria-label": "",
+          "type": "true_false",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "message": "",
+          "default_value": 1,
+          "ui": 0,
+          "ui_on_text": "",
+          "ui_off_text": ""
+        },
+        {
+          "key": "field_64ae63e77f996",
+          "label": "Desktop",
+          "name": "desktop",
+          "aria-label": "",
+          "type": "true_false",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "message": "",
+          "default_value": 1,
+          "ui": 0,
+          "ui_on_text": "",
+          "ui_off_text": ""
         }
-    ],
-    "location": [
+      ]
+    },
+    {
+      "key": "field_64a80c1347b9d",
+      "label": "Advanced Controls",
+      "name": "advanced_controls",
+      "aria-label": "",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "Show advanced controls?",
+      "default_value": 0,
+      "ui": 0,
+      "ui_on_text": "",
+      "ui_off_text": ""
+    },
+    {
+      "key": "field_64909bfee93d5",
+      "label": "Desktop Width",
+      "name": "desktop",
+      "aria-label": "",
+      "type": "range",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
         [
-            {
-                "param": "block",
-                "operator": "==",
-                "value": "giantpeach\/altcolumn"
-            }
+          {
+            "field": "field_64a80c1347b9d",
+            "operator": "==",
+            "value": "1"
+          }
         ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": true,
-    "description": "",
-    "show_in_rest": 0,
-    "modified": 1687198944
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": 6,
+      "min": 1,
+      "max": 12,
+      "step": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_64a7d162f8fe9",
+      "label": "Tablet Width",
+      "name": "tablet",
+      "aria-label": "",
+      "type": "range",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_64a80c1347b9d",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": 6,
+      "min": 1,
+      "max": 12,
+      "step": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_64a7d170f8feb",
+      "label": "Mobile Width",
+      "name": "mobile",
+      "aria-label": "",
+      "type": "range",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_64a80c1347b9d",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": 4,
+      "min": 1,
+      "max": 4,
+      "step": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_64ccde01a341f",
+      "label": "Break out of Container",
+      "name": "break_out_of_container",
+      "aria-label": "",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "table",
+      "sub_fields": [
+        {
+          "key": "field_64ccdeada3420",
+          "label": "Left Side",
+          "name": "left_side",
+          "aria-label": "",
+          "type": "true_false",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "message": "",
+          "default_value": 0,
+          "ui": 0,
+          "ui_on_text": "",
+          "ui_off_text": ""
+        },
+        {
+          "key": "field_64ccdeb9a3421",
+          "label": "Right Side",
+          "name": "right_side",
+          "aria-label": "",
+          "type": "true_false",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "message": "",
+          "default_value": 0,
+          "ui": 0,
+          "ui_on_text": "",
+          "ui_off_text": ""
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "giantpeach/column"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1693557846
 }

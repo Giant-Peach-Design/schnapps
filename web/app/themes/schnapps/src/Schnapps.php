@@ -2,35 +2,14 @@
 
 namespace Giantpeach\Schnapps\Theme;
 
-use Giantpeach\Schnapps\Blocks\Blocks;
+use Giantpeach\Schnapps\Theme\Blocks\Blocks;
 use Giantpeach\Schnapps\Images\Images;
 use Giantpeach\Schnapps\Navigation\Navigation;
-use Giantpeach\Schnapps\Theme\Blocks\Banner\Banner;
-use Giantpeach\Schnapps\Theme\Blocks\Button\Button;
-use Giantpeach\Schnapps\Theme\Blocks\Card\Card;
-use Giantpeach\Schnapps\Theme\Blocks\Columns\Columns;
-use Giantpeach\Schnapps\Theme\Blocks\HeaderNavigation\HeaderNavigation;
-use Giantpeach\Schnapps\Theme\Blocks\Hero\Hero;
-use Giantpeach\Schnapps\Theme\Blocks\Image\Image;
-use Giantpeach\Schnapps\Theme\Blocks\LatestNews\LatestNews;
-use Giantpeach\Schnapps\Theme\Blocks\Logo\Logo;
-use Giantpeach\Schnapps\Theme\Blocks\Slide\Slide;
+
+use Giantpeach\Schnapps\Theme\Routes\Api;
 
 class Schnapps
 {
-
-  protected $blocks = [
-    Banner::class,
-    Hero::class,
-    Slide::class,
-    Image::class,
-    Columns::class,
-    Button::class,
-    Logo::class,
-    Card::class,
-    HeaderNavigation::class,
-    LatestNews::class,
-  ];
 
   public function __construct()
   {
@@ -39,35 +18,60 @@ class Schnapps
 
     Images::getInstance();
     new Blocks();
+    new Api();
   }
 
-  public function setupTheme()
+  public function setupTheme(): void
   {
-    add_action('init', [$this, 'registerBlocks']);
+    add_action('init', [$this, 'registerPostTypes']);
     add_action('init', [$this, 'registerMenus']);
+
+    add_action('init', [$this, 'createThemeOptionsPage']);
+
     add_action('wp_enqueue_scripts', [$this, 'stylesheets']);
     add_action('wp_enqueue_scripts', [$this, 'scripts']);
+
     add_action('enqueue_block_editor_assets', [$this, 'blockEditorStylesheets']);
     add_action('enqueue_block_editor_assets', [$this, 'blockEditorScripts']);
   }
 
-  public function registerBlocks()
+  public function registerPostTypes(): void
   {
-    register_block_type(get_template_directory() . '/build/Blocks/Column');
-
-    foreach ($this->blocks as $block) {
-      $block::registerBlock();
-    }
+    // Register custom post types here
+    //new Work();
   }
 
-  public function registerMenus()
+  /**
+   * Register menus
+   *
+   * @return void
+   */
+  public function registerMenus(): void
   {
     Navigation::registerNav('primary');
+    Navigation::registerNav('footer');
+  }
+
+  /**
+   * Create theme options page
+   *
+   * @return void
+   */
+  public function createThemeOptionsPage(): void
+  {
+    if (function_exists('acf_add_options_page')) {
+      acf_add_options_page([
+        'page_title' => 'Theme Options',
+        'menu_title' => 'Theme Options',
+        'menu_slug' => 'theme-options',
+        'capability' => 'edit_posts',
+        'redirect' => false,
+      ]);
+    }
   }
 
   public function setupFilters()
   {
-    add_filter('allowed_block_types_all', [$this, 'allowedBlockTypes'], 25, 2);
 
     add_filter('acf/blocks/no_fields_assigned_message', function () {
       return 'This block contains no editable fields.';
@@ -84,17 +88,19 @@ class Schnapps
     wp_enqueue_style('schnapps', get_template_directory_uri() . '/dist/main.css', false, null);
   }
 
-  public function scripts()
+  public function scripts(): void
   {
     wp_enqueue_script('schnapps', get_template_directory_uri() . '/dist/main.js', array(), null, true);
+    wp_enqueue_script('fontawesome', "https://kit.fontawesome.com/c91deddf7e.js", array(), false, true);
   }
 
-  public function blockEditorStylesheets()
+  public function blockEditorStylesheets(): void
   {
     wp_enqueue_style('schnapps-editor', get_template_directory_uri() . '/dist/main.css', false, null);
+    wp_enqueue_style('schnapps-editor-specific', get_template_directory_uri() . '/dist/editor.css', false, null);
   }
 
-  public function blockEditorScripts()
+  public function blockEditorScripts(): void
   {
     wp_enqueue_script(
       'schnapps-editor',
@@ -103,25 +109,5 @@ class Schnapps
       filemtime(get_template_directory() . '/dist/editor.js'),
       true
     );
-  }
-
-  public function allowedBlockTypes($allowed_blocks, $editor_context)
-  {
-
-    $registeredCustomBlocks = [];
-
-    foreach ($this->blocks as $block) {
-      $registeredCustomBlocks[] = $block::getBlockName();
-    }
-
-    return array_merge([
-      'core/paragraph',
-      'core/heading',
-      'core/list',
-      'core/list-item',
-      'core/block',
-      'giantpeach/column',
-      'gravityforms/form',
-    ], $registeredCustomBlocks);
   }
 }

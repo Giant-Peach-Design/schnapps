@@ -1,11 +1,13 @@
-<a class="block prose" href="{{post.link}}">
-  <div class="mb-4">
-    <picture class="block overflow-hidden aspect-video">
-      <source srcset="{{post.image}}" media="(min-width: 768px)">
-      <img class="object-cover object-center w-full h-full" src="{{post.image}}" alt="{{post.title}}">
-    </picture>
+
+<a class="flex group mb-12  lg:mb-24 flex-col flex-grow transition-block {% if isAdmin == false %} translate-y-8 {% endif %}" href="{{link.url}}">
+  <div class="mb-4 aspect-[576/587] flex flex-shrink-0 flex-col justify-end  overflow-hidden">
+    <div class="overflow-hidden rounded-[36px]">
+      <div class="transition-all duration-300 group-hover:scale-110">
+        {% include 'src/Components/image.twig' %}      
+      </div>
+    </div>
   </div>
-  <h3>
-    {{post.title}}
+  <h3 class="text-[clamp(23px,2.1875vw,42px)] leading-[1.22] transition-colors group-hover:text-primary">
+    {{title}}
   </h3>
 </a>

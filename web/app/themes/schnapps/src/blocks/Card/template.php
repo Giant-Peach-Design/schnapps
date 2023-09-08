@@ -1,1 +1,1 @@
-<InnerBlocks className="p-4 border rounded-md prose max-w-none" />
+<InnerBlocks className="p-4 border rounded-md prose max-w-none transition-block" />

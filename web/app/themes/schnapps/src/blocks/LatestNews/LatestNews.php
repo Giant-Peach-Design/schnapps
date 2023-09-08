@@ -15,10 +15,7 @@ class LatestNews extends Block implements BlockInterface
 
   public function __construct($postsPerPage = 3)
   {
-    $this->posts = Query::getPosts([
-      'post_type' => 'post',
-      'posts_per_page' => $postsPerPage,
-    ]);
+    $this->posts = Query::getPosts('post', $postsPerPage);
 
     parent::__construct();
   }
