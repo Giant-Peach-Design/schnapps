@@ -16,6 +16,7 @@ use Giantpeach\Schnapps\Theme\Blocks\LatestNews\LatestNews;
 use Giantpeach\Schnapps\Theme\Blocks\Logo\Logo;
 use Giantpeach\Schnapps\Theme\Blocks\NewsList\NewsList;
 use Giantpeach\Schnapps\Theme\Blocks\Slide\Slide;
+use Giantpeach\Schnapps\Theme\Patterns\TitleLinkColumn;
 
 /**
  * Blocks Class
@@ -94,5 +95,7 @@ class Blocks
     register_block_pattern_category('giantpeach', [
       'label' => 'Giant Peach',
     ]);
+
+    TitleLinkColumn::init();
   }
 }
