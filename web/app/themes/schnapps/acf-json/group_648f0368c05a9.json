@@ -80,6 +80,13 @@
         "operator": "==",
         "value": "giantpeach/image"
       }
+    ],
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "giantpeach/textimage"
+      }
     ]
   ],
   "menu_order": 0,
@@ -91,5 +98,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1689599172
+  "modified": 1696857057
 }

@@ -1,0 +1,35 @@
+<picture class="block not-prose overflow-hidden {% if rounded != false %} rounded-[36px] {% endif %}">
+  {% if image.mobile.webp %}
+  <source srcset="{{ image.mobile.webp }}" media="(max-width: 767px)" type="image/webp" />
+  {% endif %}
+
+  {% if image.mobile.url %}
+  <source srcset="{{ image.mobile.url }}" media="(max-width: 767px)" />
+  {% endif %}
+
+  {% if image.tablet.webp %}
+  <source srcset="{{ image.tablet.webp }}" media="(min-width: 768px) and (max-width: 1023px)" type="image/webp" />
+  {% endif %}
+
+  {% if image.tablet.url %}
+  <source srcset="{{ image.tablet.url }}" media="(min-width: 768px) and (max-width: 1023px)" />
+  {% endif %}
+
+  {% if image.desktop.webp %}
+  <source srcset="{{ image.desktop.webp }}" media="(min-width: 1024px)" type="image/webp" />
+  {% endif %}
+
+  {% if image.desktop.url %}
+  <source srcset="{{ image.desktop.url }}" media="(min-width: 1024px)" />
+  {% endif %}
+
+  {% if image.desktop.url %}
+  <img class="" src="{{ image.desktop.url }}" alt="{{ image.desktop.alt }}" width="{{ image.desktop.width }}"
+    height="{{ image.desktop.height }}" />
+  {% endif %}
+
+  {% if isAdmin and image.desktop.url == null %}
+  <div class=" bg-slate-500 aspect-video" style="aspect-ratio: {{ image.desktop.width }} / {{ image.desktop.height }}">
+  </div>
+  {% endif %}
+</picture>

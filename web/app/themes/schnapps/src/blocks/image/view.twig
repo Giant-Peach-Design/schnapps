@@ -1,1 +1,5 @@
-{% include "src/Components/image.twig" with {rounded: true} %}
+{% if templatePath %}
+{% include templatePath %}
+{% else %}
+{% include 'src/Components/image.twig' %}
+{% endif %}

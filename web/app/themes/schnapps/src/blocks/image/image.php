@@ -35,20 +35,47 @@ class Image extends Block implements BlockInterface
       'webp' => ''
     ]
   ];
+  public bool $rounded = true;
+  public string $templatePath = 'src/Components/image.twig';
 
   public function __construct($image)
   {
     $this->image = $image;
+    $this->rounded = get_field('rounded') ?? true;
+
+    $tmplPath = get_field('template_path') ?? 'default';
+
+    switch ($tmplPath) {
+      case 'alt':
+        $this->templatePath = "src/Components/image-alt.twig";
+        break;
+
+      default:
+        $this->templatePath = "src/Components/image.twig";
+        break;
+    }
 
     parent::__construct();
   }
 
   public static function generateSingleImageArray(array|null|bool $imgField, string $size = '')
   {
-    if (!$imgField) return null;
+    //if (!$imgField) return null;
 
-    $width = $imgField['width'];
-    $height = $imgField['height'];
+    $width = 500;
+    $height = 500;
+    $fit = 'crop';
+
+    $id = "";
+
+    if (is_array($imgField) && isset($imgField['width']) && isset($imgField['height'])) {
+      $width = $imgField['width'];
+      $height = $imgField['height'];
+    }
+
+    if (is_array($imgField) && isset($imgField['id'])) {
+      $id = $imgField['id'];
+    }
 
     if ($size) {
       $size = $size . '_';
@@ -61,11 +88,25 @@ class Image extends Block implements BlockInterface
       $height = get_field('height');
     }
 
-    return ImageFacade::getImage($imgField['id'], [
-      'w' => $width,
-      'h' => $height,
-      'fit' => 'crop',
-    ]);
+    if (get_field('fit')) {
+      $fit = get_field('fit') ?? 'crop';
+    }
+
+    $args = [
+      'fit' => $fit,
+      'dpr' => '2',
+      'q' => '100'
+    ];
+
+    if ($width) {
+      $args['w'] = $width;
+    }
+
+    if ($height) {
+      $args['h'] = $height;
+    }
+
+    return ImageFacade::getImage($id, $args);
   }
 
   public static function generateImageArray()
@@ -127,9 +168,8 @@ class Image extends Block implements BlockInterface
     return $imgArray;
   }
 
-  public static function display(): void
+  public static function display($block = [], $content = "", $is_preview = false, $postId = 0, $context = []): void
   {
-
     $imgArray = self::generateImageArray();
 
     $image = new Image(
