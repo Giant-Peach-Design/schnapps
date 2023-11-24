@@ -1,33 +1,9 @@
 {
-  "name": "roots/bedrock",
+  "name": "giantpeach/schnapps",
   "type": "project",
   "license": "MIT",
-  "description": "WordPress boilerplate with Composer, easier configuration, and an improved folder structure",
-  "homepage": "https://roots.io/bedrock/",
-  "authors": [
-    {
-      "name": "Scott Walkinshaw",
-      "email": "scott.walkinshaw@gmail.com",
-      "homepage": "https://github.com/swalkinshaw"
-    },
-    {
-      "name": "Ben Word",
-      "email": "ben@benword.com",
-      "homepage": "https://github.com/retlehs"
-    }
-  ],
-  "keywords": [
-    "bedrock",
-    "composer",
-    "roots",
-    "wordpress",
-    "wp",
-    "wp-config"
-  ],
-  "support": {
-    "issues": "https://github.com/roots/bedrock/issues",
-    "forum": "https://discourse.roots.io/category/bedrock"
-  },
+  "description": "Peach Schnapps is a WordPress starter theme based on the Roots Bedrock framework.",
+  "homepage": "https://giantpeach.agency",
   "repositories": [
     {
       "type": "composer",
