@@ -13,6 +13,23 @@ Peach Schnapps is our Wordpress site boilerplate based on the [roots.io](http://
 - Parcel
 - Twig for templating
 
+### Pre-requisites
+
+- [Lando](https://lando.dev)
+- [Composer](https://getcomposer.org)
+- An auth.json file in your home directory with your ACF Pro key in it, see [here](https://www.advancedcustomfields.com/resources/installing-acf-pro-with-composer/) for more info, e.g. `~/.composer/auth.json`
+
+```json
+{
+  "http-basic": {
+    "connect.advancedcustomfields.com": {
+      "username": "your-key-here",
+      "password": "http://wp-playground.lndo.site"
+    }
+  }
+}
+```
+
 ### Modules
 
 Peach Schnapps comprises of several different modules, designed to be updated separately to ease future development and support on projects.
