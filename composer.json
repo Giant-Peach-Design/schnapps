@@ -53,7 +53,6 @@
     "roots/wp-password-bcrypt": "1.1.0",
     "wpackagist-theme/twentytwentythree": "^1.0",
     "wpengine/advanced-custom-fields-pro": "*",
-    "gravityforms/gravityforms": "2.4.21.3",
     "giantpeach/blocks": "^1",
     "twig/twig": "^3.6",
     "giantpeach/twiglet": "^1",
