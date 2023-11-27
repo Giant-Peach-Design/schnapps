@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "210fcf674ee2c81190eee5854a14b5fc",
+    "content-hash": "02d8b3562d95cc04de31fedcfff80043",
     "packages": [
         {
             "name": "composer/installers",
@@ -150,73 +150,6 @@
                 }
             ],
             "time": "2022-08-20T06:45:11+00:00"
-        },
-        {
-            "name": "ffraenz/private-composer-installer",
-            "version": "v5.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ffraenz/private-composer-installer.git",
-                "reference": "8655e3da4e8f99203f13ccca33b9ab953ad30a31"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ffraenz/private-composer-installer/zipball/8655e3da4e8f99203f13ccca33b9ab953ad30a31",
-                "reference": "8655e3da4e8f99203f13ccca33b9ab953ad30a31",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0 || ^2.0",
-                "php": "^7.1 || ^8.0",
-                "vlucas/phpdotenv": "^4.1 || ^5.2"
-            },
-            "require-dev": {
-                "composer/composer": "^1.0 || ^2.0",
-                "laminas/laminas-coding-standard": "^2.0",
-                "symfony/phpunit-bridge": "^5.1",
-                "symfony/process": "^4.4 || ^5.1"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "FFraenz\\PrivateComposerInstaller\\Plugin",
-                "plugin-modifies-downloads": true
-            },
-            "autoload": {
-                "psr-4": {
-                    "FFraenz\\PrivateComposerInstaller\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fränz Friederes",
-                    "email": "fraenz@frieder.es",
-                    "homepage": "https://fraenz.frieder.es"
-                }
-            ],
-            "description": "A composer install helper for private packages",
-            "keywords": [
-                "composer",
-                "env",
-                "plugin",
-                "private",
-                "wordpress",
-                "wp"
-            ],
-            "support": {
-                "issues": "https://github.com/ffraenz/private-composer-installer/issues",
-                "source": "https://github.com/ffraenz/private-composer-installer/tree/v5.0.1"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/ffraenz",
-                    "type": "github"
-                }
-            ],
-            "time": "2020-10-30T09:35:33+00:00"
         },
         {
             "name": "giantpeach/blocks",
@@ -440,67 +373,6 @@
             "time": "2023-10-12T15:39:01+00:00"
         },
         {
-            "name": "gotoandplay/gravityforms-composer-installer",
-            "version": "v2.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/gtap-dev/gravityforms-composer-installer.git",
-                "reference": "00b70f94660f7819aa3746cc7f96f4a85bf1977c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/gtap-dev/gravityforms-composer-installer/zipball/00b70f94660f7819aa3746cc7f96f4a85bf1977c",
-                "reference": "00b70f94660f7819aa3746cc7f96f4a85bf1977c",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0 || ^2.0",
-                "ffraenz/private-composer-installer": "^5.0",
-                "php": "^7.1 || ^8.0"
-            },
-            "require-dev": {
-                "composer/composer": "^1.0 || ^2.0",
-                "phpunit/phpunit": "^8.0",
-                "zendframework/zend-coding-standard": "^1.0"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "gotoAndDev\\GravityFormsComposerInstaller\\Plugin",
-                "plugin-modifies-downloads": true
-            },
-            "autoload": {
-                "psr-4": {
-                    "gotoAndDev\\GravityFormsComposerInstaller\\": "src/GravityFormsComposerInstaller"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mihkel Eidast",
-                    "email": "mihkel@play.ee",
-                    "homepage": "https://play.ee"
-                }
-            ],
-            "description": "A composer install helper for Gravity Forms",
-            "keywords": [
-                "composer",
-                "env",
-                "gravityforms",
-                "plugin",
-                "private",
-                "wordpress",
-                "wp"
-            ],
-            "support": {
-                "issues": "https://github.com/gtap-dev/gravityforms-composer-installer/issues",
-                "source": "https://github.com/gtap-dev/gravityforms-composer-installer/tree/v2.3.0"
-            },
-            "time": "2020-11-02T18:05:49+00:00"
-        },
-        {
             "name": "graham-campbell/result-type",
             "version": "v1.1.2",
             "source": {
@@ -561,18 +433,6 @@
                 }
             ],
             "time": "2023-11-12T22:16:48+00:00"
-        },
-        {
-            "name": "gravityforms/gravityforms",
-            "version": "2.4.21.3",
-            "dist": {
-                "type": "zip",
-                "url": "https://www.gravityhelp.com/wp-content/plugins/gravitymanager/api.php?op=get_plugin&slug=gravityforms&key={%WP_PLUGIN_GF_KEY}"
-            },
-            "require": {
-                "gotoandplay/gravityforms-composer-installer": "^2.3"
-            },
-            "type": "wordpress-plugin"
         },
         {
             "name": "guzzlehttp/psr7",
