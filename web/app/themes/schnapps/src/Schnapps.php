@@ -5,7 +5,7 @@ namespace Giantpeach\Schnapps\Theme;
 use Giantpeach\Schnapps\Theme\Blocks\Blocks;
 use Giantpeach\Schnapps\Images\Images;
 use Giantpeach\Schnapps\Navigation\Navigation;
-
+use Giantpeach\Schnapps\Query\Cli\Cli as QueryCli;
 use Giantpeach\Schnapps\Theme\Routes\Api;
 
 class Schnapps
@@ -18,6 +18,7 @@ class Schnapps
 
     Images::getInstance();
     new Blocks();
+    new QueryCli();
     new Api();
   }
 

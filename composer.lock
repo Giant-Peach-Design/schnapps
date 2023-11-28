@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5f7042478087c805a58d62d569d8fd2",
+    "content-hash": "ed2abac8305cfa1a413f3eefd44f83bb",
     "packages": [
         {
             "name": "composer/installers",
@@ -264,16 +264,16 @@
         },
         {
             "name": "giantpeach/query",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Giant-Peach-Design/query.git",
-                "reference": "aa56a8ede85e488f5abe7dd479d966a5f80e688d"
+                "reference": "785a9f8f1daba84cc665cc873ecdf09f17ba1116"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Giant-Peach-Design/query/zipball/aa56a8ede85e488f5abe7dd479d966a5f80e688d",
-                "reference": "aa56a8ede85e488f5abe7dd479d966a5f80e688d",
+                "url": "https://api.github.com/repos/Giant-Peach-Design/query/zipball/785a9f8f1daba84cc665cc873ecdf09f17ba1116",
+                "reference": "785a9f8f1daba84cc665cc873ecdf09f17ba1116",
                 "shasum": ""
             },
             "type": "library",
@@ -293,9 +293,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Giant-Peach-Design/query/issues",
-                "source": "https://github.com/Giant-Peach-Design/query/tree/v1.0.3"
+                "source": "https://github.com/Giant-Peach-Design/query/tree/v1.0.4"
             },
-            "time": "2023-09-01T07:29:28+00:00"
+            "time": "2023-11-28T13:40:34+00:00"
         },
         {
             "name": "giantpeach/route",
@@ -3013,7 +3013,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "giantpeach/query": 20,
         "roave/security-advisories": 20,
         "giantpeach/wp-salts": 20
     },
