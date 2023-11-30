@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed2abac8305cfa1a413f3eefd44f83bb",
+    "content-hash": "6ebe1dc487ebadb4c6974f019d13c4bc",
     "packages": [
         {
             "name": "composer/installers",
@@ -188,6 +188,33 @@
                 "source": "https://github.com/Giant-Peach-Design/blocks/tree/v1.0.3"
             },
             "time": "2023-09-20T09:10:27+00:00"
+        },
+        {
+            "name": "giantpeach/config",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "../packages/giantpeach/config",
+                "reference": "86c97391dd95e6ba5e883e550a357f1ae300179a"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Giantpeach\\Schnapps\\Config\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Giant Peach"
+                }
+            ],
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "giantpeach/images",
@@ -3013,6 +3040,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "giantpeach/config": 20,
         "roave/security-advisories": 20,
         "giantpeach/wp-salts": 20
     },
@@ -3022,5 +3050,5 @@
         "php": ">=8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

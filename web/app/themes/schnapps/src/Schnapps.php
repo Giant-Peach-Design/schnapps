@@ -2,6 +2,7 @@
 
 namespace Giantpeach\Schnapps\Theme;
 
+use Giantpeach\Schnapps\Config\Facades\Config;
 use Giantpeach\Schnapps\Theme\Blocks\Blocks;
 use Giantpeach\Schnapps\Images\Images;
 use Giantpeach\Schnapps\Navigation\Navigation;
@@ -13,13 +14,22 @@ class Schnapps
 
   public function __construct()
   {
+    // Load Config Files
+    Config::load();
+
     $this->setupTheme();
     $this->setupFilters();
 
     Images::getInstance();
+
+    // Load Blocks
     new Blocks();
-    new QueryCli();
+
+    // Load API Routes
     new Api();
+
+    // Load CLI Commands
+    new QueryCli();
   }
 
   public function setupTheme(): void
