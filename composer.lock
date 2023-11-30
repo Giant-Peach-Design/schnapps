@@ -191,17 +191,20 @@
         },
         {
             "name": "giantpeach/config",
-            "version": "v1.0.0",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Giant-Peach-Design/config.git",
-                "reference": "89adb43b9e76bcaeb15d9215419aa5be3d6f50cd"
+                "reference": "90ae8802725d2b0c87ef95dc643dbe80abeb0da5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Giant-Peach-Design/config/zipball/89adb43b9e76bcaeb15d9215419aa5be3d6f50cd",
-                "reference": "89adb43b9e76bcaeb15d9215419aa5be3d6f50cd",
+                "url": "https://api.github.com/repos/Giant-Peach-Design/config/zipball/90ae8802725d2b0c87ef95dc643dbe80abeb0da5",
+                "reference": "90ae8802725d2b0c87ef95dc643dbe80abeb0da5",
                 "shasum": ""
+            },
+            "require": {
+                "oscarotero/env": "^2.1"
             },
             "type": "library",
             "autoload": {
@@ -220,9 +223,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Giant-Peach-Design/config/issues",
-                "source": "https://github.com/Giant-Peach-Design/config/tree/v1.0.0"
+                "source": "https://github.com/Giant-Peach-Design/config/tree/v1.0.2"
             },
-            "time": "2023-11-30T11:59:30+00:00"
+            "time": "2023-11-30T16:28:50+00:00"
         },
         {
             "name": "giantpeach/images",
@@ -300,16 +303,16 @@
         },
         {
             "name": "giantpeach/query",
-            "version": "v1.0.4",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Giant-Peach-Design/query.git",
-                "reference": "785a9f8f1daba84cc665cc873ecdf09f17ba1116"
+                "reference": "044b4971b3faae05bb6a967f8890d82c6f433042"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Giant-Peach-Design/query/zipball/785a9f8f1daba84cc665cc873ecdf09f17ba1116",
-                "reference": "785a9f8f1daba84cc665cc873ecdf09f17ba1116",
+                "url": "https://api.github.com/repos/Giant-Peach-Design/query/zipball/044b4971b3faae05bb6a967f8890d82c6f433042",
+                "reference": "044b4971b3faae05bb6a967f8890d82c6f433042",
                 "shasum": ""
             },
             "type": "library",
@@ -329,9 +332,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Giant-Peach-Design/query/issues",
-                "source": "https://github.com/Giant-Peach-Design/query/tree/v1.0.4"
+                "source": "https://github.com/Giant-Peach-Design/query/tree/v1.0.6"
             },
-            "time": "2023-11-28T13:40:34+00:00"
+            "time": "2023-11-30T16:26:12+00:00"
         },
         {
             "name": "giantpeach/route",
