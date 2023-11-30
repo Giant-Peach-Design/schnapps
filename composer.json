@@ -57,7 +57,7 @@
     "twig/twig": "^3.6",
     "giantpeach/twiglet": "^1",
     "giantpeach/navigation": "^1",
-    "giantpeach/images": "dev-next",
+    "giantpeach/images": "^1",
     "wpackagist-plugin/acf-gravityforms-add-on": "^1.3",
     "giantpeach/query": "^1",
     "giantpeach/route": "^1",

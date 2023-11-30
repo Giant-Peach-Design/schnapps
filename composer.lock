@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f0f84aa66489659d1675b212a32fae3",
+    "content-hash": "a66cc65c9934ec1173d5d4f9b78ab23c",
     "packages": [
         {
             "name": "composer/installers",
@@ -226,16 +226,16 @@
         },
         {
             "name": "giantpeach/images",
-            "version": "dev-next",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Giant-Peach-Design/images.git",
-                "reference": "1a898742e6574d736ac17c5cb5a426099613d7cf"
+                "reference": "62c96ee7c2794165e121e6a9c3e1c688f80cf50e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Giant-Peach-Design/images/zipball/1a898742e6574d736ac17c5cb5a426099613d7cf",
-                "reference": "1a898742e6574d736ac17c5cb5a426099613d7cf",
+                "url": "https://api.github.com/repos/Giant-Peach-Design/images/zipball/62c96ee7c2794165e121e6a9c3e1c688f80cf50e",
+                "reference": "62c96ee7c2794165e121e6a9c3e1c688f80cf50e",
                 "shasum": ""
             },
             "require": {
@@ -259,9 +259,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Giant-Peach-Design/images/issues",
-                "source": "https://github.com/Giant-Peach-Design/images/tree/next"
+                "source": "https://github.com/Giant-Peach-Design/images/tree/v1.1.0"
             },
-            "time": "2023-11-30T14:28:17+00:00"
+            "time": "2023-11-30T15:16:06+00:00"
         },
         {
             "name": "giantpeach/navigation",
@@ -3050,7 +3050,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "giantpeach/images": 20,
         "roave/security-advisories": 20,
         "giantpeach/wp-salts": 20
     },
