@@ -4,7 +4,7 @@ namespace Giantpeach\Schnapps\Theme\Blocks\Hero;
 
 use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 use Giantpeach\Schnapps\Blocks\Block;
-use Giantpeach\Schnapps\Images\Images;
+use Giantpeach\Schnapps\Images\Facades\Images;
 
 class Hero extends Block implements BlockInterface
 {
@@ -16,13 +16,9 @@ class Hero extends Block implements BlockInterface
   public $mobileWebp;
   public $alt;
 
-  public function __construct($image, $webp, $mobile, $mobileWebp, $alt)
+  public function __construct($imageId, $mobileImageId)
   {
-    $this->image = $image;
-    $this->webp = $webp;
-    $this->mobile = $mobile;
-    $this->mobileWebp = $mobileWebp;
-    $this->alt = $alt;
+    $this->image = Images::get(image: $imageId, mobileImage: $mobileImageId, imageSize: 'banner');
 
     parent::__construct();
   }
@@ -32,44 +28,9 @@ class Hero extends Block implements BlockInterface
     $imgField = get_field('image');
     $mobImgField = get_field('mobile_image');
 
-    if ($imgField) {
-
-      $imgUrl = Images::getInstance()->getGlideImageUrl($imgField['ID'], [
-        'w' => $imgField['width'],
-        'h' => $imgField['height'],
-        'fit' => 'crop',
-      ]);
-
-      $webp = Images::getInstance()->getGlideImageUrl($imgField['ID'], [
-        'w' => $imgField['width'],
-        'h' => $imgField['height'],
-        'fit' => 'crop',
-        'fm' => 'webp',
-      ]);
-    }
-
-    if ($mobImgField) {
-
-      $mobImgUrl = Images::getInstance()->getGlideImageUrl($mobImgField['ID'], [
-        'w' => 375,
-        'h' => $mobImgField['height'],
-        'fit' => 'crop',
-      ]);
-
-      $mobWebp = Images::getInstance()->getGlideImageUrl($mobImgField['ID'], [
-        'w' => 375,
-        'h' => $mobImgField['height'],
-        'fit' => 'crop',
-        'fm' => 'webp',
-      ]);
-    }
-
     $hero = new Hero(
-      $imgUrl ?? null,
-      $webp ?? null,
-      $mobImgUrl ?? null,
-      $mobWebp ?? null,
-      $imgField['alt'] ?? null
+      imageId: $imgField['ID'] ?? -1,
+      mobileImageId: $mobImgField['ID'] ?? -1,
     );
     $hero->render();
   }

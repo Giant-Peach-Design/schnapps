@@ -1624,6 +1624,10 @@ select {
   aspect-ratio: 16 / 9;
 }
 
+.aspect-\[375\/480\] {
+  aspect-ratio: 375 / 480;
+}
+
 .\!h-full {
   height: 100% !important;
 }
@@ -2234,6 +2238,10 @@ select {
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:aspect-video {
+    aspect-ratio: 16 / 9;
   }
 
   .lg\:w-1\/12 {

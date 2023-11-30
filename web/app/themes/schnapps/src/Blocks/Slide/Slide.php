@@ -4,13 +4,20 @@ namespace Giantpeach\Schnapps\Theme\Blocks\Slide;
 
 use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 use Giantpeach\Schnapps\Blocks\Block;
-use Giantpeach\Schnapps\Images\Images;
+use Giantpeach\Schnapps\Images\Facades\Images;
 
 class Slide extends Block implements BlockInterface
 {
   public static string $blockName = 'giantpeach/slide';
 
-  public array $allowedBlocks;
+  public array $allowedBlocks = [
+    'giantpeach/columns',
+    'core/paragraph',
+    'core/heading',
+    'core/list',
+    'giantpeach/button',
+    'giantpeach/small-heading'
+  ];
   public string $proseColor;
   public $image;
   public $webp;
@@ -19,22 +26,9 @@ class Slide extends Block implements BlockInterface
   public $alt;
 
 
-  public function __construct($image, $alt, $webp = null, $mobile = null, $mobileWebp = null)
+  public function __construct($imageId, $mobileImageId)
   {
-    $this->image = $image;
-    $this->alt = $alt;
-    $this->webp = $webp;
-    $this->mobile = $mobile;
-    $this->mobileWebp = $mobileWebp;
-
-    $this->allowedBlocks = [
-      'giantpeach/columns',
-      'core/paragraph',
-      'core/heading',
-      'core/list',
-      'giantpeach/button',
-      'giantpeach/small-heading'
-    ];
+    $this->image = Images::get(image: $imageId, mobileImage: $mobileImageId, imageSize: 'banner');
 
     parent::__construct();
   }
@@ -44,44 +38,9 @@ class Slide extends Block implements BlockInterface
     $imgField = get_field('image');
     $mobileImgField = get_field('mobile');
 
-    if ($imgField) {
-
-      $imgUrl = Images::getInstance()->getGlideImageUrl($imgField['ID'], [
-        'w' => $imgField['width'],
-        'h' => $imgField['height'],
-        'fit' => 'crop',
-      ]);
-
-      $webp = Images::getInstance()->getGlideImageUrl($imgField['ID'], [
-        'w' => $imgField['width'],
-        'h' => $imgField['height'],
-        'fit' => 'crop',
-        'fm' => 'webp',
-      ]);
-    }
-
-    if ($mobileImgField) {
-
-      $mobileImgUrl = Images::getInstance()->getGlideImageUrl($mobileImgField['ID'], [
-        'w' => 375,
-        'h' => $mobileImgField['height'],
-        'fit' => 'crop',
-      ]);
-
-      $mobileWebp = Images::getInstance()->getGlideImageUrl($mobileImgField['ID'], [
-        'w' => 375,
-        'h' => $mobileImgField['height'],
-        'fit' => 'crop',
-        'fm' => 'webp',
-      ]);
-    }
-
     $slide = new Slide(
-      $imgUrl ?? null,
-      $imgField['alt'] ?? null,
-      $webp ?? null,
-      $mobileImgUrl ?? null,
-      $mobileWebp ?? null,
+      imageId: $imgField['ID'] ?? -1,
+      mobileImageId: $mobImgField['ID'] ?? -1,
     );
 
     $slide->render();

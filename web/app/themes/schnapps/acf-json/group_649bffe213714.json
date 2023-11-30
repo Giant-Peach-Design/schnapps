@@ -3,11 +3,11 @@
     "title": "Hero Block",
     "fields": [
         {
-            "key": "field_649bffe20cc12",
-            "label": "Image",
-            "name": "image",
+            "key": "field_65689e47fee8c",
+            "label": "Images",
+            "name": "images",
             "aria-label": "",
-            "type": "image",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,41 +16,13 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_649bfff00cc13",
-            "label": "Mobile Image",
-            "name": "mobile_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "Leave blank to use the Image field on mobile instead.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
+            "clone": [
+                "group_648f0368c05a9"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         }
     ],
     "location": [
@@ -71,5 +43,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687945224
+    "modified": 1701355095
 }

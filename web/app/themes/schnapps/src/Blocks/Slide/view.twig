@@ -1,28 +1,21 @@
 <div class="relative {% if isAdmin %} flex-shrink-0 {% endif %}">
-    {% if image %}
-        <picture class="block aspect-video">
-            {% if webp %}
-              <source srcset="{{ webp }}" type="image/webp" />
-            {% endif %}
+  {% if image %}
+  {% include "image.twig" with {aspect: "aspect-[375/480] lg:aspect-video"} %}
+  {% endif %}
 
-            {% if image %}
-              <img class="w-full !h-full object-cover" src="{{ image }}" alt="{{ alt }}" />
-            {% endif %}
-        </picture>
-    {% endif %}
+  {% if image is empty %}
+  <div class="block aspect-video">
+    <div class="w-full !h-full bg-gray-200"></div>
+  </div>
+  {% endif %}
 
-    {% if image is empty %}
-        <div class="block aspect-video">
-            <div class="w-full !h-full bg-gray-200"></div>
-        </div>
-    {% endif %}
+  <div class="absolute inset-0 bg-black/25"></div>
 
-    <div class="absolute inset-0 bg-black/25"></div>
-
-    <div class="absolute inset-0 flex items-center justify-center prose {{ classes.prose.color }} {{ classes.prose.size }} max-w-none">
-        <div class=" container py-8 {% if isAdmin %}outline-1 outline-dashed transition-all duration-300{% endif %}">
-          <InnerBlocks allowedBlocks="{{ allowedBlocks | wp_json_encode }}" />
-        </div>
+  <div
+    class="absolute inset-0 flex items-center justify-center prose {{ classes.prose.color }} {{ classes.prose.size }} max-w-none">
+    <div class=" container py-8 {% if isAdmin %}outline-1 outline-dashed transition-all duration-300{% endif %}">
+      <InnerBlocks allowedBlocks="{{ allowedBlocks | wp_json_encode }}" />
     </div>
+  </div>
 
 </div>

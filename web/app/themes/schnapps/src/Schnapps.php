@@ -92,6 +92,34 @@ class Schnapps
       $mimes['svg'] = 'image/svg+xml';
       return $mimes;
     });
+
+    add_filter('acf/load_field/name=post_type', function ($field) {
+      foreach (get_post_types('', 'names') as $post_type) {
+        $field['choices'][$post_type] = $post_type;
+      }
+
+      // return the field
+      return $field;
+    });
+
+    add_filter('acf/load_field/name=taxonomy', function ($field) {
+      foreach (get_taxonomies('', 'names') as $taxonomy) {
+        $field['choices'][$taxonomy] = $taxonomy;
+      }
+
+      // return the field
+      return $field;
+    });
+
+    add_filter('acf/load_field/name=image_sizes', function ($field) {
+      $sizes = Config::get('image-sizes');
+
+      foreach ($sizes as $key => $imageSize) {
+        $field['choices'][$key] = $key;
+      }
+
+      return $field;
+    });
   }
 
   public function stylesheets()
