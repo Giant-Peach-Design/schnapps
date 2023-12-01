@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a66cc65c9934ec1173d5d4f9b78ab23c",
+    "content-hash": "c74d54c9a3fffd865d552e23fedd5ba3",
     "packages": [
         {
             "name": "composer/installers",
@@ -191,16 +191,16 @@
         },
         {
             "name": "giantpeach/config",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Giant-Peach-Design/config.git",
-                "reference": "90ae8802725d2b0c87ef95dc643dbe80abeb0da5"
+                "reference": "82a8a7026ddffd2089a7ef3787c422728fa092d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Giant-Peach-Design/config/zipball/90ae8802725d2b0c87ef95dc643dbe80abeb0da5",
-                "reference": "90ae8802725d2b0c87ef95dc643dbe80abeb0da5",
+                "url": "https://api.github.com/repos/Giant-Peach-Design/config/zipball/82a8a7026ddffd2089a7ef3787c422728fa092d9",
+                "reference": "82a8a7026ddffd2089a7ef3787c422728fa092d9",
                 "shasum": ""
             },
             "require": {
@@ -223,9 +223,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Giant-Peach-Design/config/issues",
-                "source": "https://github.com/Giant-Peach-Design/config/tree/v1.0.2"
+                "source": "https://github.com/Giant-Peach-Design/config/tree/v1.0.3"
             },
-            "time": "2023-11-30T16:28:50+00:00"
+            "time": "2023-12-01T13:31:14+00:00"
         },
         {
             "name": "giantpeach/images",
@@ -370,6 +370,47 @@
                 "source": "https://github.com/Giant-Peach-Design/route/tree/v1.0.1"
             },
             "time": "2023-08-17T13:58:02+00:00"
+        },
+        {
+            "name": "giantpeach/schnapps-framework",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Giant-Peach-Design/schnapps-framework.git",
+                "reference": "4859414d439d6d61101c01e3ae970e3009911cba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Giant-Peach-Design/schnapps-framework/zipball/4859414d439d6d61101c01e3ae970e3009911cba",
+                "reference": "4859414d439d6d61101c01e3ae970e3009911cba",
+                "shasum": ""
+            },
+            "require": {
+                "giantpeach/config": "^1.0",
+                "giantpeach/images": "^1.1",
+                "giantpeach/query": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Giantpeach\\Schnapps\\Framework\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Giant Peach"
+                }
+            ],
+            "description": "Boilerplating for Peach Schnapps theme framework",
+            "support": {
+                "issues": "https://github.com/Giant-Peach-Design/schnapps-framework/issues",
+                "source": "https://github.com/Giant-Peach-Design/schnapps-framework/tree/v1.0.0"
+            },
+            "time": "2023-12-01T13:33:06+00:00"
         },
         {
             "name": "giantpeach/twiglet",
@@ -2290,12 +2331,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "ad2e43ef644f1c92e021f7106b2a9010bdc1423b"
+                "reference": "b4728d9c4af8c60b059c1d7872759eedacccdb12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/ad2e43ef644f1c92e021f7106b2a9010bdc1423b",
-                "reference": "ad2e43ef644f1c92e021f7106b2a9010bdc1423b",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/b4728d9c4af8c60b059c1d7872759eedacccdb12",
+                "reference": "b4728d9c4af8c60b059c1d7872759eedacccdb12",
                 "shasum": ""
             },
             "conflict": {
@@ -2593,7 +2634,7 @@
                 "melisplatform/melis-front": "<5.0.1",
                 "mezzio/mezzio-swoole": "<3.7|>=4,<4.3",
                 "mgallegos/laravel-jqgrid": "<=1.3",
-                "microweber/microweber": "<2.0.3",
+                "microweber/microweber": "<=2.0.4",
                 "miniorange/miniorange-saml": "<1.4.3",
                 "mittwald/typo3_forum": "<1.2.1",
                 "mobiledetect/mobiledetectlib": "<2.8.32",
@@ -2990,7 +3031,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-11-29T22:04:15+00:00"
+            "time": "2023-11-30T20:04:21+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
