@@ -1,9 +1,11 @@
 <?php
+
 /**
  * Configuration overrides for WP_ENV === 'staging'
  */
 
 use Roots\WPConfig\Config;
+use function Env\env;
 
 /**
  * You should try to keep staging as close to production as possible. However,
@@ -15,3 +17,5 @@ use Roots\WPConfig\Config;
  */
 
 Config::define('DISALLOW_INDEXING', true);
+Config::define('WP_DEBUG', true);
+Config::define('WP_DEBUG_LOG', env('WP_DEBUG_LOG') ?? true);

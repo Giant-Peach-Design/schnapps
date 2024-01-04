@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Your base production configuration goes in this file. Environment-specific
  * overrides go in their respective config/environments/{{WP_ENV}}.php file.
@@ -62,6 +63,10 @@ if (!env('WP_ENVIRONMENT_TYPE') && in_array(WP_ENV, ['production', 'staging', 'd
  */
 Config::define('WP_HOME', env('WP_HOME'));
 Config::define('WP_SITEURL', env('WP_SITEURL'));
+
+Config::define('WP_CACHE', env('WP_CACHE') ?? false);
+Config::define('WPCACHEHOME', $webroot_dir . '/app/plugins/wp-super-cache/');
+
 
 /**
  * Custom Content Directory
