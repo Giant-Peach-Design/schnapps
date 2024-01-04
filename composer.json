@@ -103,7 +103,8 @@
       "Giantpeach\\Schnapps\\Salts\\SaltsGenerator::generateSaltsForProject"
     ],
     "post-update-cmd": [
-      "Giantpeach\\Schnapps\\Salts\\SaltsGenerator::updateSaltsForProject"
+      "Giantpeach\\Schnapps\\Salts\\SaltsGenerator::updateSaltsForProject",
+      "Giantpeach\\Schnapps\\Config\\Composer\\ScriptHandler::updateConfig"
     ],
     "test": [
       "phpcs"
