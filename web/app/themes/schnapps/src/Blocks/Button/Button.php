@@ -22,6 +22,8 @@ class Button extends Block implements BlockInterface
     $this->target = $target;
     $this->rel = $rel;
     $this->size = $size;
+
+    $test = get_field('test');
   }
 
   public static function display(): void
