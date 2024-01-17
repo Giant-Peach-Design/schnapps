@@ -5,6 +5,7 @@ namespace Giantpeach\Schnapps\Theme;
 use Giantpeach\Schnapps\Config\Facades\Config;
 use Giantpeach\Schnapps\Framework\SchnappsFramework;
 use Giantpeach\Schnapps\Navigation\Navigation;
+use Giantpeach\Schnapps\Theme\Blocks\Blocks;
 
 class Schnapps extends SchnappsFramework
 {
@@ -34,20 +35,6 @@ class Schnapps extends SchnappsFramework
     parent::setupTheme();
 
     //e.g. add_action('init', [$this, 'thingToRunOnInit']);
-
-    add_action('wp_head', function () {
-      if (Config::get('seo.analytics.ga')) {
-        echo '<!-- Google tag (gtag.js) -->
-              <script async src="https://www.googletagmanager.com/gtag/js?id=' . Config::get('seo.analytics.ga') . '"></script>
-              <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag("js", new Date());
-
-                gtag("config", "' . Config::get('seo.analytics.ga') . '");
-              </script>';
-      }
-    });
   }
 
   /**
