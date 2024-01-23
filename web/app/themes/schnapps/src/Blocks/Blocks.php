@@ -75,6 +75,7 @@ class Blocks
       'core/html',
       'giantpeach/column',
       'gravityforms/form',
+      'core/embed'
     ], $registeredCustomBlocks);
   }
 
