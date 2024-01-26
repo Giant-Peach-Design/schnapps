@@ -63,7 +63,11 @@
     "giantpeach/route": "^1",
     "giantpeach/config": "^1",
     "giantpeach/schnapps-framework": "^1",
-    "guzzlehttp/guzzle": "^7.8"
+    "guzzlehttp/guzzle": "^7.8",
+    "wpackagist-plugin/wp-super-cache": "^1.11.0",
+    "wpackagist-plugin/autodescription": "^5.0.2",
+    "wpackagist-plugin/redirection": "^5.4.1",
+    "wpackagist-plugin/wp-mail-smtp": "^3.11.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",
@@ -107,6 +111,9 @@
     ],
     "post-update-cmd": [
       "Giantpeach\\Schnapps\\Salts\\SaltsGenerator::updateSaltsForProject",
+      "Giantpeach\\Schnapps\\Config\\Composer\\ScriptHandler::updateConfig"
+    ],
+    "post-install-cmd": [
       "Giantpeach\\Schnapps\\Config\\Composer\\ScriptHandler::updateConfig"
     ],
     "test": [
