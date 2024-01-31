@@ -229,16 +229,16 @@
         },
         {
             "name": "giantpeach/images",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Giant-Peach-Design/images.git",
-                "reference": "62c96ee7c2794165e121e6a9c3e1c688f80cf50e"
+                "reference": "20f03850dcbcd5b637859fbcf85e4401e3d9ec83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Giant-Peach-Design/images/zipball/62c96ee7c2794165e121e6a9c3e1c688f80cf50e",
-                "reference": "62c96ee7c2794165e121e6a9c3e1c688f80cf50e",
+                "url": "https://api.github.com/repos/Giant-Peach-Design/images/zipball/20f03850dcbcd5b637859fbcf85e4401e3d9ec83",
+                "reference": "20f03850dcbcd5b637859fbcf85e4401e3d9ec83",
                 "shasum": ""
             },
             "require": {
@@ -262,22 +262,22 @@
             ],
             "support": {
                 "issues": "https://github.com/Giant-Peach-Design/images/issues",
-                "source": "https://github.com/Giant-Peach-Design/images/tree/v1.1.0"
+                "source": "https://github.com/Giant-Peach-Design/images/tree/v1.1.1"
             },
-            "time": "2023-11-30T15:16:06+00:00"
+            "time": "2024-01-31T12:48:41+00:00"
         },
         {
             "name": "giantpeach/navigation",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Giant-Peach-Design/navigation.git",
-                "reference": "bdd70219ff634cbfe13f11d8d0bd0becb9a140b5"
+                "reference": "a9c315ab90c61be5014099a929243e70143698fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Giant-Peach-Design/navigation/zipball/bdd70219ff634cbfe13f11d8d0bd0becb9a140b5",
-                "reference": "bdd70219ff634cbfe13f11d8d0bd0becb9a140b5",
+                "url": "https://api.github.com/repos/Giant-Peach-Design/navigation/zipball/a9c315ab90c61be5014099a929243e70143698fc",
+                "reference": "a9c315ab90c61be5014099a929243e70143698fc",
                 "shasum": ""
             },
             "type": "library",
@@ -297,9 +297,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Giant-Peach-Design/navigation/issues",
-                "source": "https://github.com/Giant-Peach-Design/navigation/tree/v1.0.2"
+                "source": "https://github.com/Giant-Peach-Design/navigation/tree/v1.0.3"
             },
-            "time": "2023-08-17T13:57:55+00:00"
+            "time": "2024-01-31T13:08:45+00:00"
         },
         {
             "name": "giantpeach/query",
@@ -414,16 +414,16 @@
         },
         {
             "name": "giantpeach/twiglet",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Giant-Peach-Design/twiglet.git",
-                "reference": "8aaafc8d1c907853054bdc4bab332c945fc6ee50"
+                "reference": "9f8bfce7033131ab0cf897699373d072ede627ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Giant-Peach-Design/twiglet/zipball/8aaafc8d1c907853054bdc4bab332c945fc6ee50",
-                "reference": "8aaafc8d1c907853054bdc4bab332c945fc6ee50",
+                "url": "https://api.github.com/repos/Giant-Peach-Design/twiglet/zipball/9f8bfce7033131ab0cf897699373d072ede627ef",
+                "reference": "9f8bfce7033131ab0cf897699373d072ede627ef",
                 "shasum": ""
             },
             "require": {
@@ -448,9 +448,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Giant-Peach-Design/twiglet/issues",
-                "source": "https://github.com/Giant-Peach-Design/twiglet/tree/v1.0.2"
+                "source": "https://github.com/Giant-Peach-Design/twiglet/tree/v1.0.3"
             },
-            "time": "2023-10-12T15:39:01+00:00"
+            "time": "2024-01-31T12:49:55+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -2462,15 +2462,15 @@
         },
         {
             "name": "wpackagist-plugin/autodescription",
-            "version": "5.0.2",
+            "version": "5.0.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autodescription/",
-                "reference": "tags/5.0.2"
+                "reference": "tags/5.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.5.0.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/autodescription.5.0.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -3515,12 +3515,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "1c003064f6e7c27b0fc6f4d153b660fd33f1ba98"
+                "reference": "b1ef8f464be59fa15bf9b4956be3e17a75c4dd03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/1c003064f6e7c27b0fc6f4d153b660fd33f1ba98",
-                "reference": "1c003064f6e7c27b0fc6f4d153b660fd33f1ba98",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/b1ef8f464be59fa15bf9b4956be3e17a75c4dd03",
+                "reference": "b1ef8f464be59fa15bf9b4956be3e17a75c4dd03",
                 "shasum": ""
             },
             "conflict": {
@@ -3612,7 +3612,7 @@
                 "contao/managed-edition": "<=1.5",
                 "corveda/phpsandbox": "<1.3.5",
                 "cosenary/instagram": "<=2.3",
-                "craftcms/cms": "<=4.5.10",
+                "craftcms/cms": "<4.6.2",
                 "croogo/croogo": "<4",
                 "cuyz/valinor": "<0.12",
                 "czproject/git-php": "<4.0.3",
@@ -3670,7 +3670,7 @@
                 "ezsystems/ezplatform-solr-search-engine": ">=1.7,<1.7.12|>=2,<2.0.2|>=3.3,<3.3.15",
                 "ezsystems/ezplatform-user": ">=1,<1.0.1",
                 "ezsystems/ezpublish-kernel": "<6.13.8.2-dev|>=7,<7.5.31",
-                "ezsystems/ezpublish-legacy": "<=2017.12.7.3|>=2018.06,<=2019.03.5.1",
+                "ezsystems/ezpublish-legacy": "<=2017.12.7.3|>=2018.6,<=2019.03.5.1",
                 "ezsystems/platform-ui-assets-bundle": ">=4.2,<4.2.3",
                 "ezsystems/repository-forms": ">=2.3,<2.3.2.1-dev|>=2.5,<2.5.15",
                 "ezyang/htmlpurifier": "<4.1.1",
@@ -4030,6 +4030,7 @@
                 "sukohi/surpass": "<1",
                 "sulu/sulu": "<1.6.44|>=2,<2.2.18|>=2.3,<2.3.8|==2.4.0.0-RC1|>=2.5,<2.5.10",
                 "sumocoders/framework-user-bundle": "<1.4",
+                "superbig/craft-audit": "<3.0.2",
                 "swag/paypal": "<5.4.4",
                 "swiftmailer/swiftmailer": ">=4,<5.4.5",
                 "swiftyedit/swiftyedit": "<1.2",
@@ -4238,7 +4239,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-01-30T13:04:20+00:00"
+            "time": "2024-01-31T12:06:01+00:00"
         },
         {
             "name": "sebastian/cli-parser",
