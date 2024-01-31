@@ -20,34 +20,33 @@ class Logo extends Block implements BlockInterface
   public $mobileWidth;
   public $mobileHeight;
 
-  public function __construct($url, $alt, $width, $height, $mobileUrl, $mobileAlt, $mobileWidth, $mobileHeight)
+  public function __construct()
   {
-    $this->url = $url ?? null;
-    $this->alt = $alt ?? '';
-    $this->width = $width;
-    $this->height = $height;
+    parent::__construct();
+    $logo = get_field('logo');
+    $mobileLogo = get_field('mobile_logo');
 
-    $this->mobileUrl = $mobileUrl ?? null;
-    $this->mobileAlt = $mobileAlt ?? '';
-    $this->mobileWidth = $mobileWidth;
-    $this->mobileHeight = $mobileHeight;
+    if (!$logo) {
+      return;
+    }
+
+    $this->url = $logo['url'];
+    $this->alt = $logo['alt'];
+    $this->width = $logo['width'];
+    $this->height = $logo['height'];
+
+    if ($mobileLogo) {
+      $this->mobileUrl = $mobileLogo['url'] ?? null;
+      $this->mobileAlt = $mobileLogo['alt'] ?? '';
+      $this->mobileWidth = $mobileLogo['width'];
+      $this->mobileHeight = $mobileLogo['height'];
+    }
   }
 
   public static function display(): void
   {
-    $mobileLogo = get_field('mobile_logo');
 
-    $logo = new Logo(
-      get_field('logo')['url'],
-      get_field('logo')['alt'],
-      get_field('logo')['width'],
-      get_field('logo')['height'],
-      $mobileLogo['url'] ?? null,
-      $mobileLogo['alt'] ?? '',
-      $mobileLogo['width'] ?? null,
-      $mobileLogo['height'] ?? null
-
-    );
+    $logo = new Logo();
     $logo->render();
   }
 }
