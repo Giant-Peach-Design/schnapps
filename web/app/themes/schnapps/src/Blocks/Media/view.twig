@@ -1,0 +1,39 @@
+<div class="{{ wrapperClass }}">
+  {% if video %}
+  <div class="video block not-prose overflow-hidden {% if rounded != false %} rounded-[36px] {% endif %}"
+    style="--mobile-aspect-ratio: {{ sizes.mobile.w }} / {{ sizes.mobile.h }}; --tablet-aspect-ratio: {{ sizes.tablet.w }} {{ sizes.tablet.h }}; --desktop-aspect-ratio: {{ video.desktop.width }} / {{ video.desktop.height }};">
+
+    <video class="object-cover w-full h-full" autoplay loop muted playsinline>
+      <source src="{{ video.desktop.url }}" type="video/mp4">
+    </video>
+
+    <style>
+      @media (max-width: 767px) {
+        @scope (.video) {
+          & {
+            aspect-ratio: var(--mobile-aspect-ratio);
+          }
+        }
+      }
+
+      @media (min-width: 768px) {
+        @scope (.video) {
+          & {
+            aspect-ratio: var(--tablet-aspect-ratio);
+          }
+        }
+      }
+
+      @media (min-width: 1024px) {
+        @scope (.video) {
+          & {
+            aspect-ratio: var(--desktop-aspect-ratio);
+          }
+        }
+      }
+    </style>
+  </div>
+  {% else %}
+  {% include 'image.twig' %}
+  {% endif %}
+</div>

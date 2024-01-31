@@ -1,4 +1,4 @@
-<picture class="block not-prose overflow-hidden {{ aspect }} {% if rounded != false %} rounded-[36px] {% endif %}">
+<picture class="block not-prose overflow-hidden {% if rounded != false %} rounded-[36px] {% endif %}">
   {% if image.mobile.webp %}
   <source srcset="{{ image.mobile.webp }}" media="(max-width: 767px)" type="image/webp" />
   {% endif %}
@@ -24,11 +24,12 @@
   {% endif %}
 
   {% if image.desktop.url %}
-  <img class=" w-full !h-full object-cover" src="{{ image.desktop.url }}" alt="{{ image.desktop.alt }}" />
+  <img class=" w-full !h-full object-cover" src="{{ image.desktop.url }}" alt="{{ image.desktop.alt }}"
+    width="{{ image.desktop.width }}" height="{{ image.desktop.height }}" />
   {% endif %}
 
-
   {% if isAdmin and image.desktop.url == null %}
-  <div class=" w-full !h-full object-cover bg-slate-500 aspect-video"></div>
+  <div class=" w-full !h-full object-cover bg-slate-500 aspect-video"
+    style="aspect-ratio: {{ image.desktop.width }} / {{ image.desktop.height }}"></div>
   {% endif %}
 </picture>
