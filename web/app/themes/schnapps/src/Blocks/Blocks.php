@@ -11,7 +11,6 @@ use Giantpeach\Schnapps\Theme\Blocks\Column\Column;
 use Giantpeach\Schnapps\Theme\Blocks\Columns\Columns;
 use Giantpeach\Schnapps\Theme\Blocks\HeaderNavigation\HeaderNavigation;
 use Giantpeach\Schnapps\Theme\Blocks\Hero\Hero;
-use Giantpeach\Schnapps\Theme\Blocks\Image\Image;
 use Giantpeach\Schnapps\Theme\Blocks\LatestNews\LatestNews;
 use Giantpeach\Schnapps\Theme\Blocks\Logo\Logo;
 use Giantpeach\Schnapps\Theme\Blocks\Media\Media;
@@ -37,7 +36,6 @@ class Blocks
     Banner::class,
     Hero::class,
     Slide::class,
-    Image::class,
     Media::class,
     Columns::class,
     Column::class,
