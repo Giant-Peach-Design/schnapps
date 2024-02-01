@@ -153,16 +153,16 @@
         },
         {
             "name": "giantpeach/blocks",
-            "version": "v1.0.7",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Giant-Peach-Design/blocks.git",
-                "reference": "c5e1db516dcd812c3ec43cfd0b5ee8b7b695b597"
+                "reference": "712d673b0d5fa8465bb5a0660e483d83390ecb4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Giant-Peach-Design/blocks/zipball/c5e1db516dcd812c3ec43cfd0b5ee8b7b695b597",
-                "reference": "c5e1db516dcd812c3ec43cfd0b5ee8b7b695b597",
+                "url": "https://api.github.com/repos/Giant-Peach-Design/blocks/zipball/712d673b0d5fa8465bb5a0660e483d83390ecb4d",
+                "reference": "712d673b0d5fa8465bb5a0660e483d83390ecb4d",
                 "shasum": ""
             },
             "require": {
@@ -185,9 +185,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Giant-Peach-Design/blocks/issues",
-                "source": "https://github.com/Giant-Peach-Design/blocks/tree/v1.0.7"
+                "source": "https://github.com/Giant-Peach-Design/blocks/tree/v1.0.8"
             },
-            "time": "2024-01-30T14:19:10+00:00"
+            "time": "2024-02-01T10:15:44+00:00"
         },
         {
             "name": "giantpeach/config",
