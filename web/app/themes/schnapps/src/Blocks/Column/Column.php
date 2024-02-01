@@ -4,6 +4,7 @@ namespace Giantpeach\Schnapps\Theme\Blocks\Column;
 
 use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 use Giantpeach\Schnapps\Blocks\Block;
+use Giantpeach\Schnapps\Blocks\Classes;
 
 class Column extends Block implements BlockInterface
 {
@@ -40,6 +41,8 @@ class Column extends Block implements BlockInterface
 
   private array $mobileWidthClasses = ['w-4/12', 'w-6/12', 'w-8/12', 'w-full'];
 
+  public Classes $columnClass;
+
   public string $widthClass;
   public bool $flexGrow = false;
   public array $breakout = [];
@@ -48,6 +51,8 @@ class Column extends Block implements BlockInterface
 
   public function __construct($mobile = 4, $tablet = 6, $desktop = 6, $flexGrow = false, $display = [], $advancedControls = false, $breakout = [])
   {
+    parent::__construct();
+    $this->columnClass = new Classes();
     $this->flexGrow = $flexGrow;
     $widthClass = '';
     if ($advancedControls) {
@@ -58,17 +63,11 @@ class Column extends Block implements BlockInterface
       }
     }
 
-    parent::__construct();
-
-    $this->classes = array_merge([
-      'width' => $widthClass,
-      'flexGrow' => $this->flexGrow ? 'flex-grow' : '',
-      'display' => [
-        'mobile' => $display['mobile'] ? 'block' : 'hidden',
-        'tablet' => $display['tablet'] ? 'md:block' : 'md:hidden',
-        'desktop' => $display['desktop'] ? 'lg:block' : 'lg:hidden',
-      ]
-    ], $this->getClasses());
+    $this->columnClass->add($widthClass);
+    $this->columnClass->add($this->flexGrow ? 'flex-grow' : '');
+    $this->columnClass->add($display['mobile'] ? 'block' : 'hidden');
+    $this->columnClass->add($display['tablet'] ? 'md:block' : 'md:hidden');
+    $this->columnClass->add($display['desktop'] ? 'lg:block' : 'lg:hidden');
   }
 
   public static function display(): void

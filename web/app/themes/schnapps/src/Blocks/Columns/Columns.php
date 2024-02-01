@@ -25,8 +25,9 @@ class Columns extends Block implements BlockInterface
   protected $wrap = true;
   public string $wrapClass = 'flex-wrap';
 
-  public function __construct($justifyContent, $alignItems, $wrap = true)
+  public function __construct($justifyContent, $alignItems, $wrap = true, $content = "")
   {
+    parent::__construct();
     $this->allowedBlocks = [
       'giantpeach/column',
     ];
@@ -38,11 +39,9 @@ class Columns extends Block implements BlockInterface
       $this->wrap = false;
       $this->wrapClass = '';
     }
-
-    parent::__construct();
   }
 
-  public static function display(): void
+  public static function display($block = [], $content = "", $is_preview = false, $postId = 0, $context = []): void
   {
     $justifyDesktop = get_field('desktop_justify_content') ?? 'xl:justify-center';
     $justifyTablet = get_field('tablet_justify_content') ?? 'md:justify-center';
@@ -66,7 +65,7 @@ class Columns extends Block implements BlockInterface
       'mobile' => $alignMobile,
     ];
 
-    $columns = new Columns($justifyContent, $alignItems, $wrap);
+    $columns = new Columns($justifyContent, $alignItems, $wrap, $content);
     $columns->render();
   }
 }

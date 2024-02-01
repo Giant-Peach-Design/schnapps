@@ -153,16 +153,16 @@
         },
         {
             "name": "giantpeach/blocks",
-            "version": "v1.0.6",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Giant-Peach-Design/blocks.git",
-                "reference": "adf31d9f4d0153d5ee2a628fa46be255843d4193"
+                "reference": "c5e1db516dcd812c3ec43cfd0b5ee8b7b695b597"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Giant-Peach-Design/blocks/zipball/adf31d9f4d0153d5ee2a628fa46be255843d4193",
-                "reference": "adf31d9f4d0153d5ee2a628fa46be255843d4193",
+                "url": "https://api.github.com/repos/Giant-Peach-Design/blocks/zipball/c5e1db516dcd812c3ec43cfd0b5ee8b7b695b597",
+                "reference": "c5e1db516dcd812c3ec43cfd0b5ee8b7b695b597",
                 "shasum": ""
             },
             "require": {
@@ -185,9 +185,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Giant-Peach-Design/blocks/issues",
-                "source": "https://github.com/Giant-Peach-Design/blocks/tree/v1.0.6"
+                "source": "https://github.com/Giant-Peach-Design/blocks/tree/v1.0.7"
             },
-            "time": "2024-01-29T14:57:07+00:00"
+            "time": "2024-01-30T14:19:10+00:00"
         },
         {
             "name": "giantpeach/config",
@@ -303,16 +303,16 @@
         },
         {
             "name": "giantpeach/query",
-            "version": "v1.0.6",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Giant-Peach-Design/query.git",
-                "reference": "044b4971b3faae05bb6a967f8890d82c6f433042"
+                "reference": "468cd0e90633305465f245172dd3ee19251de7ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Giant-Peach-Design/query/zipball/044b4971b3faae05bb6a967f8890d82c6f433042",
-                "reference": "044b4971b3faae05bb6a967f8890d82c6f433042",
+                "url": "https://api.github.com/repos/Giant-Peach-Design/query/zipball/468cd0e90633305465f245172dd3ee19251de7ec",
+                "reference": "468cd0e90633305465f245172dd3ee19251de7ec",
                 "shasum": ""
             },
             "type": "library",
@@ -332,9 +332,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Giant-Peach-Design/query/issues",
-                "source": "https://github.com/Giant-Peach-Design/query/tree/v1.0.6"
+                "source": "https://github.com/Giant-Peach-Design/query/tree/v1.0.7"
             },
-            "time": "2023-11-30T16:26:12+00:00"
+            "time": "2024-02-01T09:19:42+00:00"
         },
         {
             "name": "giantpeach/route",
@@ -2462,15 +2462,15 @@
         },
         {
             "name": "wpackagist-plugin/autodescription",
-            "version": "5.0.3",
+            "version": "5.0.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autodescription/",
-                "reference": "tags/5.0.3"
+                "reference": "tags/5.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.5.0.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/autodescription.5.0.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -3515,12 +3515,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "b1ef8f464be59fa15bf9b4956be3e17a75c4dd03"
+                "reference": "e3b3cce1f2454ee4575500e084211b11efdaf64b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/b1ef8f464be59fa15bf9b4956be3e17a75c4dd03",
-                "reference": "b1ef8f464be59fa15bf9b4956be3e17a75c4dd03",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e3b3cce1f2454ee4575500e084211b11efdaf64b",
+                "reference": "e3b3cce1f2454ee4575500e084211b11efdaf64b",
                 "shasum": ""
             },
             "conflict": {
@@ -3722,7 +3722,7 @@
                 "gos/web-socket-bundle": "<1.10.4|>=2,<2.6.1|>=3,<3.3",
                 "gree/jose": "<2.2.1",
                 "gregwar/rst": "<1.0.3",
-                "grumpydictator/firefly-iii": "<6.1.1",
+                "grumpydictator/firefly-iii": "<6.1.7",
                 "gugoan/economizzer": "<=0.9.0.0-beta1",
                 "guzzlehttp/guzzle": "<6.5.8|>=7,<7.4.5",
                 "guzzlehttp/psr7": "<1.9.1|>=2,<2.4.5",
@@ -4239,7 +4239,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-01-31T12:06:01+00:00"
+            "time": "2024-01-31T19:04:19+00:00"
         },
         {
             "name": "sebastian/cli-parser",

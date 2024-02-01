@@ -1,6 +1,8 @@
-<section class="{{ classes.block.name }} {{ classes.block.spacing }} transition-block {% if isAdmin == false %} translate-y-8 {% endif %}">
+<section
+  class="{{ classes.block.name }} {{ classes.block.spacing }} transition-block {% if isAdmin == false %} translate-y-8 {% endif %}">
   <div class="container ">
-    <InnerBlocks className="prose {{ classes.prose.color }} {{ classes.prose.size }} {{ justifyContent.desktop }} {{ justifyContent.tablet }} {{ justifyContent.mobile }} {{ alignItems.desktop }} {{ alignItems.tablet }} {{ alignItems.mobile }} max-w-none flex {{ wrapClass }} -mx-4" allowedBlocks="{{ allowedBlocks | wp_json_encode }}" />
+    <InnerBlocks
+      className="columns-inner prose {{ classes.prose.color }} {{ classes.prose.size }} {{ justifyContent.desktop }} {{ justifyContent.tablet }} {{ justifyContent.mobile }} {{ alignItems.desktop }} {{ alignItems.tablet }} {{ alignItems.mobile }} max-w-none flex {{ wrapClass }} -mx-4"
+      allowedBlocks="{{ allowedBlocks | wp_json_encode }}" />
   </div>
 </section>
-
