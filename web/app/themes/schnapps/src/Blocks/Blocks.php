@@ -73,7 +73,7 @@ class Blocks
       'core/list-item',
       'core/block',
       'core/html',
-      'giantpeach/column',
+      'giantpeach/columns',
       'gravityforms/form',
       'core/embed',
       'core/table',

@@ -1,0 +1,16 @@
+{
+  "name": "giantpeach/latestnews",
+  "title": "Latest News",
+  "category": "giantpeach",
+  "icon": "smiley",
+  "keywords": [
+    "giantpeach"
+  ],
+  "supports": {
+    "jsx": true
+  },
+  "acf": {
+    "mode": "preview",
+    "renderCallback": "\\Giantpeach\\Schnapps\\Theme\\Blocks\\LatestNews\\LatestNews::display"
+  }
+}

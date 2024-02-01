@@ -1,0 +1,16 @@
+{
+  "name": "giantpeach/media",
+  "title": "Media",
+  "category": "giantpeach",
+  "icon": "format-image",
+  "keywords": [
+    "giantpeach"
+  ],
+  "supports": {
+    "jsx": true
+  },
+  "acf": {
+    "mode": "preview",
+    "renderCallback": "\\Giantpeach\\Schnapps\\Theme\\Blocks\\Media\\Media::display"
+  }
+}
