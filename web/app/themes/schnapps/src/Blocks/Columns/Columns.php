@@ -4,9 +4,12 @@ namespace Giantpeach\Schnapps\Theme\Blocks\Columns;
 
 use Giantpeach\Schnapps\Blocks\Block;
 use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
+use Giantpeach\Schnapps\Blocks\Traits\Spacing;
 
 class Columns extends Block implements BlockInterface
 {
+
+  use Spacing;
 
   public static string $blockName = 'giantpeach/columns';
 

@@ -39,6 +39,13 @@
     {
       "type": "vcs",
       "url": "https://github.com/Giant-Peach-Design/wp-salts"
+    },
+    {
+      "type": "path",
+      "url": "../packages/giantpeach/blocks",
+      "options": {
+        "symlink": false
+      }
     }
   ],
   "require": {
@@ -53,7 +60,7 @@
     "roots/wp-password-bcrypt": "1.1.0",
     "wpackagist-theme/twentytwentythree": "^1.0",
     "wpengine/advanced-custom-fields-pro": "*",
-    "giantpeach/blocks": "^1",
+    "giantpeach/blocks": "@dev",
     "twig/twig": "^3.6",
     "giantpeach/twiglet": "^1",
     "giantpeach/navigation": "^1",

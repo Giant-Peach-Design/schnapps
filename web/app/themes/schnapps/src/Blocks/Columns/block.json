@@ -12,6 +12,14 @@
   },
   "align": "full",
   "supports": {
-    "jsx": true
+    "jsx": true,
+    "color": {
+      "text": false,
+      "link": false,
+      "background": true
+    },
+    "spacing": {
+      "padding": ["top", "bottom"]
+    }
   }
 }

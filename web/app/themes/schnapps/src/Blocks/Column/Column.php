@@ -5,9 +5,13 @@ namespace Giantpeach\Schnapps\Theme\Blocks\Column;
 use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 use Giantpeach\Schnapps\Blocks\Block;
 use Giantpeach\Schnapps\Blocks\Classes;
+use Giantpeach\Schnapps\Blocks\Traits\Prose;
+use Giantpeach\Schnapps\Blocks\Traits\Spacing;
 
 class Column extends Block implements BlockInterface
 {
+
+  use Prose;
 
   private array $widthClasses = [
     'lg:w-1/12',

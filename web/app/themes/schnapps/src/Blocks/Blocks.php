@@ -24,7 +24,7 @@ use Giantpeach\Schnapps\Theme\Patterns\TitleLinkColumn;
  * This class is responsible for registering blocks and patterns.
  * 
  */
-class Blocks
+class Blocks extends SchnappsBlocks
 {
   /**
    * Available blocks
@@ -49,7 +49,7 @@ class Blocks
 
   public function __construct()
   {
-    new SchnappsBlocks();
+    parent::__construct();
 
     add_action('init', [$this, 'registerBlocks']);
     add_action('init', [$this, 'registerPatterns']);
