@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a4178b49dece052d818318f3fe3e071e",
+    "content-hash": "bafd8b73aa71c33dc3baec6e316aa9c3",
     "packages": [
         {
             "name": "composer/installers",
@@ -153,11 +153,17 @@
         },
         {
             "name": "giantpeach/blocks",
-            "version": "dev-next",
+            "version": "v1.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Giant-Peach-Design/blocks.git",
+                "reference": "a14013c7123dc58c102165c059650963057a9429"
+            },
             "dist": {
-                "type": "path",
-                "url": "../packages/giantpeach/blocks",
-                "reference": "347919e35f59a6c59d03e2266feeac0a7fc4b18d"
+                "type": "zip",
+                "url": "https://api.github.com/repos/Giant-Peach-Design/blocks/zipball/a14013c7123dc58c102165c059650963057a9429",
+                "reference": "a14013c7123dc58c102165c059650963057a9429",
+                "shasum": ""
             },
             "require": {
                 "giantpeach/twiglet": "^1.0"
@@ -168,6 +174,7 @@
                     "Giantpeach\\Schnapps\\Blocks\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -176,10 +183,11 @@
                     "name": "Giant Peach"
                 }
             ],
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/Giant-Peach-Design/blocks/issues",
+                "source": "https://github.com/Giant-Peach-Design/blocks/tree/v1.0.10"
+            },
+            "time": "2024-02-05T13:29:03+00:00"
         },
         {
             "name": "giantpeach/config",
@@ -365,16 +373,16 @@
         },
         {
             "name": "giantpeach/schnapps-framework",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Giant-Peach-Design/schnapps-framework.git",
-                "reference": "176b09375b720677722b0b6fafbd2920fb70ac45"
+                "reference": "64bdefee858297f058452118fa78de378df677c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Giant-Peach-Design/schnapps-framework/zipball/176b09375b720677722b0b6fafbd2920fb70ac45",
-                "reference": "176b09375b720677722b0b6fafbd2920fb70ac45",
+                "url": "https://api.github.com/repos/Giant-Peach-Design/schnapps-framework/zipball/64bdefee858297f058452118fa78de378df677c0",
+                "reference": "64bdefee858297f058452118fa78de378df677c0",
                 "shasum": ""
             },
             "require": {
@@ -400,9 +408,9 @@
             "description": "Boilerplating for Peach Schnapps theme framework",
             "support": {
                 "issues": "https://github.com/Giant-Peach-Design/schnapps-framework/issues",
-                "source": "https://github.com/Giant-Peach-Design/schnapps-framework/tree/v1.0.1"
+                "source": "https://github.com/Giant-Peach-Design/schnapps-framework/tree/v1.0.2"
             },
-            "time": "2024-01-17T13:14:41+00:00"
+            "time": "2024-02-05T12:22:45+00:00"
         },
         {
             "name": "giantpeach/twiglet",
@@ -3507,12 +3515,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "2f3b470e6ca356a27bf10b2b439c3683d20bebc1"
+                "reference": "794e58ed32820bf07fa2df520b6cf2cf24031192"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/2f3b470e6ca356a27bf10b2b439c3683d20bebc1",
-                "reference": "2f3b470e6ca356a27bf10b2b439c3683d20bebc1",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/794e58ed32820bf07fa2df520b6cf2cf24031192",
+                "reference": "794e58ed32820bf07fa2df520b6cf2cf24031192",
                 "shasum": ""
             },
             "conflict": {
@@ -3572,7 +3580,7 @@
                 "brotkrueml/schema": "<1.13.1|>=2,<2.5.1",
                 "brotkrueml/typo3-matomo-integration": "<1.3.2",
                 "buddypress/buddypress": "<7.2.1",
-                "bugsnag/bugsnag-laravel": "<2.0.2",
+                "bugsnag/bugsnag-laravel": ">=2,<2.0.2",
                 "bytefury/crater": "<6.0.2",
                 "cachethq/cachet": "<2.5.1",
                 "cakephp/cakephp": "<3.10.3|>=4,<4.0.10|>=4.1,<4.1.4|>=4.2,<4.2.12|>=4.3,<4.3.11|>=4.4,<4.4.10",
@@ -3620,7 +3628,7 @@
                 "desperado/xml-bundle": "<=0.1.7",
                 "directmailteam/direct-mail": "<6.0.3|>=7,<7.0.3|>=8,<9.5.2",
                 "doctrine/annotations": "<1.2.7",
-                "doctrine/cache": "<1.3.2|>=1.4,<1.4.2",
+                "doctrine/cache": ">=1,<1.3.2|>=1.4,<1.4.2",
                 "doctrine/common": "<2.4.3|>=2.5,<2.5.1",
                 "doctrine/dbal": ">=2,<2.0.8|>=2.1,<2.1.2|>=3,<3.1.4",
                 "doctrine/doctrine-bundle": "<1.5.2",
@@ -3737,7 +3745,7 @@
                 "ibexa/user": ">=4,<4.4.3",
                 "icecoder/icecoder": "<=8.1",
                 "idno/known": "<=1.3.1",
-                "illuminate/auth": ">=4,<4.0.99|>=4.1,<=4.1.31|>=4.2,<=4.2.22|>=5,<=5.0.35|>=5.1,<=5.1.46|>=5.2,<=5.2.45|>=5.3,<=5.3.31|>=5.4,<=5.4.36|>=5.5,<5.5.10",
+                "illuminate/auth": "<5.5.10",
                 "illuminate/cookie": ">=4,<=4.0.11|>=4.1,<=4.1.99999|>=4.2,<=4.2.99999|>=5,<=5.0.99999|>=5.1,<=5.1.99999|>=5.2,<=5.2.99999|>=5.3,<=5.3.99999|>=5.4,<=5.4.99999|>=5.5,<=5.5.49|>=5.6,<=5.6.99999|>=5.7,<=5.7.99999|>=5.8,<=5.8.99999|>=6,<6.18.31|>=7,<7.22.4",
                 "illuminate/database": "<6.20.26|>=7,<7.30.5|>=8,<8.40",
                 "illuminate/encryption": ">=4,<=4.0.11|>=4.1,<=4.1.31|>=4.2,<=4.2.22|>=5,<=5.0.35|>=5.1,<=5.1.46|>=5.2,<=5.2.45|>=5.3,<=5.3.31|>=5.4,<=5.4.36|>=5.5,<5.5.40|>=5.6,<5.6.15",
@@ -4160,7 +4168,7 @@
                 "yourls/yourls": "<=1.8.2",
                 "zencart/zencart": "<=1.5.7.0-beta",
                 "zendesk/zendesk_api_client_php": "<2.2.11",
-                "zendframework/zend-cache": "<2.4.8|>=2.5,<2.5.3",
+                "zendframework/zend-cache": ">=2.4,<2.4.8|>=2.5,<2.5.3",
                 "zendframework/zend-captcha": ">=2,<2.4.9|>=2.5,<2.5.2",
                 "zendframework/zend-crypt": ">=2,<2.4.9|>=2.5,<2.5.2",
                 "zendframework/zend-db": ">=2,<2.0.99|>=2.1,<2.1.99|>=2.2,<2.2.10|>=2.3,<2.3.5",
@@ -4192,7 +4200,7 @@
                 "zenstruck/collection": "<0.2.1",
                 "zetacomponents/mail": "<1.8.2",
                 "zf-commons/zfc-user": "<1.2.2",
-                "zfcampus/zf-apigility-doctrine": "<1.0.3",
+                "zfcampus/zf-apigility-doctrine": ">=1,<1.0.3",
                 "zfr/zfr-oauth2-server-module": "<0.1.2",
                 "zoujingli/thinkadmin": "<=6.1.53"
             },
@@ -4232,7 +4240,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-02-02T13:04:17+00:00"
+            "time": "2024-02-05T11:04:31+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -5283,7 +5291,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "giantpeach/blocks": 20,
         "roave/security-advisories": 20,
         "giantpeach/wp-salts": 20
     },
