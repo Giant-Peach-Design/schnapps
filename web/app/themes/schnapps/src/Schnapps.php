@@ -87,18 +87,21 @@ class Schnapps extends SchnappsFramework
   public function scripts(): void
   {
     wp_enqueue_script(
-      "schnapps",
-      get_template_directory_uri() . "/dist/main.js",
-      [],
-      null,
-      true,
+      handle: "schnapps",
+      src: get_template_directory_uri() . "/dist/main.js",
+      deps: [],
+      ver: null,
+      args: true,
     );
     wp_enqueue_script(
-      "fontawesome",
-      "https://kit.fontawesome.com/c91deddf7e.js",
-      [],
-      false,
-      true,
+      handle: "fontawesome",
+      src: "https://kit.fontawesome.com/c91deddf7e.js",
+      deps: [],
+      ver: false,
+      args: [
+        "crossorigin" => "anonymous",
+        "strategy" => "defer",
+      ],
     );
   }
 
