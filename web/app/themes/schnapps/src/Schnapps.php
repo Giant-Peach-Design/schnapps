@@ -124,11 +124,22 @@ class Schnapps extends SchnappsFramework
   public function blockEditorScripts(): void
   {
     wp_enqueue_script(
-      "schnapps-editor",
-      get_template_directory_uri() . "/dist/editor.js",
-      ["wp-blocks"],
-      filemtime(get_template_directory() . "/dist/editor.js"),
-      true,
+      handle: "schnapps-editor",
+      src: get_template_directory_uri() . "/dist/editor.js",
+      deps: ["wp-blocks"],
+      ver: filemtime(get_template_directory() . "/dist/editor.js"),
+      args: true,
+    );
+
+    wp_enqueue_script(
+      handle: "fontawesome",
+      src: "https://kit.fontawesome.com/c91deddf7e.js",
+      deps: [],
+      ver: false,
+      args: [
+        "crossorigin" => "anonymous",
+        "strategy" => "defer",
+      ],
     );
   }
 }
