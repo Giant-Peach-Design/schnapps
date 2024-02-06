@@ -2,14 +2,11 @@
 
 namespace Giantpeach\Schnapps\Theme;
 
-use Giantpeach\Schnapps\Config\Facades\Config;
 use Giantpeach\Schnapps\Framework\SchnappsFramework;
 use Giantpeach\Schnapps\Navigation\Navigation;
-use Giantpeach\Schnapps\Theme\Blocks\Blocks;
 
 class Schnapps extends SchnappsFramework
 {
-
   public function __construct()
   {
     parent::__construct();
@@ -55,8 +52,8 @@ class Schnapps extends SchnappsFramework
    */
   public function registerMenus(): void
   {
-    Navigation::registerNav('primary');
-    Navigation::registerNav('footer');
+    Navigation::registerNav("primary");
+    Navigation::registerNav("footer");
   }
 
   /**
@@ -70,7 +67,7 @@ class Schnapps extends SchnappsFramework
    * - acf/load_field/name=post_type
    * - acf/load_field/name=taxonomy
    * - acf/load_field/name=image_sizes
-   * 
+   *
    */
   public function setupFilters(): void
   {
@@ -79,29 +76,56 @@ class Schnapps extends SchnappsFramework
 
   public function stylesheets()
   {
-    wp_enqueue_style('schnapps', get_template_directory_uri() . '/dist/main.css', false, null);
+    wp_enqueue_style(
+      "schnapps",
+      get_template_directory_uri() . "/dist/main.css",
+      false,
+      null,
+    );
   }
 
   public function scripts(): void
   {
-    wp_enqueue_script('schnapps', get_template_directory_uri() . '/dist/main.js', array(), null, true);
-    wp_enqueue_script('fontawesome', "https://kit.fontawesome.com/c91deddf7e.js", array(), false, true);
+    wp_enqueue_script(
+      "schnapps",
+      get_template_directory_uri() . "/dist/main.js",
+      [],
+      null,
+      true,
+    );
+    wp_enqueue_script(
+      "fontawesome",
+      "https://kit.fontawesome.com/c91deddf7e.js",
+      [],
+      false,
+      true,
+    );
   }
 
   public function blockEditorStylesheets(): void
   {
-    wp_enqueue_style('schnapps-editor', get_template_directory_uri() . '/dist/main.css', false, null);
-    wp_enqueue_style('schnapps-editor-specific', get_template_directory_uri() . '/dist/editor.css', false, null);
+    wp_enqueue_style(
+      "schnapps-editor",
+      get_template_directory_uri() . "/dist/main.css",
+      false,
+      null,
+    );
+    wp_enqueue_style(
+      "schnapps-editor-specific",
+      get_template_directory_uri() . "/dist/editor.css",
+      false,
+      null,
+    );
   }
 
   public function blockEditorScripts(): void
   {
     wp_enqueue_script(
-      'schnapps-editor',
-      get_template_directory_uri() . '/dist/editor.js',
-      ['wp-blocks'],
-      filemtime(get_template_directory() . '/dist/editor.js'),
-      true
+      "schnapps-editor",
+      get_template_directory_uri() . "/dist/editor.js",
+      ["wp-blocks"],
+      filemtime(get_template_directory() . "/dist/editor.js"),
+      true,
     );
   }
 }
