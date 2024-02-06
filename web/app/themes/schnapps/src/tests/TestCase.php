@@ -6,8 +6,6 @@ use Mockery;
 
 use function Env\env;
 
-
-
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
   use CreateApplication;
@@ -18,13 +16,11 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
   {
     parent::setUp();
     $this->createApplication();
-    $this->client = new \GuzzleHttp\Client(
-      [
-        'base_uri' => env('WP_HOME'),
-        'cookies' => true,
-        'http_errors' => false,
-      ]
-    );
+    $this->client = new \GuzzleHttp\Client([
+      "base_uri" => env("WP_HOME"),
+      "cookies" => true,
+      "http_errors" => false,
+    ]);
   }
 
   public function tearDown(): void
