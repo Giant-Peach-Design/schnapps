@@ -9,9 +9,10 @@ class Api
 {
   public function __construct()
   {
-    Route::get('/example-route', function () {
+    // api routes are accessible at /wp-json/schnapps/v1/{route}
+    Route::get("/example-route", function () {
       return [
-        'message' => 'Hello World!',
+        "message" => "Hello World!",
       ];
     });
 
