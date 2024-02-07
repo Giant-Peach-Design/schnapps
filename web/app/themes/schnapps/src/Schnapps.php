@@ -77,10 +77,10 @@ class Schnapps extends SchnappsFramework
   public function stylesheets()
   {
     wp_enqueue_style(
-      "schnapps",
-      get_template_directory_uri() . "/dist/main.css",
-      false,
-      null,
+      handle: "schnapps",
+      src: get_template_directory_uri() . "/dist/main.css",
+      deps: false,
+      ver: null,
     );
   }
 
@@ -108,16 +108,16 @@ class Schnapps extends SchnappsFramework
   public function blockEditorStylesheets(): void
   {
     wp_enqueue_style(
-      "schnapps-editor",
-      get_template_directory_uri() . "/dist/main.css",
-      false,
-      null,
+      handle: "schnapps-editor",
+      src: get_template_directory_uri() . "/dist/main.css",
+      deps: false,
+      ver: null,
     );
     wp_enqueue_style(
-      "schnapps-editor-specific",
-      get_template_directory_uri() . "/dist/editor.css",
-      false,
-      null,
+      handle: "schnapps-editor-specific",
+      src: get_template_directory_uri() . "/dist/editor.css",
+      deps: false,
+      ver: null,
     );
   }
 
