@@ -1,36 +1,18 @@
 {
-  "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 3,
   "name": "giantpeach/column",
-  "version": "0.1.0",
   "title": "Column",
-  "category": "widgets",
-  "icon": "columns",
-  "description": "Example block scaffolded with Create Block tool.",
-  "parent": [
-    "giantpeach/columns"
+  "category": "design",
+  "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"1em\" viewBox=\"0 0 448 512\"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><defs><style>.fa-secondary{opacity:0.4;}</style></defs><path class=\"fa-primary\" d=\"M48 32C21.5 32 0 53.5 0 80V240c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48H48zm0 320c-26.5 0-48 21.5-48 48v32c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V400c0-26.5-21.5-48-48-48H48z\"/><path class=\"fa-secondary\" d=\"M304 32c-26.5 0-48 21.5-48 48v32c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48H304zm0 192c-26.5 0-48 21.5-48 48V432c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48H304z\"/></svg>",
+  "parent": "giantpeach/columns",
+  "keywords": [
+    "giantpeach"
   ],
   "supports": {
-    "anchor": true,
-    "html": false,
-    "layout": true
+    "jsx": true
   },
-  "textdomain": "test",
-  "editorScript": "file:./index.js",
-  "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css",
-  "attributes": {
-    "columnWidth": {
-      "type": "number",
-      "default": 6
-    },
-    "tabletColumnWidth": {
-      "type": "number",
-      "default": 6
-    },
-    "mobileColumnWidth": {
-      "type": "number",
-      "default": 4
-    }
-  }
+  "acf": {
+    "mode": "preview",
+    "renderCallback": "\\Giantpeach\\Schnapps\\Theme\\Blocks\\Column\\Column::display"
+  },
+  "editorStyle": "file:./editor.css"
 }
