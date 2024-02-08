@@ -1,5 +1,7 @@
 # Peach Schnapps
 
+![Schnapps](https://img.shields.io/badge/Peach-Schnapps-%23aea0fd?style=for-the-badge)
+
 ## What is Peach Schnapps
 
 Peach Schnapps is our Wordpress site boilerplate based on the [roots.io](http://roots.io) stack, making use of Bedrock for the site structure and the new WP Block Theme functionality for the theme.
