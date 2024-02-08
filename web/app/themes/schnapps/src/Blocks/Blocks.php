@@ -53,6 +53,7 @@ class Blocks extends SchnappsBlocks
 
     add_action('init', [$this, 'registerBlocks']);
     add_action('init', [$this, 'registerPatterns']);
+    add_action('acf/include_fields', [$this, 'registerFields']);
 
     add_filter('allowed_block_types_all', [$this, 'allowedBlockTypes'], 25, 2);
   }
@@ -99,5 +100,12 @@ class Blocks extends SchnappsBlocks
     ]);
 
     TitleLinkColumn::init();
+  }
+
+  public function registerFields(): void
+  {
+    foreach ($this->blocks as $block) {
+      $block::registerFields();
+    }
   }
 }
