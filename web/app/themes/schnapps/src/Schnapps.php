@@ -126,7 +126,7 @@ class Schnapps extends SchnappsFramework
     wp_enqueue_script(
       handle: "schnapps-editor",
       src: get_template_directory_uri() . "/dist/editor.js",
-      deps: ["wp-blocks"],
+      deps: ["wp-blocks", "wp-editor", "wp-edit-post"],
       ver: filemtime(get_template_directory() . "/dist/editor.js"),
       args: true,
     );
