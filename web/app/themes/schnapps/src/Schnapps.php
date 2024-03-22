@@ -123,13 +123,19 @@ class Schnapps extends SchnappsFramework
 
   public function blockEditorScripts(): void
   {
-    wp_enqueue_script(
-      handle: "schnapps-editor",
-      src: get_template_directory_uri() . "/dist/editor.js",
-      deps: ["wp-blocks", "wp-editor", "wp-edit-post"],
-      ver: filemtime(get_template_directory() . "/dist/editor.js"),
-      args: true,
-    );
+    $asset_file_path = get_parent_theme_file_path('/dist/editor/editor.asset.php');
+
+    if ( file_exists( $asset_file_path ) ) {
+      $assets = require_once $asset_file_path;
+
+      wp_enqueue_script(
+        handle: "schnapps-editor",
+        src: get_template_directory_uri() . "/dist/editor/editor.js",
+        deps: $assets['dependencies'],
+        ver: $assets['version'],
+        args: true,
+      );
+    }
 
     wp_enqueue_script(
       handle: "fontawesome",

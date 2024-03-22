@@ -192,3 +192,9 @@ The `Giantpeach\Schnapps\Blocks\Block` class handles block registration, renderi
 Patterns are collections of blocks that you can drop into the page. You click the pattern and the blocks that make up the pattern are inserted into the page, ready for you to edit.
 
 It’s also possible to create a new pattern, either in code or via the admin interface (which will be saved within the DB).
+
+### Wordpress Block editor
+
+Wodpress uses JS & React to create components in CMS. You can use src/Editor/editor.js file to make changes.
+
+To compile editor script use `npm run dev-editor` command. It will output the files to `/dist/editor`. These files are connected with CMS in `Schnapps.php` `blockEditorScripts` function
