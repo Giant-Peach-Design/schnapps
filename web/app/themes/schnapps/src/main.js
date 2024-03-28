@@ -42,14 +42,14 @@ const domReady = () => {
     inViewStop = inView(transitionableBlocks, ({ target }) => {
       animate(
         target,
-        { opactiy: 1, transform: "none" },
+        { opacity: 1, transform: "none" },
         { delay: 0.2, duration: 0.5, easing: [0.25, 0.1, 0.25, 1] },
       );
 
       return () => {
         animate(
           target,
-          { opactiy: 0, transform: "translateY(60px)" },
+          { opacity: 0, transform: "translateY(60px)" },
           { duration: 0.5, easing: [0.25, 0.1, 0.25, 1] },
         );
       };
