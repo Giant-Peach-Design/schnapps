@@ -5,7 +5,7 @@ export default function editorLinks() {
 
       if (editor) {
         editor.addEventListener("click", (event) => {
-          if(event.target.tagName === 'A') {
+          if(event.target.tagName === 'A' || event.target.closest('a')) {
             event.preventDefault();
           }
         });
