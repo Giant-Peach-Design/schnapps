@@ -1,8 +1,8 @@
 import { inView, animate } from "motion";
 import Alpine from "alpinejs";
 import intersect from "@alpinejs/intersect";
-import "./main.css";
 import Navigation from "./Blocks/HeaderNavigation/navigation";
+import "./main.css";
 
 Alpine.plugin(intersect);
 
@@ -11,15 +11,32 @@ Alpine.start();
 
 const domReady = () => {
   Navigation();
-  const banner = document.querySelectorAll(".banner");
-  let transitionableBlocks = document.querySelectorAll(".transition-block");
+  initModules();
+  initAnimations();
+};
 
-  if (banner.length) {
-    import("./blocks/banner/banner.js").then(({ default: Banner }) => {
-      Banner();
+
+/*
+
+Each module should be treated as an individual block. 
+Please pass each node as module param. 
+Module path is case-sensitive. Wrong path will throw an error on dev server after running `npm run build`.
+
+*/
+function initModules() {
+  // Banner
+  const bannerBlocks = document.querySelectorAll(".giantpeach-banner");
+  if (bannerBlocks.length) {
+    import("./blocks/Banner/banner.js").then(({ default: Banner }) => {
+      bannerBlocks.forEach(node => {
+        Banner(node);
+      });
     });
   }
+}
 
+function initAnimations() {
+  let transitionableBlocks = document.querySelectorAll(".transition-block");
   let inViewStop = inView(transitionableBlocks, ({ target }) => {
     animate(
       target,
@@ -55,6 +72,6 @@ const domReady = () => {
       };
     });
   });
-};
+}
 
 document.addEventListener("DOMContentLoaded", domReady);

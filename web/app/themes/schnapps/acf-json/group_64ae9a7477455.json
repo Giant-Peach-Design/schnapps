@@ -18,7 +18,9 @@
             },
             "choices": {
                 "small": "small",
-                "thumbnail": "thumbnail"
+                "thumbnail": "thumbnail",
+                "full": "full",
+                "banner": "banner"
             },
             "default_value": false,
             "return_format": "value",
@@ -300,8 +302,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701354900
+    "modified": 1713263653
 }

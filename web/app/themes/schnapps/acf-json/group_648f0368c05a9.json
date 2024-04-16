@@ -1,6 +1,6 @@
 {
     "key": "group_648f0368c05a9",
-    "title": "Image Block",
+    "title": "Image\/Media Block",
     "fields": [
         {
             "key": "field_648f03699420d",
@@ -100,13 +100,6 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "giantpeach\/image"
-            }
-        ],
-        [
-            {
-                "param": "block",
-                "operator": "==",
                 "value": "giantpeach\/media"
             }
         ]
@@ -120,5 +113,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1706628083
+    "modified": 1713263631
 }
