@@ -34,7 +34,10 @@
                 "acf-post-type": "acf-post-type",
                 "acf-taxonomy": "acf-taxonomy",
                 "acf-field-group": "acf-field-group",
-                "acf-field": "acf-field"
+                "acf-field": "acf-field",
+                "wp_font_family": "wp_font_family",
+                "wp_font_face": "wp_font_face",
+                "acf-ui-options-page": "acf-ui-options-page"
             },
             "default_value": false,
             "return_format": "value",
@@ -60,8 +63,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687523278
+    "modified": 1713274958
 }

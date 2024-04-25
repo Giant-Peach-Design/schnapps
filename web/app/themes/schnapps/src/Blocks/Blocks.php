@@ -4,18 +4,22 @@ namespace Giantpeach\Schnapps\Theme\Blocks;
 
 use Giantpeach\Schnapps\Blocks\Blocks as SchnappsBlocks;
 
+use Giantpeach\Schnapps\Theme\Blocks\Header\Header;
+use Giantpeach\Schnapps\Theme\Blocks\Footer\Footer;
+
 use Giantpeach\Schnapps\Theme\Blocks\Banner\Banner;
 use Giantpeach\Schnapps\Theme\Blocks\Button\Button;
 use Giantpeach\Schnapps\Theme\Blocks\Card\Card;
 use Giantpeach\Schnapps\Theme\Blocks\Column\Column;
 use Giantpeach\Schnapps\Theme\Blocks\Columns\Columns;
-use Giantpeach\Schnapps\Theme\Blocks\HeaderNavigation\HeaderNavigation;
 use Giantpeach\Schnapps\Theme\Blocks\Hero\Hero;
 use Giantpeach\Schnapps\Theme\Blocks\LatestNews\LatestNews;
 use Giantpeach\Schnapps\Theme\Blocks\Logo\Logo;
 use Giantpeach\Schnapps\Theme\Blocks\Media\Media;
 use Giantpeach\Schnapps\Theme\Blocks\NewsList\NewsList;
 use Giantpeach\Schnapps\Theme\Blocks\Slide\Slide;
+use Giantpeach\Schnapps\Theme\Blocks\SocialLinks\SocialLinks;
+
 use Giantpeach\Schnapps\Theme\Patterns\TitleLinkColumn;
 
 /**
@@ -33,6 +37,8 @@ class Blocks extends SchnappsBlocks
    * @var array
    */
   protected $blocks = [
+    Header::class,
+    Footer::class,
     Banner::class,
     Hero::class,
     Slide::class,
@@ -42,9 +48,9 @@ class Blocks extends SchnappsBlocks
     Button::class,
     Logo::class,
     Card::class,
-    HeaderNavigation::class,
     LatestNews::class,
     NewsList::class,
+    SocialLinks::class
   ];
 
   public function __construct()
@@ -74,9 +80,11 @@ class Blocks extends SchnappsBlocks
       'core/list-item',
       'core/block',
       'core/html',
+      'core/pattern',
+      'core/shortcode',
       'giantpeach/column',
       'gravityforms/form',
-      'core/embed',
+      // 'core/embed',
       'core/table',
     ], $registeredCustomBlocks);
   }

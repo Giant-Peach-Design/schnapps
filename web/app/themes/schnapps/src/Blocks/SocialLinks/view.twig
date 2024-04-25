@@ -1,0 +1,21 @@
+{% if socials %}
+	<div class="{{ wrapperClass }}">
+		<ul class="flex gap-x-4">
+	    {% for social in socials %}
+	    	<li>
+	        <a 
+	          class="inline-block text-[0px]" 
+	          href="{{ social.url }}" 
+	          target="_blank"
+	         >
+	        	<i class="text-3xl align-middle fa-brands {{ social.iconClass }}"></i>
+
+            {% if social.label %}
+              <span class="inline-block text-base ml-1 align-middle">{{ social.label | raw }}</span>
+            {% endif %}
+	        </a>
+	      </li>
+	    {% endfor %}
+		</ul>
+	</div>
+{% endif %}

@@ -1,0 +1,16 @@
+{
+  "name": "giantpeach/footer",
+  "title": "Footer",
+  "category": "giantpeach",
+  "icon": "smiley",
+  "keywords": [
+    "giantpeach"
+  ],
+  "supports": {
+    "jsx": true
+  },
+  "acf": {
+    "mode": "preview",
+    "renderCallback": "\\Giantpeach\\Schnapps\\Theme\\Blocks\\Footer\\Footer::display"
+  }
+}

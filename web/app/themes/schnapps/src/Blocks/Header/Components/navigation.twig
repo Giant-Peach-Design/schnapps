@@ -1,0 +1,35 @@
+{# Mobile / Side navigation. Keep semantic tags here #}
+<div style="transform: translateX(100%)" class="fixed w-full h-full top-0 left-0 overflow-auto text-white z-40 bg-black text-white" id="page-navbar-sidebar">
+	<nav class="pt-20">
+		<ul class="flex flex-col">
+			{% for item in navigation %}
+				<li class="relative group cursor-pointer border-b border-b-white/20 nav-item-js">
+					{% if item.children %}
+						<div class="" x-data="{ open: false }">
+							<div class="flex justify-between group items-center" @click="open = !open">
+								<a href="{{ item.url }}" class="flex-1 py-2" :class="open ? 'text-green' : 'text-white'">{{ item.title | raw }}</a>
+								<i class="text-lg fa-regular fa-chevron-down duration-300" :class="open ? 'rotate-180' : 'rotate-0'"></i>
+                {# Chevron / button to trigger subnav #}
+							</div>
+
+              {# Second level nav #}
+							<div class="grid duration-300 overflow-hidden" :class="open ? 'grid-rows-[1fr] opacity-1' : 'grid-rows-[0fr] opacity-0'">
+								<div class="overflow-hidden">
+									<ul class="pb-2">
+										{% for child in item.children %}
+											<li>
+												<a class="block py-2" href="{{ child.url }}">{{ child.title }}</a>
+											</li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div>
+						</div>
+					{% else %}
+						<a href="{{ item.url }}" class="block py-2">{{ item.title | raw }}</a>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+</div>  

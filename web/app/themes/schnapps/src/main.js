@@ -1,7 +1,7 @@
 import { inView, animate } from "motion";
 import Alpine from "alpinejs";
 import intersect from "@alpinejs/intersect";
-import Navigation from "./Blocks/HeaderNavigation/navigation";
+import Navigation from "./Blocks/Header/navigation";
 import "./main.css";
 
 Alpine.plugin(intersect);

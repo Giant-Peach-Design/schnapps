@@ -4,6 +4,7 @@ namespace Giantpeach\Schnapps\Theme;
 
 use Giantpeach\Schnapps\Framework\SchnappsFramework;
 use Giantpeach\Schnapps\Navigation\Navigation;
+use Giantpeach\Schnapps\Theme\PostTypes\Post;
 
 class Schnapps extends SchnappsFramework
 {
@@ -31,7 +32,45 @@ class Schnapps extends SchnappsFramework
   {
     parent::setupTheme();
 
+    add_theme_support( 'custom-spacing' );
+    remove_theme_support( 'core-block-patterns' );
+
+    add_action( 'after_setup_theme', function() {
+      $themeColours = $this->getThemeColours();
+
+      add_theme_support( 'editor-color-palette', $themeColours);
+      add_theme_support( 'disable-custom-colors' );
+      remove_theme_support( 'core-block-patterns' );
+      add_theme_support( 'custom-spacing' );
+    });
+
     //e.g. add_action('init', [$this, 'thingToRunOnInit']);
+  }
+
+  /**
+   * Sets up the colours used in WP Editor.
+   *
+   * @return array
+   */
+  public function getThemeColours(): array
+  {
+    return [
+        [
+            'name' => esc_attr__('Light', 'giantpeach'),
+            'slug' => 'light',
+            'color' => '#FBF4ED',
+        ],
+        [
+            'name' => esc_attr__('Dark Grey', 'giantpeach'),
+            'slug' => 'darkgrey',
+            'color' => '#202831',
+        ],
+        [
+            'name' => esc_attr__('Blue', 'giantpeach'),
+            'slug' => 'blue',
+            'color' => '#3F82BC',
+        ]
+    ];
   }
 
   /**
@@ -43,6 +82,7 @@ class Schnapps extends SchnappsFramework
   {
     // Register custom post types here
     //new Work();
+    new Post();
   }
 
   /**

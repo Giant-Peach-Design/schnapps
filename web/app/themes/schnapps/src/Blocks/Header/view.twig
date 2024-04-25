@@ -1,0 +1,42 @@
+<div class="{{ wrapperClass }} fixed top-0 left-0 w-full duration-300 z-50" id="page-navbar">
+  <div class="flex items-center justify-between py-2 lg:py-0 relative z-50 bg-gray-300">
+
+    {# Logo #}
+  	<a href="/" aria-label="Back to Home" class="inline-block">
+  		<img src="{{ logo }}" alt="Cyan Solutions"/>
+  	</a>
+
+    {# Desktop navigation #}
+  	<div class="w-10/12 hidden lg:block">
+  		<ul class="flex items-center justify-end gap-x-4">
+
+  			{% for item in navigation %}
+  				<li class="relative group cursor-pointer">
+  					<a href="{{ item.url }}" class="block py-6">{{ item.title | raw }}</a>
+  				  
+            {# Second level nav dropdown #}
+            {% if item.children %}
+  				    <ul class="absolute top-[100%] left-1/2 -translate-x-1/2 bg-gray-500 text-center hidden group-hover:block hover:block">
+  				      {% for child in item.children %}
+  				        <li class="border-b border-black last:border-none">
+                    <a class="block p-2 whitespace-nowrap hover:bg-slate-300" href="{{ child.url }}">{{ child.title | raw }}</a>
+                  </li>
+  				      {% endfor %}
+  				    </ul>
+  				  {% endif %}
+  				</li>
+  			{% endfor %}
+
+  		</ul>
+  	</div>
+
+    {# Burger btn #}
+    <div class="block lg:hidden">
+    	{% include 'src/Blocks/Header/Components/menu-button.twig' %}
+    </div>
+
+  </div>
+
+  {# Side navigation #}
+	{% include 'src/Blocks/Header/Components/navigation.twig' %}
+</div>

@@ -1,0 +1,22 @@
+<div class="{{ wrapperClass }} bg-gray-100 py-10">
+	<a href="/" aria-label="Back to Home" class="inline-block w-[300px]">
+		<img class="w-full" src="{{ logo }}" alt=""/>
+	</a>
+
+	<nav class="my-5">
+    <h2> {{ navigation.name | raw }}</h2>
+		<ul class="flex flex-col lg:flex-row gap-y-4 lg:gap-x-4">
+			{% for item in navigation.items %}
+				<li class="">
+					<a href="{{ item.url }}" class="">{{ item.title | raw}}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+
+  <div class="my-5">
+	 {{ socials | raw }}
+  </div>
+
+  <p>{{ copyrightText | raw }}</p>
+</div>
