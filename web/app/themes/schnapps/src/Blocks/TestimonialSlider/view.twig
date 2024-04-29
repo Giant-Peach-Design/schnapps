@@ -1,0 +1,21 @@
+<section class="{{ wrapperClass }}">
+    <div class="flex items-end justify-between mb-12">
+      <div class="[&_svg]:max-lg:w-auto [&_svg]:max-lg:h-10">{{ include('images/quote.svg') }}</div>
+      <div>
+        <button type="button" class="slider-prev text-[18px] size-[44px] rounded-full leading-[44px] text-black bg-white [.style-light_&]:bg-black [.style-light_&]:text-white duration-150 hover:!bg-green">
+          <i class="fa-sharp fa-light fa-arrow-left" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="slider-next text-[18px] size-[44px] rounded-full leading-[44px] text-black bg-white [.style-light_&]:bg-black [.style-light_&]:text-white duration-150 hover:!bg-green ml-4 ">
+          <i class="fa-sharp fa-light fa-arrow-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <InnerBlocks class="gp-testimonial-slider [&_.flickity-viewport]:duration-300 [&_.flickity-viewport]:transition-height [&_.giantpeach-testimonial]:lg:pr-[10%]" allowedBlocks="{{ allowedBlocks | wp_json_encode }}" template="{{ template | wp_json_encode }}" />
+
+    {% if link %}
+      <div class="mt-10 lg:mt-0 lg:text-right lg:-translate-y-full link-wrap">
+        {% include 'button.twig' %}
+      </div>
+    {% endif %}
+</section>

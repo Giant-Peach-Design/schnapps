@@ -9,8 +9,9 @@
     "mode": "preview",
     "renderCallback": "Giantpeach\\Schnapps\\Theme\\Blocks\\Button\\Button::display"
   },
-  "align": "full",
   "supports": {
-    "jsx": true
+    "jsx": true,
+    "align": [ "left", "right", "center" ],
+    "alignWide": false
   }
 }

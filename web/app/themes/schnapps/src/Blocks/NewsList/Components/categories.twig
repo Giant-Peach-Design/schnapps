@@ -1,0 +1,26 @@
+{% set elClass = 'inline-block text-base cursor-pointer nowrap hover:opacity-50 peer-checked/catradio:text-primary' %}
+
+<div x-ref="categories" class="categories relative mb-5">
+  <ul class="flex justify-center lg:justify-start flex-wrap gap-2 lg:gap-3">
+    <li>
+      <input class="peer/catradio !hidden" type="radio" x-model="selectedCategory" name="cat" value="all" x-on:change="updateSelectedCategory('all')" id="cat-all">
+      <label for="cat-all" class="{{ elClass }}" data-category="">All resources</label>
+    </li>
+
+    {% for category in categories %}
+      <li>
+        <input class="peer/catradio !hidden" type="radio" x-model="selectedCategory" name="cat" value="{{ category.slug }}" x-on:change="updateSelectedCategory('{{ category.slug }}')" id="cat-{{ category.slug }}">
+        <label for="cat-{{ category.slug }}" class="{{ elClass }}" data-category="{{ category.slug }}">{{ category.name }}</label>
+      </li>
+    {% endfor %}
+  </ul>
+
+  {# loader #}
+  {# svg animation loading issue when using x-show="isLoading"  (https://iconify.design/docs/articles/svg-animation-issues/). Use opacity/visiblity transition instead  #}
+  <div 
+    class="absolute top-full left-1/2 -translate-x-1/2 lg:left-auto mt-3 lg:right-0 lg:mt-0 lg:transfrom-none lg:top-1.5 lg:mb-[16px] [&_svg]:w-[40px] duration-100"
+    :class="isLoading ? 'opacity-100 visible' : 'invisible opacity-0'"
+  >
+    {% include "images/loader.svg" %}
+  </div>
+</div>

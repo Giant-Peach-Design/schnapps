@@ -33,6 +33,16 @@ function initModules() {
       });
     });
   }
+
+  // Testimonial Slider
+  const testimonialSliderNodes = document.querySelectorAll(".giantpeach-testimonialslider");
+  if (testimonialSliderNodes.length) {
+    import("./Blocks/TestimonialSlider/testimonialSlider.js").then(({default: TestimonialSlider}) => {
+      testimonialSliderNodes.forEach(slider => {
+        TestimonialSlider(slider);
+      });
+    });
+  }
 }
 
 function initAnimations() {

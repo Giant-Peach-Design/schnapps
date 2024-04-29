@@ -53,3 +53,62 @@ Requires at least:  5.9
 .is-style-small + * {
   @apply !mt-0;
 }
+
+@layer components {
+  /* Button */
+  .btn {
+    @apply relative inline-block text-center text-base overflow-hidden rounded-[25px] w-fit whitespace-nowrap text-black;
+  }
+
+  .btn::before {
+    @apply block content-[''] absolute inset-0 size-full bg-black rounded-[25px] duration-300 -translate-x-[calc(100%_-_44px)];
+  }
+
+  .btn > i {
+    @apply relative align-middle inline-block text-lg size-[44px] leading-[44px] text-white duration-150;
+  }
+
+  .btn > span {
+    @apply inline-block align-middle font-semibold duration-300 pl-4;
+    mix-blend-mode: difference;
+  }
+
+  .btn:hover {
+    @apply before:translate-x-0;
+  }
+
+  .btn:hover > span {
+    @apply -translate-x-8;
+  }
+
+  .btn:hover > i {
+    @apply delay-100 opacity-0;
+  }
+
+  /* .btn-simple */
+  .btn-simple {
+    @apply relative inline-block text-center text-base rounded-full text-white bg-black px-8 py-3 duration-150 font-semibold;
+  }
+  .btn-simple:hover {
+    @apply text-black bg-white;
+  }
+
+  .wp-block-giantpeach-button.alignleft {
+    float: none !important;
+    margin-inline-start: 0 !important;
+    margin-inline-end: 0 !important;
+    text-align: left;
+  }
+  .wp-block-giantpeach-button.aligncenter {
+    float: none !important;
+    margin-inline-start: 0 !important;
+    margin-inline-end: 0 !important;
+    text-align: center;
+  }
+  .wp-block-giantpeach-button.alignright {
+    float: none !important;
+    margin-inline-start: 0 !important;
+    margin-inline-end: 0 !important;
+    text-align: right; 
+  }
+}

@@ -1,13 +1,13 @@
 {
-    "key": "group_64a4271daac91",
-    "title": "Latest News Block",
+    "key": "group_65f41e653df29",
+    "title": "Testimonial Slider Block",
     "fields": [
         {
-            "key": "field_64a4271d63074",
-            "label": "Number of Posts",
-            "name": "number_of_posts",
+            "key": "field_65f41e65fc323",
+            "label": "Link to reviews",
+            "name": "link",
             "aria-label": "",
-            "type": "number",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,13 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": 3,
-            "min": "",
-            "max": "",
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": ""
+            "return_format": "array"
         }
     ],
     "location": [
@@ -30,7 +24,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "giantpeach\/latestnews"
+                "value": "giantpeach\/testimonialslider"
             }
         ]
     ],
@@ -43,5 +37,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688479549
+    "modified": 1710497427
 }

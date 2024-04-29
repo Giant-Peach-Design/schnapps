@@ -1,6 +1,6 @@
 {
     "key": "group_648c5738d65fe",
-    "title": "Slide Block",
+    "title": "BannerSlide Block",
     "fields": [
         {
             "key": "field_6499a19b2e9d5",
@@ -33,7 +33,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "giantpeach\/slide"
+                "value": "giantpeach\/bannerslide"
             }
         ]
     ],
@@ -46,5 +46,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687789990
+    "modified": 1714054006
 }

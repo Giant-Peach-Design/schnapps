@@ -1,0 +1,16 @@
+.giantpeach-testimonialslider {
+  overflow-x: scroll;
+}
+.giantpeach-testimonialslider .gp-testimonial-slider {
+  display: flex;
+}
+.giantpeach-testimonialslider .gp-testimonial-slider > div {
+  flex: 1;
+  min-width: 80%;
+  padding: 10px;
+}
+
+.giantpeach-testimonialslider .link-wrap {
+  transform: none !important;
+  margin-top: 50px;
+}

@@ -1,6 +1,6 @@
 {
-  "name": "giantpeach/slide",
-  "title": "Slide",
+  "name": "giantpeach/bannerslide",
+  "title": "Banner: Slide",
   "category": "giantpeach",
   "icon": "smiley",
   "parent": ["giantpeach/banner"],
@@ -10,7 +10,7 @@
   },
   "acf": {
     "mode": "preview",
-    "renderCallback": "\\Giantpeach\\Schnapps\\Theme\\Blocks\\Slide\\Slide::display"
+    "renderCallback": "\\Giantpeach\\Schnapps\\Theme\\Blocks\\BannerSlide\\BannerSlide::display"
   },
   "editorStyle": "file:./editor.css"
 }

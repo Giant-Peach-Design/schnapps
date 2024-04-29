@@ -1,0 +1,14 @@
+{
+  "name": "giantpeach/newsrelated",
+  "title": "News: Related",
+  "category": "gp_blocks",
+  "icon": "smiley",
+  "keywords": ["giantpeach"],
+  "supports": {
+    "jsx": true
+  },
+  "acf": {
+    "mode": "preview",
+    "renderCallback": "\\Giantpeach\\Schnapps\\Theme\\Blocks\\NewsRelated\\NewsRelated::display"
+  }
+}

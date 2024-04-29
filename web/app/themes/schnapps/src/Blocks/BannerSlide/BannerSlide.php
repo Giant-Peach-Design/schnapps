@@ -1,26 +1,28 @@
 <?php
 
-namespace Giantpeach\Schnapps\Theme\Blocks\Slide;
+namespace Giantpeach\Schnapps\Theme\Blocks\BannerSlide;
 
 use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 use Giantpeach\Schnapps\Blocks\Block;
 use Giantpeach\Schnapps\Images\Facades\Images;
 
-class Slide extends Block implements BlockInterface
+class BannerSlide extends Block implements BlockInterface
 {
-  public static string $blockName = 'giantpeach/slide';
+  public static string $blockName = 'giantpeach/bannerslide';
 
   public array $allowedBlocks = [
-    'giantpeach/columns',
     'core/paragraph',
     'core/heading',
-    'core/list',
-    'giantpeach/button',
-    'giantpeach/small-heading'
+    'giantpeach/button'
   ];
-  public string $proseColor;
+
+  public array $template = [
+    ['core/heading', ['level' => 2, 'placeholder' => 'Slide heading (optional)']],
+    ['core/paragraph', ['placeholder' => 'During the strategic definition stage, the client’s business case and strategic brief are assessed to ensure they have been properly considered’ and the scope of the project is defined. This stage is not about design or the practical details.', 'className' => '']],
+  ];
+
+
   public $image;
-  public $webp;
   public $mobile;
   public $mobileWebp;
   public $alt;
@@ -38,7 +40,7 @@ class Slide extends Block implements BlockInterface
     $imgField = get_field('image');
     $mobileImgField = get_field('mobile');
 
-    $slide = new Slide(
+    $slide = new BannerSlide(
       imageId: $imgField['ID'] ?? -1,
       mobileImageId: $mobImgField['ID'] ?? -1,
     );

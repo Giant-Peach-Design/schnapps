@@ -1,0 +1,21 @@
+{
+  "name": "giantpeach/testimonialslider",
+  "title": "Testimonial Slider",
+  "category": "giantpeach",
+  "icon": "smiley",
+  "providesContext": {
+    "giantpeach/testimonialslider": "data"
+  },
+  "keywords": [
+    "giantpeach"
+  ],
+  "supports": {
+    "jsx": true
+  },
+  "acf": {
+    "mode": "preview",
+    "renderCallback": "\\Giantpeach\\Schnapps\\Theme\\Blocks\\TestimonialSlider\\TestimonialSlider::display"
+  },
+  "editorStyle": "file:./editor.css",
+  "style": ["file:./style.css", "giantpeach-testimonialslider"]
+}

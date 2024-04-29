@@ -1,6 +1,6 @@
-<div class="relative {% if isAdmin %} flex-shrink-0 {% endif %}">
+<div class="{{ wrapperClass }} relative {% if isAdmin %} flex-shrink-0 {% endif %}">
   {% if image %}
-  {% include "image.twig" with {aspect: "aspect-[375/480] lg:aspect-video"} %}
+    {% include "image.twig" with {aspect: "aspect-[375/480] lg:aspect-video"} %}
   {% endif %}
 
   {% if image is empty %}
@@ -14,7 +14,10 @@
   <div
     class="absolute inset-0 flex items-center justify-center prose {{ classes.prose.color }} {{ classes.prose.size }} max-w-none">
     <div class=" container py-8 {% if isAdmin %}outline-1 outline-dashed transition-all duration-300{% endif %}">
-      <InnerBlocks allowedBlocks="{{ allowedBlocks | wp_json_encode }}" />
+      <InnerBlocks 
+        allowedBlocks="{{ allowedBlocks | wp_json_encode }}" 
+        template="{{ template | wp_json_encode }}" 
+      />
     </div>
   </div>
 

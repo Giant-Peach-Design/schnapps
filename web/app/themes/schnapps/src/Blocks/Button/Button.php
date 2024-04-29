@@ -9,31 +9,29 @@ use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 class Button extends Block implements BlockInterface
 {
   public static string $blockName = 'giantpeach/button';
-  public $text;
-  public $url;
-  public $target;
+  
+  public $link;
   public $rel;
-  public $size;
+  public $btn_style;
+  public $position;
 
-  public function __construct($text, $url, $target, $rel, $size)
+  public function __construct($link, $rel, $btnStyle, $position)
   {
-    $this->text = $text;
-    $this->url = $url;
-    $this->target = $target;
+    $this->link = $link ? $link : null;
     $this->rel = $rel;
-    $this->size = $size;
+    $this->btn_style = $btnStyle;
+    $this->position = $position;
 
-    $test = get_field('test');
+    parent::__construct();
   }
 
   public static function display(): void
   {
     $button = new Button(
-      get_field('text'),
-      get_field('url'),
-      get_field('target'),
-      get_field('rel'),
-      get_field('size'),
+      link: get_field('link'),
+      rel: get_field('rel'),
+      btnStyle: get_field('btn_style'),
+      position: get_field('position')
     );
     $button->render();
   }

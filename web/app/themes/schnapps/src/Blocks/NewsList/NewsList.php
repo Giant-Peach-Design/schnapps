@@ -11,19 +11,31 @@ class NewsList extends Block implements BlockInterface
 
   public static string $blockName = 'giantpeach/newslist';
 
-  public $posts;
+  public $postType = 'post';
+  public $taxonomy = 'category';
+  public $perPage;
+  public $showCategoryFilter;
+  public $categories;
 
-  public function __construct($perPage = 8)
+  public function __construct($perPage = 8, $showCategoryFilter = false)
   {
-    $this->posts = Post::get($perPage);
-
     parent::__construct();
+
+    $this->perPage = $perPage ? $perPage : 2;
+    $this->categories = $showCategoryFilter ? get_categories( [
+      'taxonomy' => $this->taxonomy,
+      'hide_empty' => true,
+      'show_option_all' => 'All',
+      'exclude' => [1],
+    ] ) : null;
   }
 
   public static function display(): void
   {
-    $postsPerPage = get_field('posts_per_page') ?? 8;
-    $newsList = new NewsList($postsPerPage);
+    $newsList = new NewsList(
+      perPage: get_field('posts_per_page') ?? 8,
+      showCategoryFilter: get_field('show_category_filter') ?? false,
+    );
     $newsList->render();
   }
 }

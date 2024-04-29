@@ -1,12 +1,13 @@
 <section class="{{ wrapperClass }} relative overflow-hidden">
-
-    <div class="blaze-slider">
-        <div class="blaze-container">
-            <div class="blaze-track-container">
-                <InnerBlocks className="blaze-track {% if isAdmin %} overflow-x-scroll flex {% endif %}"
-                    allowedBlocks="{{ allowedBlocks | wp_json_encode }}" />
-            </div>
-        </div>
+  <div class="blaze-slider">
+    <div class="blaze-container">
+      <div class="blaze-track-container">
+        <InnerBlocks 
+          className="blaze-track {% if isAdmin %} overflow-x-scroll flex {% endif %}" 
+          allowedBlocks="{{ allowedBlocks | wp_json_encode }}" 
+          template="{{ template | wp_json_encode }}" 
+        />
+      </div>
     </div>
-
+  </div>
 </section>

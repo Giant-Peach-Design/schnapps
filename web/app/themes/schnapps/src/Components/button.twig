@@ -1,7 +1,27 @@
-<a 
-  href="{{ url }}" 
-  class=" not-prose inline-block font-normal text-4xl uppercase rounded-l-full rounded-r-full px-4 py-2 border border-black no-underline {{ class }} {{ size }} {{ align }}" 
-  target="{{ target }}" 
-  rel="{{ rel }}">
-    {{ text }}
-</a>
+{% if (link.title and link.url) or isAdmin %}
+  {% set btnClasses = 'btn' %}
+
+  {% if btn_style == 'simple' %}
+    {% set btnClasses = 'btn-simple' %}
+  {% endif %}
+
+  {% if blockAttributes.class %}
+    <div class="{{ blockAttributes.class }}">
+  {% endif %}
+
+  <a 
+    href="{{ link.url }}" 
+    class="block-btn not-prose {{ btnClasses }} {{ custom_classes }}" 
+    target="{{ link.target }}" 
+    rel="{{ rel }}"
+  >
+    {% if btn_style != 'simple' %}
+    <i class="fa-sharp fa-light fa-arrow-right"></i>
+    {% endif %}
+    <span>{{ (isAdmin and (not link.title)) ? '<span>Configure</span>' : link.title | raw }}</span>
+  </a>
+  
+  {% if blockAttributes.class %}
+    </div>
+  {% endif %}
+{% endif %}

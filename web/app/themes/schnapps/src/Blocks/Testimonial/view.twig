@@ -1,0 +1,33 @@
+{% if quote %}
+<blockquote class="{{ wrapperClass }} relative w-full">
+  <div>
+    {% if not isChildOfSlider %}
+      <div class="mb-12 [&_svg]:max-lg:w-auto [&_svg]:max-lg:h-10">
+        {{ include('images/quote.svg') }}
+      </div>
+    {% endif %}
+
+    <p class="text-6xl">{{ (not quote and isAdmin) ? 'Add Quote.' : quote }}</p>
+
+    {% if stars %}
+      <div class="my-6">
+        {% for i in 1..5 %}
+          <i class="text-green-500 text-[20px] fa-sharp fa-star {{ i <= stars ? 'fa-solid' : 'fa-light' }}"></i>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if author or cite %}
+      <footer class="mt-6 2xl">
+        {% if author %}
+          <cite class="block author mb-2">{{ author }}</cite>
+        {% endif %}
+
+        {% if cite %}
+          <cite class="block cite">{{ cite }}</cite>
+        {% endif %}
+      </footer>
+    {% endif %}
+  </div>
+</blockquote>
+{% endif %}

@@ -1,0 +1,19 @@
+<section class="{{ wrapperClass }}">
+  <div class="flex justify-between mb-10 lg:mb-16 items-center">
+    {% if section_title %}
+      <h2>{{ section_title }}</h2>
+    {% endif %}
+    
+    {% if archiveLink %}
+      <div class="hidden lg:inline-block leading-base">
+        {% include 'button.twig' with {'link': archiveLink} %}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="grid items-start md:grid-cols-2 gap-5 lg:gap-x-[25px] lg:gap-y-[30px]">
+    {% for post in posts %}
+      {% include 'src/Components/post-card.twig' with post %}
+    {% endfor %}
+  </div>
+</section>

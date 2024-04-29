@@ -1,30 +1,148 @@
-  <section x-data="newsList" class="{{ classes.block.name }} {{ classes.block.spacing }}">
-    <div class="container ">
-      <div x-ref="list" class="flex flex-wrap -mx-4">
-        {% include "src/Blocks/NewsList/items.twig" %}
-      </div>
-      <div x-intersect:enter="enter"></div>
-    </div>
+  <section 
+    class="{{ wrapperClass }} max-w-[900px] mx-auto py-20"
+    x-data="newsList({{ perPage ?: 8 }}, '/wp-json/schnapps/v1/news-items')" 
+  >
+    {# Categories #}
+    {% if categories %}
+      {% include "src/Blocks/NewsList/Components/categories.twig" %}
+    {% endif %}
+
+    {% if isAdmin %}
+      <div class="bg-slate-300 py-10 text-center">Post List</div>
+    {% else %}
+      <div x-ref="list" class="grid items-start md:grid-cols-2 gap-5 lg:gap-x-[25px] lg:gap-y-[30px]"></div>
+    {% endif %}
+
+    {# Pagination #}
+    {% include "src/Blocks/NewsList/Components/pagination.twig" %}
   </section>
 
   <script>
   document.addEventListener('alpine:init', () => {
-    Alpine.data('newsList', () => ({
-      currentPage: 1,
-      posts: null,
-      enter() {
-        this.currentPage++;
+    Alpine.data('newsList', (perPage, fetchUrl) => ({
+      isLoading: false,
+      fetchController: null,
+      queryParams: null,
+      selectedCategory: 'all',
+      defaultParams: {
+        fetchUrl: fetchUrl,
+        perPage: perPage ?? 8,
+      },
+      pagination: {
+        currentPageNumber: 1,
+        hasPagination: false,
+        totalPages: 1
+      },
 
-        fetch(`/wp-json/schnapps/v1/news-items?page=${this.currentPage}`)
-          .then(response => response.text())
+      init() {
+        this.readUrlParams();
+        this.runQuery();
+      },
+
+      rebuildParams() {
+        let queryParams = new URL(window.location.href);
+        
+        queryParams.searchParams.delete('pagenum');
+        queryParams.searchParams.delete('category');
+
+        if (this.selectedCategory && this.selectedCategory != 'all') {
+          queryParams.searchParams.append("category", this.selectedCategory);
+        }
+
+        if (this.pagination.currentPageNumber > 1) {
+          queryParams.searchParams.append('pagenum', this.pagination.currentPageNumber);
+        }
+
+        this.params = queryParams.searchParams;
+      },
+
+      readUrlParams() {
+        // Get params from url, update inputs and trigger filter if params are present
+        const queryParams = new URL(window.location.href);
+
+        if (parseInt(queryParams.searchParams.get('pagenum'))) {
+          this.pagination.currentPageNumber = parseInt(queryParams.searchParams.get('pagenum'));
+        }
+        if (queryParams.searchParams.get('category')) {
+          this.selectedCategory = queryParams.searchParams.get('category');
+        }
+      },
+
+      updateSelectedCategory(value) {
+        // this.selectedCategory = value; // selectedCategory auto updates using x-model
+        this.pagination.currentPageNumber = 1;
+
+        this.runQuery();
+      },
+
+      getFetchUrl() {
+        return `${this.defaultParams.fetchUrl}${this.params ? '?' + this.params : ''}`;
+      },
+
+      updateCurrentUrl() {
+         // Update URL based on params set.
+        if (this.params && this.params.size) {
+          window.history.replaceState({}, '', `${location.pathname}?${this.params}`);
+        } else {
+          window.history.replaceState({}, '', `${location.pathname}`);
+        }
+      },
+
+      runQuery(scrollToTop) {
+        if (this.fetchController) {
+          this.fetchController.abort({message: 'Fetching interrupted by user.'});
+        }
+
+        this.fetchController = new AbortController();
+
+        this.rebuildParams();
+        this.isLoading = true;
+
+        this.updateCurrentUrl();
+
+        this.params ? this.params.append("per_page", this.defaultParams.perPage) : '';
+
+        const fetchUrl = this.getFetchUrl();
+
+        fetch(fetchUrl, {
+          signal: this.fetchController.signal
+        })
+          .then(response => response.json())
           .then(data => {
-            this.posts = data;
-            this.$refs.list.insertAdjacentHTML('beforeend', data);
-            this.$dispatch('block:load');
+            this.fetchController = null;
+
+            // this.$refs.list.querySelectorAll('.transition-block').forEach(el => {
+            //   el.style.opacity = 0;
+            // });
+
+            if (scrollToTop) {
+              this.$root.scrollIntoView({ behavior: "smooth"});
+            }
+
+            setTimeout(_ => {
+              this.pagination.totalPages = data.pagination.total_pages;
+              this.pagination.hasPagination = (parseInt(data.pagination.total_pages) > 1);
+              this.isLoading = false;
+
+              if (data.posts && data.posts.length) {
+                this.$refs.list.innerHTML = data.posts;
+              } else {
+                this.$refs.list.innerHTML = "<p>No posts found. Please try a different search</p>";
+              }
+
+              this.$dispatch('block:load');
+            }, 150);
           })
+          .catch((err) => {
+            console.error(`Fetch error: ${err.message}`);
+          });
       },
-      leave() {
-      },
+
+      getPage(page) {
+        this.pagination.currentPageNumber = page;
+        this.rebuildParams();
+        this.runQuery(true);
+      }
     }))
   });
 </script>

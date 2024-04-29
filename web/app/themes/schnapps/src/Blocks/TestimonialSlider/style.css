@@ -1,0 +1,12 @@
+.giantpeach-testimonialslider {
+
+}
+
+.giantpeach-testimonialslider .flickity-cell {
+  opacity: 0 !important;
+  transition: opacity 600ms ease !important;
+}
+
+.giantpeach-testimonialslider .flickity-cell.is-selected {
+  opacity: 1 !important;
+}

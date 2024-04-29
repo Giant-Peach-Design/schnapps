@@ -1,0 +1,46 @@
+{% set paginationBtnClass = 'inline-block text-center size-[36px] leading-[34px] rounded-full bg-white border border-black/12 duration-150 text-black' %}
+
+<div class="mt-15 lg:mt-20 relative">
+
+  <ul class="flex justify-center flex-wrap gap-[6px] !transfrom-none" x-show="pagination.hasPagination">
+    <li class="mr-3">
+      <button 
+          x-on:click="getPage(pagination.currentPageNumber - 1)" 
+          class="{{ paginationBtnClass }}"  
+          :class="pagination.currentPageNumber != 1 ? 'hover:bg-black hover:border-black hover:text-white' : 'text-black/40 opacity-80'"
+          x-bind:disabled="pagination.currentPageNumber == 1"
+        >
+        <i class="inline-block fa-sharp fa-regular fa-arrow-left"></i>
+      </button>
+    </li>
+    <template x-for="i in pagination.totalPages">
+        <li>
+          <button 
+            x-text="i" 
+            x-on:click="pagination.currentPageNumber != i && getPage(i)" 
+            class="{{ paginationBtnClass }}" 
+            :class="pagination.currentPageNumber == i ? 'bg-slate-400 border-slate-400' : 'bg-white hover:bg-slate-400'"
+          ></button>
+        </li>
+    </template>
+    <li class="ml-3">
+      <button 
+          x-on:click="getPage(pagination.currentPageNumber + 1)" 
+          class="{{ paginationBtnClass }}" 
+          :class="pagination.currentPageNumber == pagination.totalPages ? 'text-black/40 opacity-80' : 'hover:bg-black hover:border-black hover:text-white'" 
+          x-bind:disabled="pagination.currentPageNumber == pagination.totalPages"
+        >
+        <i class="inline-block fa-sharp fa-light fa-arrow-right"></i>
+      </button>
+    </li>
+  </ul>
+
+  {# loader #}
+  {# svg animation loading issue when using x-show="isLoading"  (https://iconify.design/docs/articles/svg-animation-issues/). Use opacity/visiblity transition instead  #}
+  <div 
+    class="absolute left-1/2 bottom-full mb-[16px] -translate-x-1/2 [&_svg]:w-[32px] duration-100"
+    :class="isLoading ? 'opacity-100 visible' : 'invisible opacity-0'"
+  >
+    {% include "images/loader.svg" %}
+  </div>
+</div>

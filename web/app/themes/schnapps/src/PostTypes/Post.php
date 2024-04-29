@@ -46,86 +46,130 @@ class Post
             ]
           ]
         ]
-      ]
+      ],
+      [ 'giantpeach/newsrelated', ['data' => ["section_title" => "Related News", "display_related" => "1"]]]
     ];
   }
 
-  protected static function formatForOutput($posts)
+  public static function formatPostOutput($posts)
   {
+    // Post data used in post-card.twig template
+    if (!$posts) return [];
+
     $postsOutput = [];
 
-    if ($posts) {
-      foreach ($posts as $post) {
-        $p = [];
-        $p['id'] = $post->id;
-        $p['title'] = $post->title;
-        $p['link']  = [
-          'url' => get_permalink($post->id),
-          'title' => $post->title
-        ];
+    foreach ($posts as $post) {
+      $postCategories = get_the_category($post->id);
+      $postCategory = $postCategories ? $postCategories[0] : null;
 
-        $thumbnailId = get_post_thumbnail_id($post->id);
-        $p['thumbnailId'] = $thumbnailId;
-        $p['image'] = Images::get($thumbnailId, 'post');
+      $p = [];
+      $p['id'] = $post->id;
+      $p['title'] = $post->title;
+      $p['date'] = get_the_date("M j, Y", $post->id);
+      $p['category'] = $postCategory ? [
+        'name' =>  $postCategory->name,
+        'slug' =>  $postCategory->slug,
+        'url' =>  get_permalink(get_field('news_page', 'option')) . '?category=' . $postCategory->slug,
+      ] : null;
 
-        $postsOutput[] = $p;
-      }
+      $p['link']  = [
+        'url' => get_permalink($post->id),
+        'title' => __('Read Article')
+      ];
+
+      $p['image'] = Images::get(get_post_thumbnail_id($post->id), 'article-tile');
+
+      $postsOutput[] = $p;
     }
 
     return $postsOutput;
   }
 
 
-  public static function get(int $perPage = 8, int $page = 1): array
+  public static function get(int $perPage = 9, int $page = 1): array
   {
-    $posts = Query::getPosts(
-      'post',
-      $perPage,
-      [
-        'paged' => $page,
-        'order' => 'DESC',
-        'orderby' => 'date',
-        'post_status' => 'publish'
-      ]
-    );
+    $args = [
+      'paged' => $page,
+      'order' => 'DESC',
+      'orderby' => 'date',
+      'post_status' => 'publish'
+    ];
 
-    return self::formatForOutput($posts);
+    $posts = Query::getPosts('post', $perPage, $args);
+
+    return self::formatPostOutput($posts);
+  }
+
+  public static function getResults(int $perPage = 9, $page = 1, $taxonomy = null, $categorySlug = null): array
+  { 
+    $args = [
+      'paged' => $page,
+      'order' => 'DESC',
+      'orderby' => 'date',
+      'post_status' => 'publish'
+    ];
+
+    if ($taxonomy && $categorySlug) {
+      $args['tax_query'] = [
+        [
+          'taxonomy' => $taxonomy,
+          'field'    => 'slug',
+          'terms'    => $categorySlug,
+        ]
+      ];
+    }
+
+    $outputArr = Query::getQueryResults('post', $perPage, $args);
+
+    if ($outputArr['posts']) {
+      $outputArr['posts'] = self::formatPostOutput($outputArr['posts']);
+
+      $outputArr['posts'] = Twiglet::getInstance()->render("src/Blocks/NewsList/items.twig", [
+        'posts' => $outputArr['posts']
+      ]);
+    }
+
+    return $outputArr;
   }
 
   public static function related(int $perPage, int $postId)
   {
-    $posts = Query::getPosts(
-      'post',
-      $perPage,
-      [
+    $postCategories = get_the_category(); // Query based on current post category.
+    // $postCategories = false;
+
+    $args = [
         'order' => 'DESC',
         'orderby' => 'date',
         'post_status' => 'publish',
         'post__not_in' => [$postId]
-      ]
+    ];
+
+    if ($postCategories && count($postCategories)) {
+      $args['tax_query'] = [
+        [
+          'taxonomy' => 'category',
+          'field'    => 'term_id',
+          'terms'    => $postCategories[0]->cat_ID,
+        ]
+      ];
+    }
+
+    $posts = Query::getPosts(
+      'post',
+      $perPage,
+      $args
     );
 
-    return self::formatForOutput($posts);
-  }
-
-  public static function getPage($page = 2)
-  {
-    $posts = self::get(9, $page);
-
-    Twiglet::getInstance()->display("src/Blocks/NewsList/items.twig", [
-      'posts' => $posts
-    ]);
+    return self::formatPostOutput($posts);
   }
 
   public static function getPageRequest(WP_REST_Request $request)
   {
-    $page = $request->get_param('page') ?? 2;
-    $posts = self::getPage($page);
+    $per_page = $request->get_param('per_page') ?? 8;
+    $page = $request->get_param('pagenum') ?? 1;
+    $taxonomy = 'category';
+    $categorySlug = $request->get_param('category');
 
-    if ($posts) {
-      return $posts;
-    }
-
-    return;
+    return self::getResults($per_page, $page, $taxonomy, $categorySlug);
   }
 }

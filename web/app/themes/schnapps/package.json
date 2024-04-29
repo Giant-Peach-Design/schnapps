@@ -39,6 +39,8 @@
     "alpinejs": "^3.12.2",
     "blaze-slider": "^1.9.3",
     "body-scroll-lock": "^4.0.0-beta.0",
+    "flickity": "^3.0.0",
+    "flickity-fade": "^2.0.0",
     "lodash.throttle": "^4.1.1",
     "motion": "^10.16.2",
     "react": "^18.2.0",

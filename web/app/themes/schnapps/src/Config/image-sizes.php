@@ -11,6 +11,29 @@ return [
   "full" => [
     "q" => 100,
   ],
+  "article-tile" => [
+    "desktop" => [
+      "w" => 450,
+      "h" => 300,
+      "fit" => "crop",
+      "dpr" => 2,
+      "q" => 90,
+    ],
+    "mobile" => [
+      "w" => 300,
+      "h" => 200,
+      "fit" => "crop",
+      "dpr" => 2,
+      "q" => 90,
+    ],
+    "tablet" => [
+      "w" => 300,
+      "h" => 200,
+      "fit" => "crop",
+      "dpr" => 2,
+      "q" => 90,
+    ],
+  ],
   "thumbnail" => [
     "desktop" => [
       "w" => 300,
