@@ -21,7 +21,7 @@
       "type": "package",
       "package": {
         "name": "gravityforms/gravityforms",
-        "version": "2.8.71",
+        "version": "2.8.11",
         "type": "wordpress-plugin",
         "dist": {
           "type": "zip",
@@ -61,6 +61,8 @@
     "giantpeach/query": "^1",
     "giantpeach/route": "^1",
     "giantpeach/config": "^1",
+    "gravityforms/gravityforms": "*",
+    "giantpeach/login-page": "^1",
     "giantpeach/schnapps-framework": "^1",
     "guzzlehttp/guzzle": "^7.8",
     "wpackagist-plugin/advanced-custom-fields-font-awesome": "^4.0",
