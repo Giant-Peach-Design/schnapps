@@ -26,7 +26,7 @@ class SocialLinks extends Block implements BlockInterface
       'linkedin' => [
         'url' => get_field('linkedin', 'option'),
         'iconClass' => 'fa-linkedin',
-        'label' => 'Test'
+        'label' => 'LinkedIn'
       ],
       'instagram' => [
         'url' => get_field('instagram', 'option'),
@@ -41,6 +41,36 @@ class SocialLinks extends Block implements BlockInterface
       'facebook' => [
         'url' => get_field('facebook', 'option'),
         'iconClass' => 'fa-facebook',
+        'label' => ''
+      ],
+      'tiktok' => [
+        'url' => get_field('tiktok', 'option'),
+        'iconClass' => 'fa-tiktok',
+        'label' => ''
+      ],
+      'pinterest' => [
+        'url' => get_field('pinterest', 'option'),
+        'iconClass' => 'fa-pinterest',
+        'label' => ''
+      ],
+      'medium' => [
+        'url' => get_field('medium', 'option'),
+        'iconClass' => 'fa-medium',
+        'label' => ''
+      ],
+      'whatsapp' => [
+        'url' => get_field('whatsapp', 'option'),
+        'iconClass' => 'fa-whatsapp',
+        'label' => ''
+      ],
+      'youtube' => [
+        'url' => get_field('youtube', 'option'),
+        'iconClass' => 'fa-youtube',
+        'label' => ''
+      ],
+      'threads' => [
+        'url' => get_field('threads', 'option'),
+        'iconClass' => 'fa-threads',
         'label' => ''
       ]
     ];
