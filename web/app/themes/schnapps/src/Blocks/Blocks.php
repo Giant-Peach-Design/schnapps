@@ -25,9 +25,9 @@ use Giantpeach\Schnapps\Theme\Patterns\TitleLinkColumn;
 
 /**
  * Blocks Class
- * 
+ *
  * This class is responsible for registering blocks and patterns.
- * 
+ *
  */
 class Blocks extends SchnappsBlocks
 {
@@ -52,51 +52,53 @@ class Blocks extends SchnappsBlocks
     NewsRelated::class,
     Testimonial::class,
     TestimonialSlider::class,
-    SocialLinks::class
+    SocialLinks::class,
   ];
 
   public function __construct()
   {
     parent::__construct();
 
-    add_action('init', [$this, 'registerBlocks']);
-    add_action('init', [$this, 'registerPatterns']);
-    add_action('acf/include_fields', [$this, 'registerFields']);
+    //add_action('init', [$this, 'registerBlocks']);
+    add_action("init", [$this, "registerPatterns"]);
+    add_action("acf/include_fields", [$this, "registerFields"]);
 
-    add_filter('allowed_block_types_all', [$this, 'allowedBlockTypes'], 25, 2);
+    add_filter("allowed_block_types_all", [$this, "allowedBlockTypes"], 25, 2);
   }
 
   public function allowedBlockTypes($allowed_blocks, $editor_context): array
   {
-
     $registeredCustomBlocks = [];
 
     foreach ($this->blocks as $block) {
       $registeredCustomBlocks[] = $block::getBlockName();
     }
 
-    return array_merge([
-      'core/paragraph',
-      'core/heading',
-      'core/list',
-      'core/list-item',
-      'core/block',
-      'core/html',
-      'core/pattern',
-      'core/shortcode',
-      'giantpeach/column',
-      'gravityforms/form',
-      // 'core/embed',
-      'core/table',
-    ], $registeredCustomBlocks);
+    return array_merge(
+      [
+        "core/paragraph",
+        "core/heading",
+        "core/list",
+        "core/list-item",
+        "core/block",
+        "core/html",
+        "core/pattern",
+        "core/shortcode",
+        "giantpeach/column",
+        "gravityforms/form",
+        // 'core/embed',
+        "core/table",
+      ],
+      $registeredCustomBlocks,
+    );
   }
 
-  public function registerBlocks(): void
-  {
-    foreach ($this->blocks as $block) {
-      $block::registerBlock();
-    }
-  }
+  //public function registerBlocks(): void
+  //{
+  //  foreach ($this->blocks as $block) {
+  //    $block::registerBlock();
+  //  }
+  //}
 
   /**
    * Register patterns
@@ -105,8 +107,8 @@ class Blocks extends SchnappsBlocks
    */
   public function registerPatterns(): void
   {
-    register_block_pattern_category('giantpeach', [
-      'label' => 'Giant Peach',
+    register_block_pattern_category("giantpeach", [
+      "label" => "Giant Peach",
     ]);
 
     TitleLinkColumn::init();

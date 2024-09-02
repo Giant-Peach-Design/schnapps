@@ -3,13 +3,13 @@
 namespace Giantpeach\Schnapps\Theme\Blocks\Button;
 
 use Giantpeach\Schnapps\Blocks\Block;
+use Giantpeach\Schnapps\Blocks\Compatability\Block as CompatabilityBlock;
 use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 
-
-class Button extends Block implements BlockInterface
+class Button extends CompatabilityBlock
 {
-  public static string $blockName = 'giantpeach/button';
-  
+  public static string $blockName = "giantpeach/button";
+
   public $link;
   public $rel;
   public $btn_style;
@@ -28,10 +28,10 @@ class Button extends Block implements BlockInterface
   public static function display(): void
   {
     $button = new Button(
-      link: get_field('link'),
-      rel: get_field('rel'),
-      btnStyle: get_field('btn_style'),
-      position: get_field('position')
+      link: get_field("link"),
+      rel: get_field("rel"),
+      btnStyle: get_field("btn_style"),
+      position: get_field("position"),
     );
     $button->render();
   }

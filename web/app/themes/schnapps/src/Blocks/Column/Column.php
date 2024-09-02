@@ -5,10 +5,11 @@ namespace Giantpeach\Schnapps\Theme\Blocks\Column;
 use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 use Giantpeach\Schnapps\Blocks\Block;
 use Giantpeach\Schnapps\Blocks\Classes;
+use Giantpeach\Schnapps\Blocks\Compatability\Block as CompatabilityBlock;
 use Giantpeach\Schnapps\Blocks\Traits\Prose;
 use Giantpeach\Schnapps\Blocks\Traits\Spacing;
 
-class Column extends Block implements BlockInterface
+class Column extends CompatabilityBlock
 {
   use Prose;
 
