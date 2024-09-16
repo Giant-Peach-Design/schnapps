@@ -10,7 +10,7 @@
   },
   "acf": {
     "mode": "preview",
-    "renderCallback": "\\Giantpeach\\Schnapps\\Theme\\Blocks\\BannerSlide\\BannerSlide::display"
+    "renderCallback": "\\Giantpeach\\Schnapps\\Theme\\Blocks\\Blocks::renderBlock"
   },
   "editorStyle": "file:./editor.css"
 }

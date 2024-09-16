@@ -2,15 +2,11 @@
 
 namespace Giantpeach\Schnapps\Theme\Blocks\BannerSlide;
 
-use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 use Giantpeach\Schnapps\Blocks\Block;
-use Giantpeach\Schnapps\Blocks\Compatability\Block as CompatabilityBlock;
 use Giantpeach\Schnapps\Images\Facades\Images;
 
-class BannerSlide extends CompatabilityBlock
+class BannerSlide extends Block
 {
-  public static string $blockName = "giantpeach/bannerslide";
-
   public array $allowedBlocks = [
     "core/paragraph",
     "core/heading",
@@ -32,32 +28,20 @@ class BannerSlide extends CompatabilityBlock
     ],
   ];
 
-  public $image;
-  public $mobile;
-  public $mobileWebp;
-  public $alt;
+  public array $image;
+  public array $mobile;
 
-  public function __construct($imageId, $mobileImageId)
+  public function mount(): void
   {
-    $this->image = Images::get(
-      image: $imageId,
-      mobileImage: $mobileImageId,
-      imageSize: "banner",
-    );
+    $image = get_image_field("image");
+    $mobileImage = get_image_field("mobile");
 
-    parent::__construct();
-  }
-
-  public static function display(): void
-  {
-    $imgField = get_field("image");
-    $mobileImgField = get_field("mobile");
-
-    $slide = new BannerSlide(
-      imageId: $imgField["ID"] ?? -1,
-      mobileImageId: $mobImgField["ID"] ?? -1,
-    );
-
-    $slide->render();
+    if ($image !== -1 && $image !== null) {
+      $this->image = Images::get(
+        image: $image,
+        imageSize: "banner",
+        mobileImage: $mobileImage,
+      );
+    }
   }
 }

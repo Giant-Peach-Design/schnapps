@@ -32,12 +32,9 @@ class Banner extends Block
    * isn't required if the block doesn't set any
    * properties.
    *
-   * It gets passed in the blocks settings / attributes
-   * as an array.
-   *
    * @return void
    */
-  public function mount(...$args): void
+  public function mount(): void
   {
   }
 }
