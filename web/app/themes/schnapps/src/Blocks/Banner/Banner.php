@@ -37,9 +37,7 @@ class Banner extends Block
    *
    * @return void
    */
-  public function mount($args): void
+  public function mount(...$args): void
   {
-    $this->variableName = get_field("variable_name");
-    $this->intVariable = get_field("int_variable");
   }
 }
