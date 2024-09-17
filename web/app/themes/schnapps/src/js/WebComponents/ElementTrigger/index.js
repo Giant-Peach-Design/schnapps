@@ -6,6 +6,7 @@ export class ElementTrigger extends LitElement {
       target: { type: String },
       toggleable: { type: Boolean },
       toggled: { type: Boolean },
+      invert: { type: Boolean },
     };
   }
 
@@ -14,6 +15,7 @@ export class ElementTrigger extends LitElement {
     this.target = "";
     this.toggleable = false;
     this.toggled = false;
+    this.invert = false;
   }
 
   connectedCallback() {
@@ -39,7 +41,8 @@ export class ElementTrigger extends LitElement {
       new CustomEvent("element:trigger", {
         detail: {
           target: this.target,
-          toggled: togged,
+          toggled: this.invert ? !togged : togged,
+          toggleable: this.toggleable,
         },
         composed: true,
         bubbles: true,

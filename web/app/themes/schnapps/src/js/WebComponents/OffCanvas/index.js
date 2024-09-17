@@ -8,7 +8,13 @@ export class OffCanvas extends LitElement {
       class: { type: String, reflect: true },
       backgroundClose: { type: Boolean },
       parentOpacity: { type: Number },
+      _hasDuration: { type: Boolean },
     };
+  }
+
+  get _slottedChildren() {
+    const slot = this.shadowRoot.querySelector("slot");
+    return slot?.assignedElements({ flatten: true });
   }
 
   constructor() {
@@ -16,6 +22,7 @@ export class OffCanvas extends LitElement {
     this.open = false;
     this.backgroundClose = true;
     this.parentOpacity = this.open ? 1 : 0;
+    this._hasDuration = false;
   }
 
   connectedCallback() {
@@ -24,6 +31,13 @@ export class OffCanvas extends LitElement {
       "element:trigger",
       this._onElementTrigger.bind(this),
     );
+  }
+
+  firstUpdated() {
+    if (this._slottedChildren?.length) {
+      this._hasDuration =
+        getComputedStyle(this._slottedChildren[0]).transitionDuration !== "0s";
+    }
   }
 
   render() {
@@ -45,14 +59,26 @@ export class OffCanvas extends LitElement {
 
   _onElementTrigger(e) {
     if (e.detail.target === this.id) {
+      if (e.detail.toggleable && !this._hasDuration) {
+        // if the slot element doesn't have a transition duration
+        let open = e.detail.toggled;
+        this.open = open;
+        this.parentOpacity = open ? 1 : 0;
+        return;
+      }
+
+      // otherwise, set the open state and parent opacity
+      // close state should be handled by the transitionEnd event
       this.open = e.detail.toggled;
-      this.parentOpacity = 1;
+      this.parentOpacity = this.open;
+      return;
     }
   }
 
   _backgroundClick(e) {
     e.preventDefault();
-    if (this.backgroundClose) {
+
+    if (e.target.assignedSlot && this.backgroundClose) {
       this.open = false;
     }
   }
