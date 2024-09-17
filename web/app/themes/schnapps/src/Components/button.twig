@@ -24,3 +24,30 @@
   target="{{ attributes.target ?? '_self' }}">
   {{ slot }}
 </a>
+
+<div class="py-8">
+  <element-trigger target="banana">
+    <button>Open Menu</button>
+  </element-trigger>
+
+  <element-trigger target="toggle" toggleable>
+    <button>Toggle Thing</button>
+  </element-trigger>
+
+  <off-canvas id="banana">
+    <div
+      class="fixed inset-0 transition-all duration-500 opacity-0 off-canvas-open:opacity-100 off-canvas-open:bg-black/25">
+      <div
+        class="bg-white translate-x-full transition-all duration-500 absolute flex items-center right-0 top-0 bottom-0 w-[400px] max-w-full off-canvas-open:translate-x-0">
+        <h2>Off Canvas Yo</h2>
+      </div>
+    </div>
+  </off-canvas>
+
+  <off-canvas id="toggle">
+    <div class="fixed inset-[400px] bg-white rounded-xl flex items-center">
+      <h2>Toggle Test</h2>
+    </div>
+  </off-canvas>
+
+</div>

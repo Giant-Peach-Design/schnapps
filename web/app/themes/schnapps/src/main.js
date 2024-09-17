@@ -2,6 +2,7 @@ import { inView, animate } from "motion";
 import Alpine from "alpinejs";
 import intersect from "@alpinejs/intersect";
 import Navigation from "./Blocks/Header/navigation";
+import WebComponents from "./js/WebComponents/index.js";
 import "./main.css";
 
 Alpine.plugin(intersect);
@@ -15,7 +16,6 @@ const domReady = () => {
   initAnimations();
 };
 
-
 /*
 
 Each module should be treated as an individual block. 
@@ -28,20 +28,24 @@ function initModules() {
   const bannerBlocks = document.querySelectorAll(".giantpeach-banner");
   if (bannerBlocks.length) {
     import("./blocks/Banner/banner.js").then(({ default: Banner }) => {
-      bannerBlocks.forEach(node => {
+      bannerBlocks.forEach((node) => {
         Banner(node);
       });
     });
   }
 
   // Testimonial Slider
-  const testimonialSliderNodes = document.querySelectorAll(".giantpeach-testimonialslider");
+  const testimonialSliderNodes = document.querySelectorAll(
+    ".giantpeach-testimonialslider",
+  );
   if (testimonialSliderNodes.length) {
-    import("./Blocks/TestimonialSlider/testimonialSlider.js").then(({default: TestimonialSlider}) => {
-      testimonialSliderNodes.forEach(slider => {
-        TestimonialSlider(slider);
-      });
-    });
+    import("./Blocks/TestimonialSlider/testimonialSlider.js").then(
+      ({ default: TestimonialSlider }) => {
+        testimonialSliderNodes.forEach((slider) => {
+          TestimonialSlider(slider);
+        });
+      },
+    );
   }
 }
 

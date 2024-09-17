@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
+const plugin = require("tailwindcss/plugin");
+
 const margins = (columns = 12) => {
   const obj = {};
 
@@ -13,58 +15,74 @@ const margins = (columns = 12) => {
 
 module.exports = {
   content: [
-    './templates/**/*.{html,php,twig,js}',
-    './parts/**/*.{html,php,twig,js}',
-    './blocks/**/*.{html,php,twig,js}',
-    './src/**/*.{html,php,twig,js}',
-    './patterns/**/*.{html,php,twig,js}',
-    './src/**/*.js',
-    '../../../../vendor/giantpeach/**/*.php',
+    "./templates/**/*.{html,php,twig,js}",
+    "./parts/**/*.{html,php,twig,js}",
+    "./blocks/**/*.{html,php,twig,js}",
+    "./src/**/*.{html,php,twig,js}",
+    "./patterns/**/*.{html,php,twig,js}",
+    "./src/**/*.js",
+    "../../../../vendor/giantpeach/**/*.php",
   ],
   safelist: [
-    'prose-invert',
-    'prose-sm',
-    'prose-lg',
-    'prose-xl',
-    'prose-2xl',
-    'prose-3xl',
-    'bg-white',
-    'bg-primrose',
+    "prose-invert",
+    "prose-sm",
+    "prose-lg",
+    "prose-xl",
+    "prose-2xl",
+    "prose-3xl",
+    "bg-white",
+    "bg-primrose",
     {
       pattern: /hidden/,
-      variants: ['md', 'lg', 'xl'],
+      variants: ["md", "lg", "xl"],
     },
     {
       pattern: /block/,
-      variants: ['md', 'lg', 'xl'],
+      variants: ["md", "lg", "xl"],
     },
     {
       pattern: /justify-(start|end|center|between|around|evenly)/,
-      variants: ['md', 'lg', 'xl'],
+      variants: ["md", "lg", "xl"],
     },
     {
       pattern: /items-(start|end|center|baseline|stretch)/,
-      variants: ['md', 'lg', 'xl'],
+      variants: ["md", "lg", "xl"],
     },
   ],
   theme: {
     extend: {
       colors: {
-        current: 'currentColor',
-        primary: { DEFAULT: '#AEA0FD' },
-        secondary: { DEFAULT: '#D8FF85' },
+        current: "currentColor",
+        primary: { DEFAULT: "#AEA0FD" },
+        secondary: { DEFAULT: "#D8FF85" },
       },
       container: {
         center: true,
-        padding: '1rem',
+        padding: "1rem",
       },
       screens: {
-        '3xl': '1920px',
+        "3xl": "1920px",
       },
       spacing: {
         ...margins(),
       },
     },
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    plugin(function ({ addVariant }) {
+      addVariant("in", [".is-visible &", "&.is-visible"]);
+
+      // web components
+      addVariant("off-canvas-open", [
+        ".off-canvas-open &",
+        "&.off-canvas-open",
+        "[data-open='true'] &",
+        "&[data-open='true']",
+        "[open] &",
+        "&[open]",
+      ]);
+    }),
+  ],
 };
