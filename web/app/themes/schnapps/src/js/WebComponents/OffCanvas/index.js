@@ -1,6 +1,7 @@
-import { LitElement, html } from "lit";
+import { PeachElement } from "../Element";
+import { html } from "lit";
 
-export class OffCanvas extends LitElement {
+export class OffCanvas extends PeachElement {
   static get properties() {
     return {
       open: { type: Boolean, reflect: true },
@@ -9,12 +10,8 @@ export class OffCanvas extends LitElement {
       backgroundClose: { type: Boolean },
       parentOpacity: { type: Number },
       _hasDuration: { type: Boolean },
+      _backgroundElement: { type: Object },
     };
-  }
-
-  get _slottedChildren() {
-    const slot = this.shadowRoot.querySelector("slot");
-    return slot?.assignedElements({ flatten: true });
   }
 
   constructor() {
@@ -22,7 +19,7 @@ export class OffCanvas extends LitElement {
     this.open = false;
     this.backgroundClose = true;
     this.parentOpacity = this.open ? 1 : 0;
-    this._hasDuration = false;
+    this._hasDuration = true;
   }
 
   connectedCallback() {
@@ -34,10 +31,31 @@ export class OffCanvas extends LitElement {
   }
 
   firstUpdated() {
-    if (this._slottedChildren?.length) {
-      this._hasDuration =
-        getComputedStyle(this._slottedChildren[0]).transitionDuration !== "0s";
-    }
+    this._backgroundElement = this.shadowRoot.querySelector(".off-canvas");
+  }
+
+  get classes() {
+    // object of wrapper classes, each class is a boolean
+    // if the class is true, it will be added to the element
+
+    const clses = {
+      "off-canvas": true,
+      open: this.open,
+      "pointer-events-auto": this.open,
+      "pointer-events-none": !this.open,
+      fixed: true,
+      "inset-0": true,
+      "transition-all": true,
+      "duration-500": true,
+      "opacity-0": true,
+      "off-canvas-open:opacity-100": this.open,
+      "off-canvas-open:bg-black/25": this.open,
+    };
+
+    // return a string of classes that are true
+    return Object.keys(clses)
+      .filter((cls) => clses[cls])
+      .join(" ");
   }
 
   render() {
@@ -45,9 +63,9 @@ export class OffCanvas extends LitElement {
       <div
         id="${this.id}"
         data-open="${this.open}"
-        style="pointer-events: none; opacity: ${this.parentOpacity};"
+        style="opacity: ${this.parentOpacity};"
         @click="${this._backgroundClick}"
-        class="off-canvas ${this.open ? "off-canvas-open" : ""} ${this.class}"
+        class="${this.classes}"
       >
         <slot
           @transitionEnd="${this._transitionEnd}"
@@ -59,17 +77,7 @@ export class OffCanvas extends LitElement {
 
   _onElementTrigger(e) {
     if (e.detail.target === this.id) {
-      if (e.detail.toggleable && !this._hasDuration) {
-        // if the slot element doesn't have a transition duration
-        let open = e.detail.toggled;
-        this.open = open;
-        this.parentOpacity = open ? 1 : 0;
-        return;
-      }
-
-      // otherwise, set the open state and parent opacity
-      // close state should be handled by the transitionEnd event
-      this.open = e.detail.toggled;
+      this.open = e.detail.state;
       this.parentOpacity = this.open;
       return;
     }
@@ -78,7 +86,7 @@ export class OffCanvas extends LitElement {
   _backgroundClick(e) {
     e.preventDefault();
 
-    if (e.target.assignedSlot && this.backgroundClose) {
+    if (this.backgroundClose && e.target === this._backgroundElement) {
       this.open = false;
     }
   }

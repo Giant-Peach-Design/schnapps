@@ -4,7 +4,6 @@ export class ElementTrigger extends LitElement {
   static get properties() {
     return {
       target: { type: String },
-      toggleable: { type: Boolean },
       toggled: { type: Boolean },
       invert: { type: Boolean },
     };
@@ -13,7 +12,6 @@ export class ElementTrigger extends LitElement {
   constructor() {
     super();
     this.target = "";
-    this.toggleable = false;
     this.toggled = false;
     this.invert = false;
   }
@@ -23,26 +21,19 @@ export class ElementTrigger extends LitElement {
   }
 
   render() {
-    return html`<div class="bg-red-500">
-      <slot @click="${this._onClick}"></slot>
-    </div>`;
+    return html`<slot @click="${this._onClick}"></slot>`;
   }
 
   _onClick(e) {
     e.preventDefault();
 
-    let togged = this.toggleable ? !this.toggled : true;
-
-    if (this.toggleable) {
-      togged = this.toggled = !this.toggled;
-    }
+    let togged = true;
 
     this.dispatchEvent(
       new CustomEvent("element:trigger", {
         detail: {
           target: this.target,
-          toggled: this.invert ? !togged : togged,
-          toggleable: this.toggleable,
+          state: this.invert ? !togged : togged,
         },
         composed: true,
         bubbles: true,
