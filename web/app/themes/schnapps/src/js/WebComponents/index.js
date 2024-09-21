@@ -1,5 +1,6 @@
 import { ElementTrigger } from "./ElementTrigger";
 import { OffCanvas } from "./OffCanvas";
+import { OffCanvasInner } from "./OffCanvas/inner";
 
 //console.log(document.styleSheets);
 

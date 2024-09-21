@@ -34,16 +34,12 @@
     <button>Toggle Thing</button>
   </element-trigger>
 
-  <off-canvas id="banana" class="scale-110">
-    <div
-      class="bg-white translate-x-full transition-all duration-500 absolute flex items-center right-0 top-0 bottom-0 w-[400px] max-w-full off-canvas-open:translate-x-0">
-      <div>
-        <element-trigger target="banana" invert>
-          <button>Close Menu</button>
-        </element-trigger>
-      </div>
-      <h2>Off Canvas Yo</h2>
-    </div>
+  <off-canvas id="banana">
+    <off-canvas-inner orientation="right">
+      <h2>
+        Off Canvas Inner Yo
+      </h2>
+    </off-canvas-inner>
   </off-canvas>
 
   <off-canvas id="modal">

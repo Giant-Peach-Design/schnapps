@@ -20,6 +20,8 @@ export class OffCanvas extends PeachElement {
     this.backgroundClose = true;
     this.parentOpacity = this.open ? 1 : 0;
     this._hasDuration = true;
+
+    this.inner = null;
   }
 
   connectedCallback() {
@@ -28,6 +30,8 @@ export class OffCanvas extends PeachElement {
       "element:trigger",
       this._onElementTrigger.bind(this),
     );
+
+    this.inner = this.querySelector("off-canvas-inner");
   }
 
   firstUpdated() {
@@ -58,27 +62,40 @@ export class OffCanvas extends PeachElement {
       .join(" ");
   }
 
+  show() {
+    this.open = true;
+    this.parentOpacity = 1;
+    if (this.inner) {
+      this.inner.setAttribute("open", this.open);
+    }
+  }
+
+  hide() {
+    this.open = false;
+    this.parentOpacity = 0;
+    if (this.inner) {
+      this.inner.removeAttribute("open");
+    }
+  }
+
   render() {
     return html`
       <div
         id="${this.id}"
-        data-open="${this.open}"
+        open="${this.open}"
         style="opacity: ${this.parentOpacity};"
         @click="${this._backgroundClick}"
         class="${this.classes}"
+        @transitionEnd="${this._transitionEnd}"
       >
-        <slot
-          @transitionEnd="${this._transitionEnd}"
-          style="pointer-events: ${this.open ? "auto" : "none"};"
-        ></slot>
+        <slot style="pointer-events: ${this.open ? "auto" : "none"};"></slot>
       </div>
     `;
   }
 
   _onElementTrigger(e) {
     if (e.detail.target === this.id) {
-      this.open = e.detail.state;
-      this.parentOpacity = this.open;
+      this.show();
       return;
     }
   }
@@ -87,13 +104,13 @@ export class OffCanvas extends PeachElement {
     e.preventDefault();
 
     if (this.backgroundClose && e.target === this._backgroundElement) {
-      this.open = false;
+      this.hide();
     }
   }
 
   _transitionEnd(e) {
     if (!this.open) {
-      this.parentOpacity = 0;
+      this.hide();
     }
   }
 }
