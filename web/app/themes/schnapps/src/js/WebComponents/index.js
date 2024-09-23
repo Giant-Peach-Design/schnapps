@@ -1,6 +1,7 @@
 import { ElementTrigger } from "./ElementTrigger";
 import { OffCanvas } from "./OffCanvas";
 import { OffCanvasInner } from "./OffCanvas/inner";
+import { Accordion } from "./Accordion";
 
 //console.log(document.styleSheets);
 

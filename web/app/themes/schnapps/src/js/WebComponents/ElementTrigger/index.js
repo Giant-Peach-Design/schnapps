@@ -1,6 +1,7 @@
-import { LitElement, html } from "lit";
+import { html } from "lit";
+import { PeachElement } from "../Element";
 
-export class ElementTrigger extends LitElement {
+export class ElementTrigger extends PeachElement {
   static get properties() {
     return {
       target: { type: String },
