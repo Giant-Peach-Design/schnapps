@@ -55,4 +55,4 @@ export class OffCanvasInner extends PeachElement {
   }
 }
 
-customElements.define("off-canvas-inner", OffCanvasInner);
+customElements.define("peach-off-canvas-inner", OffCanvasInner);

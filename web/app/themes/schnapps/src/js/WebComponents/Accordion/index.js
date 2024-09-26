@@ -43,4 +43,4 @@ export class Accordion extends PeachElement {
   }
 }
 
-customElements.define("gp-accordion", Accordion);
+customElements.define("peach-accordion", Accordion);

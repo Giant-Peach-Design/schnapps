@@ -110,4 +110,4 @@ export class AccordionItem extends PeachElement {
   }
 }
 
-customElements.define("gp-accordion-item", AccordionItem);
+customElements.define("peach-accordion-item", AccordionItem);

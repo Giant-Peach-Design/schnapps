@@ -25,42 +25,4 @@
   {{ slot }}
 </a>
 
-<div class="py-8">
-  <element-trigger target="banana">
-    <button>Open Menu</button>
-  </element-trigger>
-
-  <element-trigger target="modal">
-    <button>Toggle Thing</button>
-  </element-trigger>
-
-  <off-canvas id="banana">
-    <off-canvas-inner orientation="right">
-      <h2>
-        Off Canvas Inner Yo
-      </h2>
-    </off-canvas-inner>
-  </off-canvas>
-
-  <off-canvas id="modal">
-    <div class="fixed inset-[400px] bg-white rounded-xl flex items-center">
-      <h2>Toggle Test</h2>
-    </div>
-  </off-canvas>
-
-  <gp-accordion>
-    <gp-accordion-item open>
-      <h2>Title</h2>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-    </gp-accordion-item>
-    <gp-accordion-item>
-      <h2>Another Title</h2>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-    </gp-accordion-item>
-  </gp-accordion>
-
-</div>
+<x-web-components-playground></x-web-components-playground>

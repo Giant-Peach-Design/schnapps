@@ -31,7 +31,7 @@ export class OffCanvas extends PeachElement {
       this._onElementTrigger.bind(this),
     );
 
-    this.inner = this.querySelector("off-canvas-inner");
+    this.inner = this.querySelector("peach-off-canvas-inner");
   }
 
   firstUpdated() {
@@ -115,4 +115,4 @@ export class OffCanvas extends PeachElement {
   }
 }
 
-customElements.define("off-canvas", OffCanvas);
+customElements.define("peach-off-canvas", OffCanvas);
