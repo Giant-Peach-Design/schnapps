@@ -1,9 +1,9 @@
 <div class="bg-[#ebecf0] group/postcard text-black">
-  <a href="{{ link.url }}" class="bg-[#ebecf0] block overflow-hidden [&_img]:scale-[1.005] [&_img]:duration-300 group-hover/postcard:[&_img]:scale-[1.05]">
+  <a href="{{ link.url }}" class="bg-[#ebecf0] block overflow-hidden [&_img]:scale-[1.005] [&_img]:duration-300 [&_img]:group-hover/postcard:scale-[1.05]">
     {% if image %}
       {% include 'image.twig' %}
     {% else %}
-      <div class="aspect-[3/2] bg-slate-400"></div>
+      <div class="aspect-3/2 bg-slate-400"></div>
     {% endif %}
   </a>
 

@@ -1,5 +1,5 @@
-import BlazeSlider from 'blaze-slider';
-import 'blaze-slider/dist/blaze.css';
+import BlazeSlider from "blaze-slider";
+import "blaze-slider/dist/blaze.css";
 
 const Banner = (node) => {
   const slider = new BlazeSlider(node, {
@@ -7,7 +7,7 @@ const Banner = (node) => {
       enableAutoplay: true,
       autoplayInterval: 2000,
       transitionDuration: 1000,
-      transitionTimingFunction: 'cubic-bezier(0.33, 1, 0.68, 1)',
+      transitionTimingFunction: "cubic-bezier(0.33, 1, 0.68, 1)",
       slidesToShow: 1,
     },
   });

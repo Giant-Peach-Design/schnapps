@@ -8,11 +8,8 @@ use Giantpeach\Schnapps\Theme\Blocks\Header\Header;
 use Giantpeach\Schnapps\Theme\Blocks\Footer\Footer;
 
 use Giantpeach\Schnapps\Theme\Blocks\Banner\Banner;
-use Giantpeach\Schnapps\Theme\Blocks\BannerSlide\BannerSlide;
 use Giantpeach\Schnapps\Theme\Blocks\Button\Button;
 use Giantpeach\Schnapps\Theme\Blocks\Card\Card;
-use Giantpeach\Schnapps\Theme\Blocks\Column\Column;
-use Giantpeach\Schnapps\Theme\Blocks\Columns\Columns;
 use Giantpeach\Schnapps\Theme\Blocks\Hero\Hero;
 use Giantpeach\Schnapps\Theme\Blocks\NewsRelated\NewsRelated;
 use Giantpeach\Schnapps\Theme\Blocks\Media\Media;
@@ -41,11 +38,8 @@ class Blocks extends SchnappsBlocks
     Header::class,
     Footer::class,
     Banner::class,
-    BannerSlide::class,
     Hero::class,
     Media::class,
-    Columns::class,
-    Column::class,
     Button::class,
     Card::class,
     NewsList::class,

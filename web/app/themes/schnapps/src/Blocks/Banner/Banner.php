@@ -3,23 +3,10 @@
 namespace Giantpeach\Schnapps\Theme\Blocks\Banner;
 
 use Giantpeach\Schnapps\Blocks\Block;
+use Giantpeach\Schnapps\Images\Facades\Images;
 
 class Banner extends Block
 {
-  /**
-   * The blocks allowed within this block.
-   *
-   * @var array
-   */
-  public array $allowedBlocks = ["giantpeach/bannerslide"];
-
-  /**
-   * The default template for this block.
-   *
-   * @var array
-   */
-  public array $template = [["giantpeach/bannerslide"]];
-
   /**
    * Any other fields you want accessible in the template
    */
@@ -34,7 +21,25 @@ class Banner extends Block
    *
    * @return void
    */
+  public array $image;
+  public array $mobile;
+  public $heading;
+  public $content;
+  public $link;
+  public $slides;
+
   public function mount(): void
   {
+    $image = get_image_field("image");
+    $mobileImage = get_image_field("mobile");
+    $this->slides = get_field("banner_slide");
+
+    if ($image !== -1 && $image !== null) {
+      $this->image = Images::get(
+        image: $image,
+        imageSize: "banner",
+        mobileImage: $mobileImage,
+      );
+    }
   }
 }

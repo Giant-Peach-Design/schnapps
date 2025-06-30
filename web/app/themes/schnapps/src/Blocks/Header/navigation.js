@@ -26,18 +26,18 @@ const Navigation = () => {
       navBar.classList.add('nav-is-sticky');
 
       if (scrollTop >= lastScrollTop) {
-        navBar.classList.remove('!transform-none');
+        navBar.classList.remove('transform-none!');
         navBar.classList.add('-translate-y-full');
 
       } else {
         /* Show on scroll up */
-        navBar.classList.add('!transform-none');
+        navBar.classList.add('transform-none!');
       }
 
       lastScrollTop = scrollTop;
     } else {
       navBar.classList.remove('nav-is-sticky');
-      navBar.classList.remove('!transform-none');            
+      navBar.classList.remove('transform-none!');            
       navBar.classList.remove('-translate-y-full');
     }
   }, 100));

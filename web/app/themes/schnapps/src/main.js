@@ -18,8 +18,8 @@ const domReady = () => {
 
 /*
 
-Each module should be treated as an individual block. 
-Please pass each node as module param. 
+Each module should be treated as an individual block.
+Please pass each node as module param.
 Module path is case-sensitive. Wrong path will throw an error on dev server after running `npm run build`.
 
 */
@@ -50,6 +50,22 @@ function initModules() {
 }
 
 function initAnimations() {
+  const blocks = document.querySelectorAll(".in");
+
+  inView(
+    blocks,
+    (element) => {
+      const target = element.target;
+
+      target.classList.add("is-visible");
+
+      return () => {
+        target.classList.remove("is-visible");
+      };
+    },
+    { margin: "0px 0px -15% 0px" },
+  );
+
   let transitionableBlocks = document.querySelectorAll(".transition-block");
   let inViewStop = inView(transitionableBlocks, ({ target }) => {
     animate(

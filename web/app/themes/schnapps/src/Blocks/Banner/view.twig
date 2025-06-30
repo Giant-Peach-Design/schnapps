@@ -2,11 +2,35 @@
   <div class="blaze-slider">
     <div class="blaze-container">
       <div class="blaze-track-container">
-        <InnerBlocks 
-          className="blaze-track {% if isAdmin %} overflow-x-scroll flex {% endif %}" 
-          allowedBlocks="{{ allowedBlocks | wp_json_encode }}" 
-          template="{{ template | wp_json_encode }}" 
-        />
+        <div class="blaze-track {% if isAdmin %} overflow-x-scroll flex {% endif %}">
+          {% for slide in slides %}
+            <div class="relative {% if isAdmin %} shrink-0 {% endif %}">
+              {% if slide.image %}
+                {% set image = slide.image %}
+                {% include "image.twig" with {aspect: "aspect-375/480 lg:aspect-video"} %}
+              {% endif %}
+              {% if slide.image is empty %}
+                <div class="block aspect-video">
+                  <div class="w-full h-full! bg-gray-200"></div>
+                </div>
+              {% endif %}
+              <div class="absolute inset-0 bg-black/25"></div>
+              <div class="absolute inset-0 flex flex-col items-center justify-center rt in {{ classes.prose.color }} {{ classes.prose.size }} max-w-none">
+                {% if slide.heading %}
+                  <h2>{{ slide.heading }}</h2>
+                {% endif %}
+                {% if slide.content %}
+                  <p>{{ slide.content }}</p>
+                {% endif %}
+                {% if slide.link and slide.link.url %}
+                  <x-button href="{{ slide.link.url }}" type="{{ type }}" hideOnDesktop="{{ hide_on_desktop }}" hideOnMobile="{{ hide_on_mobile }}">
+                    {{ slide.link.title }}
+                  </x-button>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>

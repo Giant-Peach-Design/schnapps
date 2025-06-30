@@ -3,13 +3,13 @@
 <div x-ref="categories" class="categories relative mb-5">
   <ul class="flex justify-center lg:justify-start flex-wrap gap-2 lg:gap-3">
     <li>
-      <input class="peer/catradio !hidden" type="radio" x-model="selectedCategory" name="cat" value="all" x-on:change="updateSelectedCategory('all')" id="cat-all">
+      <input class="peer/catradio hidden!" type="radio" x-model="selectedCategory" name="cat" value="all" x-on:change="updateSelectedCategory('all')" id="cat-all">
       <label for="cat-all" class="{{ elClass }}" data-category="">All resources</label>
     </li>
 
     {% for category in categories %}
       <li>
-        <input class="peer/catradio !hidden" type="radio" x-model="selectedCategory" name="cat" value="{{ category.slug }}" x-on:change="updateSelectedCategory('{{ category.slug }}')" id="cat-{{ category.slug }}">
+        <input class="peer/catradio hidden!" type="radio" x-model="selectedCategory" name="cat" value="{{ category.slug }}" x-on:change="updateSelectedCategory('{{ category.slug }}')" id="cat-{{ category.slug }}">
         <label for="cat-{{ category.slug }}" class="{{ elClass }}" data-category="{{ category.slug }}">{{ category.name }}</label>
       </li>
     {% endfor %}
