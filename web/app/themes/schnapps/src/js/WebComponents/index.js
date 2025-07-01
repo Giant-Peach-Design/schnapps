@@ -2,6 +2,7 @@ import { Trigger } from "./Trigger";
 import { OffCanvas } from "./OffCanvas";
 import { OffCanvasInner } from "./OffCanvas/inner";
 import { Accordion } from "./Accordion";
+import { Slider } from "./Slider";
 
 //console.log(document.styleSheets);
 

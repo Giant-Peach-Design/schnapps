@@ -1,0 +1,228 @@
+@import 'tailwindcss' source('../..');
+@import '../components/rt.css';
+
+html {
+  -webkit-font-smoothing: antialiased;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+peach-off-canvas:not(:defined),
+peach-off-canvas-inner:not(:defined) {
+  display: none;
+}
+
+@theme {
+  --color-red: #ff0000;
+
+  --color-primary: #0b6e4f;
+  --color-secondary: #588157;
+  --color-body: #073b3a;
+
+  --color-jade: var(--color-primary);
+  --color-veridian: var(--color-secondary);
+  --color-midnight: var(--color-body);
+  --color-table-linen: #fcfbf7;
+  --color-ivory: #faf8f4;
+  --color-chalk: #f7f6f1;
+  --color-bark: #8c8579;
+
+  --font-sans: 'Figtree', sans-serif;
+  --font-serif: 'Merchant', serif;
+
+  --spacing-0\/12: 0%;
+  --spacing-1\/12: 8.3333333333%;
+  --spacing-2\/12: 16.6666666666%;
+  --spacing-3\/12: 25%;
+  --spacing-4\/12: 33.3333333333%;
+  --spacing-5\/12: 41.6666666666%;
+  --spacing-6\/12: 50%;
+  --spacing-7\/12: 58.3333333333%;
+  --spacing-8\/12: 66.6666666666%;
+  --spacing-9\/12: 75%;
+  --spacing-10\/12: 83.3333333333%;
+  --spacing-11\/12: 91.6666666666%;
+  --spacing-12\/12: 100%;
+  --spacing-block: clamp(60px, 6.9444444vw, 100px);
+
+  --text-xs: 0.666666rem;
+
+  --text-hero: clamp(2.778rem, 6.528vw, 5.222rem);
+  --text-hero--font-weight: 100;
+  --text-hero--line-height: 1;
+  --text-hero--font-family: 'Merchant', sans-serif;
+
+  --text-h1: clamp(2.444rem, 5vw, 4rem);
+  --text-h1--font-weight: 100;
+  --text-h1--line-height: 1;
+  --text-h1--font-family: 'Merchant', sans-serif;
+
+  --text-h2: clamp(2.111rem, 3.889vw, 3.111rem);
+  --text-h2--font-weight: 100;
+  --text-h2--line-height: 1.1;
+  --text-h2--font-family: 'Merchant', sans-serif;
+
+  --text-h3: clamp(1.778rem, 2.778vw, 2.222rem);
+  --text-h3--font-weight: 100;
+  --text-h3--line-height: 1.2;
+  --text-h3--font-family: 'Merchant', sans-serif;
+
+  --text-h4: clamp(1.444rem, 2.222vw, 1.778rem);
+  --text-h4--font-weight: 100;
+  --text-h4--line-height: 1.2;
+  --text-h4--font-family: 'Merchant', sans-serif;
+
+  --text-h5: clamp(1.111rem, 1.528vw, 1.222rem);
+  --text-h5--font-weight: 300;
+  --text-h5--line-height: 1.2;
+  --text-h5--font-family: 'Merchant', sans-serif;
+
+  --text-h6: clamp(0.667rem, 0.972vw, 0.778rem);
+  --text-h6--font-weight: 400;
+  --text-h6--line-height: 1;
+  --text-h6--font-family: 'Figtree', sans-serif;
+  --text-h6--letter-spacing: 0.05em;
+  --text-h6--text-transform: uppercase;
+
+  --text-para: clamp(0.889rem, 1.25vw, 1rem);
+  --text-para--font-weight: 300;
+  --text-para--line-height: 1.2;
+  --text-para--font-family: 'Figtree', sans-serif;
+
+  --text-para-small: clamp(0.667rem, 0.972vw, 0.778rem);
+  --text-para-small--font-weight: 400;
+  --text-para-small--line-height: 1.15;
+  --text-para-small--font-family: 'Figtree', sans-serif;
+}
+
+@layer base {
+  button {
+    @apply cursor-pointer;
+  }
+
+  .shopify-section-group-header-group {
+    @apply contents;
+  }
+
+  .text-hero {
+    font-family: var(--text-hero--font-family);
+  }
+
+  .text-h1 {
+    font-family: var(--text-h1--font-family);
+  }
+
+  .text-h2 {
+    font-family: var(--text-h2--font-family);
+  }
+
+  .text-h3 {
+    font-family: var(--text-h3--font-family);
+  }
+
+  .text-h4 {
+    font-family: var(--text-h4--font-family);
+  }
+
+  .text-h5 {
+    font-family: var(--text-h5--font-family);
+  }
+
+  .text-h6 {
+    font-family: var(--text-h6--font-family);
+  }
+
+  .text-body {
+    font-family: var(--text-body--font-family);
+  }
+
+  .text-body-small {
+    font-family: var(--text-body-small--font-family);
+  }
+}
+
+@custom-variant open {
+  [open] &,
+  &[open],
+  [data-open='true'] &,
+  &[data-open='true'] {
+    @slot;
+  }
+}
+
+@custom-variant loading {
+  [loading] &,
+  &[loading],
+  [data-loading='true'] &,
+  &[data-loading='true'] {
+    @slot;
+  }
+}
+
+@custom-variant in {
+  .is-visible & {
+    @slot;
+  }
+
+  &.is-visible {
+    @slot;
+  }
+}
+
+@utility fade-in {
+  @apply transition-opacity duration-500 opacity-0 in:opacity-100;
+}
+
+@utility fade-in-up {
+  @apply transition-all duration-500 opacity-0 in:opacity-100 translate-y-[60px] in:translate-y-0;
+}
+
+@utility fade-in-right {
+  @apply transition-all duration-500 opacity-0 in:opacity-100 -translate-x-[60px] in:translate-x-0;
+}
+
+@utility fade-in-left {
+  @apply transition-all duration-500 opacity-0 in:opacity-100 translate-x-[60px] in:translate-x-0;
+}
+
+@utility content {
+  --gap: clamp(1rem, 3.125vw, 2rem);
+  --full: minmax(var(--gap), 1fr);
+  --content: min(1500px, 100% - var(--gap) * 2);
+  --content-inner: min(1260px, 100% - var(--gap) * 2);
+  --popout: minmax(0, 2rem);
+  --feature: minmax(0, 5rem);
+
+  display: grid;
+  grid-template-columns:
+    [full-start] var(--full)
+    [feature-start] var(--feature)
+    [popout-start] var(--popout)
+    [content-start] var(--content) [content-end]
+    var(--popout) [popout-end]
+    var(--feature) [feature-end]
+    var(--full) [full-end];
+
+  & > * {
+    grid-column: content;
+  }
+
+  & > .content {
+    grid-column: full;
+    grid-template-columns: inherit;
+  }
+}
+
+@utility full-width {
+  grid-column: full;
+}
+@utility no-scrollbar {
+  & {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

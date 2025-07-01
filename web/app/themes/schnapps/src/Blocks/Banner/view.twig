@@ -1,26 +1,29 @@
 <section class="{{ wrapperClass }} relative overflow-hidden">
-  <div class="blaze-slider">
-    <div class="blaze-container">
-      <div class="blaze-track-container">
-        <div class="blaze-track {% if isAdmin %} overflow-x-scroll flex {% endif %}">
+    <peach-slider>
           {% for slide in slides %}
-            <div class="relative {% if isAdmin %} shrink-0 {% endif %}">
-              {% if slide.image %}
-                {% set image = slide.image %}
-                {% include "image.twig" with {aspect: "aspect-375/480 lg:aspect-video"} %}
-              {% endif %}
+            <div class="relative w-full {% if isAdmin %} shrink-0 {% endif %}">
+            {% if slide.image %}
+            <div class="block aspect-[375/480] lg:aspect-video">
+              <img
+                src="{{ slide.image.url }}"
+                alt="{{ slide.image.alt|default('') }}"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            {% endif %}
               {% if slide.image is empty %}
                 <div class="block aspect-video">
-                  <div class="w-full h-full! bg-gray-200"></div>
+                  <div class="w-full min-h-screen h-full! bg-gray-200"></div>
                 </div>
               {% endif %}
               <div class="absolute inset-0 bg-black/25"></div>
               <div class="absolute inset-0 flex flex-col items-center justify-center rt in {{ classes.prose.color }} {{ classes.prose.size }} max-w-none">
                 {% if slide.heading %}
-                  <h2>{{ slide.heading }}</h2>
+                  <h2 class="{% if slide.slide_style == 'light' %} text-white {% endif %}">{{ slide.heading }}</h2>
                 {% endif %}
                 {% if slide.content %}
-                  <p>{{ slide.content }}</p>
+                  <p class="{% if slide.slide_style == 'light' %} text-white {% endif %}">{{ slide.content }}</p>
                 {% endif %}
                 {% if slide.link and slide.link.url %}
                   <x-button href="{{ slide.link.url }}" type="{{ type }}" hideOnDesktop="{{ hide_on_desktop }}" hideOnMobile="{{ hide_on_mobile }}">
@@ -30,8 +33,6 @@
               </div>
             </div>
           {% endfor %}
-        </div>
-      </div>
-    </div>
-  </div>
+        </peach-slider>
+
 </section>

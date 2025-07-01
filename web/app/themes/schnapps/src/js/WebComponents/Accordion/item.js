@@ -1,4 +1,4 @@
-import { PeachElement } from "../Element";
+import { Elem, ProjectElem } from "../Element";
 import { html } from "lit";
 
 function slugify(str) {
@@ -13,7 +13,7 @@ function slugify(str) {
  * This element will automatically use the first child element as the header
  * and any other children as the content.
  */
-export class AccordionItem extends PeachElement {
+export class AccordionItem extends ProjectElem {
   static get properties() {
     return {
       open: { type: Boolean, reflect: true },

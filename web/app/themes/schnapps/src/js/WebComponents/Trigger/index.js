@@ -1,7 +1,7 @@
 import { html } from "lit";
-import { PeachElement } from "../Element";
+import { Elem, ProjectElem } from "../Element";
 
-export class Trigger extends PeachElement {
+export class Trigger extends ProjectElem {
   static get properties() {
     return {
       target: { type: String },

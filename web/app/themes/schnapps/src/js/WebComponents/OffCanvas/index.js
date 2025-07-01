@@ -1,7 +1,7 @@
-import { PeachElement } from "../Element";
+import { Elem, ProjectElem } from "../Element";
 import { html } from "lit";
 
-export class OffCanvas extends PeachElement {
+export class OffCanvas extends ProjectElem {
   static get properties() {
     return {
       open: { type: Boolean, reflect: true },

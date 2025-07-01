@@ -30,16 +30,6 @@ class Banner extends Block
 
   public function mount(): void
   {
-    $image = get_image_field("image");
-    $mobileImage = get_image_field("mobile");
     $this->slides = get_field("banner_slide");
-
-    if ($image !== -1 && $image !== null) {
-      $this->image = Images::get(
-        image: $image,
-        imageSize: "banner",
-        mobileImage: $mobileImage,
-      );
-    }
   }
 }

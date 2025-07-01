@@ -1,4 +1,4 @@
-import { PeachElement } from "../Element";
+import { Elem, ProjectElem } from "../Element";
 import { html } from "lit";
 import { AccordionItem } from "./item";
 
@@ -7,7 +7,7 @@ import { AccordionItem } from "./item";
  * @slot default - The accordion items
  * @property {String} type - "single" or "multiple", defaults to "single"
  */
-export class Accordion extends PeachElement {
+export class Accordion extends ProjectElem {
   static get properties() {
     return {
       type: { type: String }, // "single" or "multiple"

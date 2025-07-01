@@ -25,14 +25,14 @@ Module path is case-sensitive. Wrong path will throw an error on dev server afte
 */
 function initModules() {
   // Banner
-  const bannerBlocks = document.querySelectorAll(".giantpeach-banner");
-  if (bannerBlocks.length) {
-    import("./blocks/Banner/banner.js").then(({ default: Banner }) => {
-      bannerBlocks.forEach((node) => {
-        Banner(node);
-      });
-    });
-  }
+  // const bannerBlocks = document.querySelectorAll(".giantpeach-banner");
+  // if (bannerBlocks.length) {
+  //   import("./blocks/Banner/banner.js").then(({ default: Banner }) => {
+  //     bannerBlocks.forEach((node) => {
+  //       Banner(node);
+  //     });
+  //   });
+  // }
 
   // Testimonial Slider
   const testimonialSliderNodes = document.querySelectorAll(
