@@ -4,17 +4,14 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel --no-cache",
-    "build": "parcel build",
+    "dev": "vite",
+    "build": "vite build",
     "build-blocks": "wp-scripts build",
     "dev-blocks": "wp-scripts start",
     "dev-editor": "wp-scripts start src/Editor/editor.js --webpack-src-dir=src/Editor --output-path=dist/editor",
     "build-editor": "wp-scripts build src/Editor/editor.js --webpack-src-dir=src/Editor --output-path=dist/editor"
   },
-  "source": [
-    "src/main.js",
-    "src/editor.css"
-  ],
+  "type": "module",
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -26,11 +23,12 @@
     "@tailwindcss/typography": "^0.5.12",
     "@wordpress/babel-plugin-import-jsx-pragma": "^4.38.0",
     "autoprefixer": "^10.4.14",
-    "parcel": "^2.12.0",
     "postcss": "^8.4.24",
     "prettier": "^3.2.5",
     "process": "^0.11.10",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.11",
+    "vite": "^7.0.0",
+    "@tailwindcss/vite": "^4.1.11"
   },
   "dependencies": {
     "@alpinejs/intersect": "^3.13.0",

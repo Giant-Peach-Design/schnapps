@@ -12,6 +12,10 @@ Requires at least:  5.9
 
 /* @config '../tailwind.config.js'; */
 
+h1 {
+  color: red !important;
+}
+
 @theme {
   --color-primary: "#AEA0FD";
   --color-secondary: "#D8FF85";
