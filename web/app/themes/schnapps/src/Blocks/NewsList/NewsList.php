@@ -1,28 +1,31 @@
 <?php
-
 namespace Giantpeach\Schnapps\Theme\Blocks\NewsList;
-
-use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 use Giantpeach\Schnapps\Blocks\Block;
-use Giantpeach\Schnapps\Blocks\Compatability\Block as CompatabilityBlock;
 use Giantpeach\Schnapps\Theme\PostTypes\Post;
 
-class NewsList extends CompatabilityBlock
+class NewsList extends Block
 {
-  public static string $blockName = "giantpeach/newslist";
+  /**
+   * News list properties accessible in the template
+   */
+  public string $postType = "post";
+  public string $taxonomy = "category";
+  public int $perPage;
+  public bool $showCategoryFilter;
+  public ?array $categories;
 
-  public $postType = "post";
-  public $taxonomy = "category";
-  public $perPage;
-  public $showCategoryFilter;
-  public $categories;
-
-  public function __construct($perPage = 8, $showCategoryFilter = false)
+  /**
+   * The mount function replaces the constructor
+   * and is where you should set any properties.
+   *
+   * @return void
+   */
+  public function mount(): void
   {
-    parent::__construct();
+    $this->perPage = get_field("posts_per_page") ?? 8;
+    $this->showCategoryFilter = get_field("show_category_filter") ?? false;
 
-    $this->perPage = $perPage ? $perPage : 2;
-    $this->categories = $showCategoryFilter
+    $this->categories = $this->showCategoryFilter
       ? get_categories([
         "taxonomy" => $this->taxonomy,
         "hide_empty" => true,
@@ -30,14 +33,5 @@ class NewsList extends CompatabilityBlock
         "exclude" => [1],
       ])
       : null;
-  }
-
-  public static function display(): void
-  {
-    $newsList = new NewsList(
-      perPage: get_field("posts_per_page") ?? 8,
-      showCategoryFilter: get_field("show_category_filter") ?? false,
-    );
-    $newsList->render();
   }
 }

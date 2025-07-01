@@ -10,13 +10,9 @@ use Giantpeach\Schnapps\Theme\Blocks\Footer\Footer;
 use Giantpeach\Schnapps\Theme\Blocks\Banner\Banner;
 use Giantpeach\Schnapps\Theme\Blocks\Button\Button;
 use Giantpeach\Schnapps\Theme\Blocks\Card\Card;
-use Giantpeach\Schnapps\Theme\Blocks\Hero\Hero;
 use Giantpeach\Schnapps\Theme\Blocks\NewsRelated\NewsRelated;
-use Giantpeach\Schnapps\Theme\Blocks\Media\Media;
 use Giantpeach\Schnapps\Theme\Blocks\NewsList\NewsList;
 use Giantpeach\Schnapps\Theme\Blocks\SocialLinks\SocialLinks;
-use Giantpeach\Schnapps\Theme\Blocks\Testimonial\Testimonial;
-use Giantpeach\Schnapps\Theme\Blocks\TestimonialSlider\TestimonialSlider;
 
 use Giantpeach\Schnapps\Theme\Patterns\TitleLinkColumn;
 
@@ -38,14 +34,10 @@ class Blocks extends SchnappsBlocks
     Header::class,
     Footer::class,
     Banner::class,
-    Hero::class,
-    Media::class,
     Button::class,
     Card::class,
     NewsList::class,
     NewsRelated::class,
-    Testimonial::class,
-    TestimonialSlider::class,
     SocialLinks::class,
   ];
 

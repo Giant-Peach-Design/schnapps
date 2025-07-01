@@ -3,14 +3,13 @@
   "title": "SocialLinks",
   "category": "giantpeach",
   "icon": "smiley",
-  "keywords": [
-    "giantpeach"
-  ],
-  "supports": {
-    "jsx": true
-  },
+  "keywords": ["giantpeach"],
   "acf": {
     "mode": "preview",
-    "renderCallback": "\\Giantpeach\\Schnapps\\Theme\\Blocks\\SocialLinks\\SocialLinks::display"
+    "renderCallback": "Giantpeach\\Schnapps\\Theme\\Blocks\\Blocks::renderBlock"
+  },
+  "align": "full",
+  "supports": {
+    "jsx": true
   }
 }

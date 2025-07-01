@@ -1,25 +1,29 @@
 <?php
-
 namespace Giantpeach\Schnapps\Theme\Blocks\NewsRelated;
-
-use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 use Giantpeach\Schnapps\Blocks\Block;
-use Giantpeach\Schnapps\Blocks\Compatability\Block as CompatabilityBlock;
 use Giantpeach\Schnapps\Query\Query;
 use Giantpeach\Schnapps\Theme\PostTypes\Post;
 
-class NewsRelated extends CompatabilityBlock
+class NewsRelated extends Block
 {
-  public static string $blockName = "giantpeach/newsrelated";
-
+  /**
+   * News related properties accessible in the template
+   */
   public array $posts = [];
   public array $archiveLink;
-  public $section_title;
+  public string $section_title;
 
-  public function __construct($sectionTitle, $displayRelated, $posts = [])
+  /**
+   * The mount function replaces the constructor
+   * and is where you should set any properties.
+   *
+   * @return void
+   */
+  public function mount(): void
   {
-    parent::__construct();
-    $this->section_title = $sectionTitle;
+    $this->section_title = get_field("section_title");
+    $displayRelated = get_field("display_related");
+    $selectedPosts = get_field("items") ?? [];
 
     if ($displayRelated) {
       $this->posts = Post::related(2, get_the_ID());
@@ -29,9 +33,8 @@ class NewsRelated extends CompatabilityBlock
         "post_status" => "publish",
         "orderby" => "post__in",
         "order" => "DESC",
-        "post__in" => $posts,
+        "post__in" => $selectedPosts,
       ]);
-
       $this->posts = Post::formatPostOutput($items);
     }
 
@@ -39,15 +42,5 @@ class NewsRelated extends CompatabilityBlock
       "title" => "All resources",
       "url" => get_permalink(get_field("news_page", "option")),
     ];
-  }
-
-  public static function display(): void
-  {
-    $newsRelated = new NewsRelated(
-      sectionTitle: get_field("section_title"),
-      displayRelated: get_field("display_related"),
-      posts: get_field("items") ?? [],
-    );
-    $newsRelated->render();
   }
 }

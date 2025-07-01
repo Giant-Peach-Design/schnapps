@@ -1,29 +1,23 @@
 <?php
-
 namespace Giantpeach\Schnapps\Theme\Blocks\SocialLinks;
-
-use Giantpeach\Schnapps\Blocks\Interfaces\BlockInterface;
 use Giantpeach\Schnapps\Blocks\Block;
-use Giantpeach\Schnapps\Blocks\Compatability\Block as CompatabilityBlock;
 
-class SocialLinks extends CompatabilityBlock
+class SocialLinks extends Block
 {
-  public static string $blockName = "giantpeach/sociallinks";
+  /**
+   * Social links properties accessible in the template
+   */
+  public array $socials = [];
 
-  public $socials = [];
-
-  public function __construct($socials = [])
+  /**
+   * The mount function replaces the constructor
+   * and is where you should set any properties.
+   *
+   * @return void
+   */
+  public function mount(): void
   {
-    parent::__construct();
-
-    $this->socials = array_filter($socials, function ($item) {
-      return boolval($item["url"]);
-    });
-  }
-
-  public static function display(): void
-  {
-    $socials = [
+    $allSocials = [
       "linkedin" => [
         "url" => get_field("linkedin", "option"),
         "iconClass" => "fa-linkedin",
@@ -76,8 +70,8 @@ class SocialLinks extends CompatabilityBlock
       ],
     ];
 
-    $socialLinks = new SocialLinks($socials);
-
-    $socialLinks->render();
+    $this->socials = array_filter($allSocials, function ($item) {
+      return boolval($item["url"]);
+    });
   }
 }

@@ -4,11 +4,12 @@
   "category": "gp_blocks",
   "icon": "smiley",
   "keywords": ["giantpeach"],
-  "supports": {
-    "jsx": true
-  },
   "acf": {
     "mode": "preview",
-    "renderCallback": "\\Giantpeach\\Schnapps\\Theme\\Blocks\\NewsRelated\\NewsRelated::display"
+    "renderCallback": "Giantpeach\\Schnapps\\Theme\\Blocks\\Blocks::renderBlock"
+  },
+  "align": "full",
+  "supports": {
+    "jsx": true
   }
 }
