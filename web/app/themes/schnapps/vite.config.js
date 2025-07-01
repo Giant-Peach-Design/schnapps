@@ -4,6 +4,14 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [tailwindcss()],
   build: {
-    emptyOutDir: false,
+    outDir: "dist",
+    rollupOptions: {
+      input: {
+        main: "./src/main.js",
+        style: "./src/main.css",
+      },
+    },
+    emptyOutDir: true,
+    assetsDir: "",
   },
 });
