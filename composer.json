@@ -74,7 +74,8 @@
     "wpackagist-plugin/redirection": "^5.4.2",
     "wpackagist-plugin/wp-mail-smtp": "^4.0.1",
     "wpackagist-plugin/post-types-order": "^2.2",
-    "wpackagist-plugin/duplicate-page": "^4.5"
+    "wpackagist-plugin/duplicate-page": "^4.5",
+    "giantpeach/acf-editorjs": "dev-main"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",

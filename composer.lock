@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2662bcb524c361a4557de2a1ef84925",
+    "content-hash": "56da84dd1c9eb2c7e13e0b22ed0a58c9",
     "packages": [
         {
             "name": "composer/installers",
@@ -151,6 +151,51 @@
                 }
             ],
             "time": "2024-06-24T20:46:46+00:00"
+        },
+        {
+            "name": "giantpeach/acf-editorjs",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Giant-Peach-Design/acf-editorjs.git",
+                "reference": "3e7d8b8ac3d6efcb3e458fd3d041e9ba272ba9b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Giant-Peach-Design/acf-editorjs/zipball/3e7d8b8ac3d6efcb3e458fd3d041e9ba272ba9b2",
+                "reference": "3e7d8b8ac3d6efcb3e458fd3d041e9ba272ba9b2",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0",
+                "php": ">=7.4"
+            },
+            "default-branch": true,
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-name": "acf-editorjs"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Giantpeach\\AcfEditorjs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Giant Peach",
+                    "email": "dev@giantpeach.agency"
+                }
+            ],
+            "description": "ACF field for EditorJS rich text editor",
+            "support": {
+                "issues": "https://github.com/Giant-Peach-Design/acf-editorjs/issues",
+                "source": "https://github.com/Giant-Peach-Design/acf-editorjs/tree/main"
+            },
+            "time": "2025-07-22T15:00:28+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -2227,6 +2272,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "giantpeach/acf-editorjs": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
