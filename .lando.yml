@@ -1,4 +1,4 @@
-name: wp-playground
+name: schnapps
 recipe: wordpress
 config:
   php: "8.2"
