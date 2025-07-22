@@ -106,6 +106,13 @@
   },
   "scripts": {
     "lint": "pint --test",
-    "lint:fix": "pint"
+    "lint:fix": "pint",
+    "post-install-cmd": [
+      "@composer install --working-dir=web/app/themes/schnapps",
+      "cd web/app/themes/schnapps && npm install && npm run build"
+    ],
+    "post-update-cmd": [
+      "@composer update --working-dir=web/app/themes/schnapps"
+    ]
   }
 }
