@@ -1,20 +1,23 @@
-import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite';
-import laravel from 'laravel-vite-plugin'
-import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin';
+import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
+import laravel from "laravel-vite-plugin";
+import { wordpressPlugin, wordpressThemeJson } from "@roots/vite-plugin";
+import { resolve } from "path";
 
 export default defineConfig({
-  base: '/app/themes/sage/public/build/',
+  base: "/app/themes/sage/public/build/",
+  envDir: resolve(__dirname, "../../../../"),
   plugins: [
     tailwindcss(),
     laravel({
       input: [
-        'resources/css/app.css',
-        'resources/js/app.js',
-        'resources/css/editor.css',
-        'resources/js/editor.js',
+        "resources/css/app.css",
+        "resources/js/app.js",
+        "resources/css/editor.css",
+        "resources/js/editor.js",
       ],
       refresh: true,
+      url: process.env.APP_URL || "http://localhost",
     }),
 
     wordpressPlugin(),
@@ -29,10 +32,10 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@scripts': '/resources/js',
-      '@styles': '/resources/css',
-      '@fonts': '/resources/fonts',
-      '@images': '/resources/images',
+      "@scripts": "/resources/js",
+      "@styles": "/resources/css",
+      "@fonts": "/resources/fonts",
+      "@images": "/resources/images",
     },
   },
-})
+});
