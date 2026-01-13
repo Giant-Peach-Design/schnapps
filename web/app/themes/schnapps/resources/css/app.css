@@ -1,7 +1,57 @@
 @import "tailwindcss" theme(static);
 @source "../views/";
 @source "../../app/";
+@import "./fonts.css";
+
+@theme {
+  /* Example Font style */
+  --font-instrument: "Instrument Sans", "sans-serif";
+
+  --breakpoint-3xl: 110rem;
+
+  /* Example Colour */
+  --color-brown: #2A2621;
+
+    /* Example Heading 1 */
+    --text-heading-1: clamp(48px, 4.58vw, 66px);
+    --text-heading-1--line-height: 1.2;
+    --text-heading-1--letter-spacing: -0.02em;
+    --text-heading-1--font-weight: 300;
+}
 
 body {
   @apply font-sans;
+}
+
+@layer base {
+  .content {
+    --gap: clamp(1rem, 3.125vw, 2rem);
+    --full: minmax(var(--gap), 1fr);
+    --content: min(1440px, 100% - var(--gap) * 2);
+    --content-inner: min(1260px, 100% - var(--gap) * 2);
+    --popout: minmax(0, 2rem);
+    --feature: minmax(0, 5rem);
+
+    display: grid;
+    grid-template-columns:
+      [full-start] var(--full) [feature-start] var(--feature) [popout-start] var(--popout) [content-start] var(--content) [content-end] var(--popout) [popout-end] var(--feature) [feature-end] var(--full) [full-end];
+
+    &>* {
+      grid-column: content;
+    }
+
+    &>.content {
+      grid-column: full;
+      grid-template-columns: inherit;
+    }
+  }
+}
+
+a:where(:not(.wp-element-button)) {
+    text-decoration: none;
+}
+
+.full-svg svg {
+  width: 100%;
+  height: auto;
 }

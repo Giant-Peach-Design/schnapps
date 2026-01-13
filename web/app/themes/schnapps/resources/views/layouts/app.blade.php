@@ -6,6 +6,8 @@
     @php(do_action('get_header'))
     @php(wp_head())
 
+    <script src="https://kit.fontawesome.com/f37d9f5366.js" crossorigin="anonymous"></script>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
 
