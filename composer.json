@@ -38,6 +38,10 @@
       ]
     },
     {
+      "type": "vcs",
+      "url": "git@github.com:Giant-Peach-Design/wp-piece-of-peach.git"
+    },
+    {
       "type": "composer",
       "url": "https://connect.advancedcustomfields.com"
     },
@@ -75,7 +79,9 @@
     "wpackagist-plugin/wp-mail-smtp": "^4.0.1",
     "wpackagist-plugin/post-types-order": "^2.2",
     "wpackagist-plugin/duplicate-page": "^4.5",
-    "giantpeach/acf-editorjs": "dev-main"
+    "giantpeach/wp-modern-images": "dev-main",
+    "giantpeach/piece-of-peach": "dev-main",
+    "giantpeach/acf-relative-urls": "dev-main"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",

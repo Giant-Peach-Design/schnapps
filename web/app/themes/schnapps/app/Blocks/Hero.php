@@ -174,7 +174,7 @@ class Hero extends Block
         $fields = Builder::make('hero');
 
         $fields
-            ->addField('content', 'editorjs')
+            ->addWysiwyg('content')
             ->addRepeater('items')
             ->addText('item')
             ->endRepeater();
