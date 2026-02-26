@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Rich Text (rt) utility
+   Styles for WYSIWYG content output. Apply with class="rt" on wrapper elements.
+   Heading token names (text-h1 etc.) must match your @theme tokens in theme.css.
+   ========================================================================== */
+
+@utility rt {
+  * {
+    @apply mb-4 last:mb-0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .is-h1,
+  .is-h2,
+  .is-h3,
+  .is-h4,
+  .is-h5,
+  .is-h6 {
+    @apply leading-[1.2];
+  }
+
+  h1,
+  .is-h1 {
+    @apply text-h1 font-bold;
+  }
+
+  h2,
+  .is-h2 {
+    @apply text-h2 font-bold;
+  }
+
+  h3,
+  .is-h3 {
+    @apply text-h3 font-bold;
+  }
+
+  h4,
+  .is-h4 {
+    @apply text-h4 font-bold;
+  }
+
+  h5,
+  .is-h5 {
+    @apply text-h5 font-bold;
+  }
+
+  h6,
+  .is-h6 {
+    @apply text-h6 font-bold;
+  }
+
+  p,
+  li {
+    @apply text-body font-normal leading-[1.5];
+  }
+
+  strong,
+  b {
+    @apply font-bold;
+  }
+
+  ul {
+    @apply list-disc pl-6;
+  }
+
+  ol {
+    @apply list-decimal pl-6;
+  }
+
+  li {
+    @apply mb-2;
+  }
+
+  a:where(:not(.wp-element-button)) {
+    @apply underline underline-offset-2 transition-colors hover:decoration-transparent;
+    text-decoration-color: var(--theme-text, currentColor);
+  }
+}
+
+/* Smaller body text variant — use with class="rt rt-sm" */
+@utility rt-sm {
+  p,
+  li {
+    @apply text-body-sm;
+  }
+}
+
+/* Blog variant — extra spacing after headings */
+@utility rt-blog {
+  h2+p {
+    @apply mt-10;
+  }
+}

@@ -5,7 +5,12 @@ import { wordpressPlugin, wordpressThemeJson } from "@roots/vite-plugin";
 import { resolve } from "path";
 
 export default defineConfig({
-  base: "/app/themes/sage/public/build/",
+  server: {
+    cors: {
+      origin: "*",
+    },
+  },
+  base: "/app/themes/schnapps/public/build/",
   envDir: resolve(__dirname, "../../../../"),
   plugins: [
     tailwindcss(),

@@ -1,1 +1,11 @@
 @import "tailwindcss";
+@import "./rt.css";
+@import "./theme.css";
+
+a {
+  @apply no-underline;
+}
+
+.block-editor-block-list__layout a {
+  pointer-events: none;
+}

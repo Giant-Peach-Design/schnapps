@@ -68,7 +68,7 @@
     "oscarotero/env": "^2.1",
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
-    "roots/wordpress": "6.8.1",
+    "roots/wordpress": "6.9.1",
     "roots/wp-config": "1.0.0",
     "wpengine/advanced-custom-fields-pro": "*",
     "wpackagist-plugin/advanced-custom-fields-font-awesome": "^4.0",
@@ -80,7 +80,6 @@
     "wpackagist-plugin/post-types-order": "^2.2",
     "wpackagist-plugin/duplicate-page": "^4.5",
     "giantpeach/wp-modern-images": "dev-main",
-    "giantpeach/piece-of-peach": "dev-main",
     "giantpeach/acf-relative-urls": "dev-main"
   },
   "require-dev": {

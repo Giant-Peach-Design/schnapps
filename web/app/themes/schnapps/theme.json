@@ -4,7 +4,7 @@
   "version": 3,
   "settings": {
     "layout": {
-      "contentSize": "48rem"
+      "contentSize": "1440px"
     },
     "background": {
       "backgroundImage": true
@@ -27,7 +27,14 @@
     },
     "spacing": {
       "padding": true,
-      "units": ["px", "%", "em", "rem", "vw", "vh"]
+      "units": [
+        "px",
+        "%",
+        "em",
+        "rem",
+        "vw",
+        "vh"
+      ]
     },
     "typography": {
       "defaultFontSizes": false,
