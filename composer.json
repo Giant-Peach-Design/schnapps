@@ -80,7 +80,8 @@
     "wpackagist-plugin/post-types-order": "^2.2",
     "wpackagist-plugin/duplicate-page": "^4.5",
     "giantpeach/wp-modern-images": "dev-main",
-    "giantpeach/acf-relative-urls": "dev-main"
+    "giantpeach/acf-relative-urls": "dev-main",
+    "giantpeach/wp-sane-defaults": "dev-main"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",

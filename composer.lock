@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d19fe5ee94b1c584e423b7d8ad90b40a",
+    "content-hash": "59956f1a6ee5dd60ba497549712fcdad",
     "packages": [
         {
             "name": "composer/installers",
@@ -234,6 +234,42 @@
                 "source": "https://github.com/Giant-Peach-Design/wp-modern-images/tree/main"
             },
             "time": "2025-11-27T11:24:38+00:00"
+        },
+        {
+            "name": "giantpeach/wp-sane-defaults",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Giant-Peach-Design/wp-sane-defaults.git",
+                "reference": "fe17eb2188a0a34b6af2d640029847e5c55d8445"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Giant-Peach-Design/wp-sane-defaults/zipball/fe17eb2188a0a34b6af2d640029847e5c55d8445",
+                "reference": "fe17eb2188a0a34b6af2d640029847e5c55d8445",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0"
+            },
+            "default-branch": true,
+            "type": "wordpress-muplugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Giant Peach",
+                    "homepage": "https://giantpeach.agency"
+                }
+            ],
+            "description": "WordPress mu-plugin that fixes common insecure and annoying defaults.",
+            "support": {
+                "issues": "https://github.com/Giant-Peach-Design/wp-sane-defaults/issues",
+                "source": "https://github.com/Giant-Peach-Design/wp-sane-defaults/tree/main"
+            },
+            "time": "2026-03-04T09:26:52+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -2836,6 +2872,7 @@
     "stability-flags": {
         "giantpeach/acf-relative-urls": 20,
         "giantpeach/wp-modern-images": 20,
+        "giantpeach/wp-sane-defaults": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
