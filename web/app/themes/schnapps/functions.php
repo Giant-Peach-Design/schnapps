@@ -58,3 +58,35 @@ collect(['setup', 'filters'])
             );
         }
     });
+
+
+
+        function custom_menu_order($menu_ord) {
+            if (!$menu_ord) return true;
+            return array(
+                'index.php',                  // Dashboard
+                'edit.php?post_type=page',   // Pages
+                'edit.php',                   // Posts
+                'upload.php',                 // Media
+                'gf_edit_forms',             // Gravity Forms
+                'theme-options',             // Theme Options
+                'woocommerce',               // WooCommerce (if active)
+                'themes.php',                // Appearance
+                'plugins.php',               // Plugins
+                'users.php',                 // Users
+                'tools.php',                 // Tools
+                'options-general.php' ,       // Settings
+                'edit-comments.php',         // Comments
+            );
+        }
+        add_filter('custom_menu_order', '__return_true');
+        add_filter('menu_order', 'custom_menu_order');
+
+        /* make gravity forms available to Editor role */
+
+        function add_gf_cap()
+        {
+            $role = get_role( 'editor' );
+            $role->add_cap( 'gform_full_access' );
+        }
+         add_action( 'admin_init', 'add_gf_cap' );
