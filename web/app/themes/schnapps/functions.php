@@ -82,11 +82,12 @@ collect(['setup', 'filters'])
         add_filter('custom_menu_order', '__return_true');
         add_filter('menu_order', 'custom_menu_order');
 
-        /* make gravity forms available to Editor role */
+        /* Grant Editor role extra capabilities (Gravity Forms, site settings) */
 
         function add_gf_cap()
         {
             $role = get_role( 'editor' );
             $role->add_cap( 'gform_full_access' );
+            $role->add_cap( 'manage_options' );
         }
          add_action( 'admin_init', 'add_gf_cap' );
