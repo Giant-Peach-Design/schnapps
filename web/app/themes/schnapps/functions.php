@@ -89,5 +89,8 @@ collect(['setup', 'filters'])
             $role = get_role( 'editor' );
             $role->add_cap( 'gform_full_access' );
             $role->add_cap( 'manage_options' );
+            $role->add_cap( 'manage_privacy_options' );
+            $role->add_cap( 'edit_theme_options' );
+            $role->add_cap( 'manage_privacy' );
         }
          add_action( 'admin_init', 'add_gf_cap' );
