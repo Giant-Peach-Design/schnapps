@@ -38,6 +38,7 @@ class ThemeServiceProvider extends SageServiceProvider
     public function allowedBlockTypes($allowedBlocks, $context): array
     {
         $coreBlocks = [
+            'core/block',
             // Text essentials
             'core/paragraph',
             'core/heading',
