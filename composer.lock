@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "beee19a79f232897df8e33452c55acf1",
+    "content-hash": "21709764d2021d549c196481b6c67b83",
     "packages": [
         {
             "name": "composer/installers",
@@ -1643,15 +1643,15 @@
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields-font-awesome",
-            "version": "4.1.2",
+            "version": "6.0.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/advanced-custom-fields-font-awesome/",
-                "reference": "tags/4.1.2"
+                "reference": "tags/6.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields-font-awesome.4.1.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields-font-awesome.6.0.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1751,15 +1751,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-super-cache",
-            "version": "1.12.4",
+            "version": "3.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-super-cache/",
-                "reference": "tags/1.12.4"
+                "reference": "tags/3.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-super-cache.1.12.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-super-cache.3.1.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
