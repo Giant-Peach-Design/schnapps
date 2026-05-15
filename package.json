@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.3",
+    "@playwright/test": "^1.59.1",
+    "@shufo/prettier-plugin-blade": "^1.16.1",
+    "prettier": "^3.7.1"
+  }
+}

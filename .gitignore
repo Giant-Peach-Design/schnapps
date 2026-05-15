@@ -31,3 +31,12 @@ wp-cli.local.yml
 .DS_Store
 .AppleDouble
 .LSOverride
+
+# Node
+node_modules
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
