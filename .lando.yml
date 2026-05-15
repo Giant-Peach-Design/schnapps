@@ -1,19 +1,13 @@
-name: wp-playground
+name: schnapps
 recipe: wordpress
 config:
-  php: '8.2'
+  php: "8.2"
   via: nginx
-  config:
-    vhosts: .vscode/default.conf.tpl
   webroot: web
   database: mariadb
   xdebug: true
 services:
-  appserver:
-    build_as_root:
-      - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-      - chmod +x wp-cli.phar
-      - mv wp-cli.phar /usr/local/bin/wp
-tooling:
-  wp:
-    service: 'appserver'
+  appserver_nginx:
+    overrides:
+      ports:
+        - "8080:80"

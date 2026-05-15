@@ -4,6 +4,30 @@
   "license": "MIT",
   "description": "Peach Schnapps is a WordPress starter theme based on the Roots Bedrock framework.",
   "homepage": "https://giantpeach.agency",
+  "authors": [
+    {
+      "name": "Scott Walkinshaw",
+      "email": "scott.walkinshaw@gmail.com",
+      "homepage": "https://github.com/swalkinshaw"
+    },
+    {
+      "name": "Ben Word",
+      "email": "ben@benword.com",
+      "homepage": "https://github.com/retlehs"
+    }
+  ],
+  "keywords": [
+    "bedrock",
+    "composer",
+    "roots",
+    "wordpress",
+    "wp",
+    "wp-config"
+  ],
+  "support": {
+    "issues": "https://github.com/roots/bedrock/issues",
+    "forum": "https://discourse.roots.io/category/bedrock"
+  },
   "repositories": [
     {
       "type": "composer",
@@ -18,52 +42,20 @@
       "url": "https://connect.advancedcustomfields.com"
     },
     {
-      "type": "package",
-      "package": {
-        "name": "gravityforms/gravityforms",
-        "version": "2.8.11",
-        "type": "wordpress-plugin",
-        "dist": {
-          "type": "zip",
-          "url": "https://www.gravityhelp.com/wp-content/plugins/gravitymanager/api.php?op=get_plugin&slug=gravityforms&key={%WP_PLUGIN_GF_KEY}"
-        },
-        "require": {
-          "gotoandplay/gravityforms-composer-installer": "^2.3"
-        }
-      }
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/Giant-Peach-Design/wp-cli-salts-command"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/Giant-Peach-Design/wp-salts"
+      "type": "composer",
+      "url": "https://composer.gravity.io"
     }
   ],
   "require": {
-    "php": ">=8.0",
+    "php": ">=8.3",
     "composer/installers": "^2.2",
     "vlucas/phpdotenv": "^5.5",
     "oscarotero/env": "^2.1",
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
-    "roots/wordpress": "^6.5",
+    "roots/wordpress": "6.9.1",
     "roots/wp-config": "1.0.0",
-    "roots/wp-password-bcrypt": "1.1.0",
-    "wpackagist-theme/twentytwentythree": "^1.0",
     "wpengine/advanced-custom-fields-pro": "*",
-    "giantpeach/blocks": "next-dev",
-    "twig/twig": "^3.6",
-    "giantpeach/twiglet": "^1.0.4",
-    "giantpeach/navigation": "^1",
-    "giantpeach/images": "^1",
-    "giantpeach/query": "^1",
-    "giantpeach/route": "^1",
-    "giantpeach/config": "^1",
-    "giantpeach/login-page": "^1",
-    "giantpeach/schnapps-framework": "^1",
-    "guzzlehttp/guzzle": "^7.8",
     "wpackagist-plugin/advanced-custom-fields-font-awesome": "^4.0",
     "wpackagist-plugin/acf-gravityforms-add-on": "^1.3",
     "wpackagist-plugin/wp-super-cache": "^1.12.0",
@@ -71,14 +63,15 @@
     "wpackagist-plugin/redirection": "^5.4.2",
     "wpackagist-plugin/wp-mail-smtp": "^4.0.1",
     "wpackagist-plugin/post-types-order": "^2.2",
-    "wpackagist-plugin/duplicate-page": "^4.5"
+    "wpackagist-plugin/duplicate-page": "^4.5",
+    "gravity/gravityforms": "^2.8",
+    "giantpeach/wp-modern-images": "dev-main",
+    "giantpeach/acf-relative-urls": "dev-main",
+    "giantpeach/wp-sane-defaults": "dev-main"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^3.7.1",
-    "giantpeach/wp-salts": "dev-master",
-    "phpunit/phpunit": "^10.5",
-    "mockery/mockery": "^1.6",
-    "symfony/var-dumper": "^7.1"
+    "roave/security-advisories": "dev-latest",
+    "laravel/pint": "^1.18"
   },
   "config": {
     "optimize-autoloader": true,
@@ -86,8 +79,7 @@
     "allow-plugins": {
       "composer/installers": true,
       "roots/wordpress-core-installer": true,
-      "ffraenz/private-composer-installer": true,
-      "gotoandplay/gravityforms-composer-installer": true
+      "ffraenz/private-composer-installer": true
     }
   },
   "minimum-stability": "dev",
@@ -107,26 +99,14 @@
     "wordpress-install-dir": "web/wp"
   },
   "scripts": {
-    "post-root-package-install": [
-      "php -r \"copy('.env.example', '.env');\""
-    ],
-    "post-create-project-cmd": [
-      "Giantpeach\\Schnapps\\Salts\\SaltsGenerator::generateSaltsForProject"
+    "lint": "pint --test",
+    "lint:fix": "pint",
+    "post-install-cmd": [
+      "@composer install --working-dir=web/app/themes/schnapps",
+      "cd web/app/themes/schnapps && npm install && npm run build"
     ],
     "post-update-cmd": [
-      "Giantpeach\\Schnapps\\Salts\\SaltsGenerator::updateSaltsForProject",
-      "Giantpeach\\Schnapps\\Config\\Composer\\ScriptHandler::updateConfig"
-    ],
-    "post-install-cmd": [
-      "Giantpeach\\Schnapps\\Config\\Composer\\ScriptHandler::updateConfig"
-    ],
-    "test": [
-      "phpcs"
+      "@composer update --working-dir=web/app/themes/schnapps"
     ]
-  },
-  "autoload": {
-    "psr-4": {
-      "Giantpeach\\Schnapps\\Theme\\": "web/app/themes/schnapps/src/"
-    }
   }
 }

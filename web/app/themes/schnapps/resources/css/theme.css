@@ -1,0 +1,206 @@
+/* ==========================================================================
+   Theme CSS
+   Project-specific design tokens, theme classes, utilities, and component styles.
+   Import this in app.css and editor.css.
+   ========================================================================== */
+
+/* Font Faces — replace with your project fonts
+   Move to fonts.css if preferred */
+
+/* @font-face {
+  font-family: "Your Font";
+  src: url("../fonts/YourFont-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+} */
+
+/* Design Tokens
+   Define all project colours, typography scales, and spacing here.
+   These extend/override the tokens in app.css @theme block. */
+
+@theme {
+  /* Fonts */
+  /* --font-sans: "Your Font", sans-serif; */
+
+  /* Colours — define your palette */
+  /* --color-off-black: #1a1a1a;
+  --color-white: #ffffff;
+  --color-primary: #3b82f6;
+  --color-primary-dark: #1e40af;
+  --color-secondary: #f59e0b;
+  --color-secondary-dark: #92400e; */
+
+  /* Typography scale — fluid sizes using clamp() */
+  /* --text-h1: clamp(3rem, 5.28vw, 4.75rem);
+  --text-h1--line-height: 1;
+  --text-h1--font-weight: 700;
+
+  --text-h2: clamp(2.625rem, 4.58vw, 4.125rem);
+  --text-h2--line-height: 1;
+  --text-h2--font-weight: 700;
+
+  --text-h3: clamp(2.25rem, 3.89vw, 3.5rem);
+  --text-h3--line-height: 1;
+  --text-h3--font-weight: 700;
+
+  --text-h4: clamp(2rem, 3.06vw, 2.75rem);
+  --text-h4--line-height: 1.1;
+  --text-h4--font-weight: 700;
+
+  --text-h5: clamp(1.75rem, 2.22vw, 2rem);
+  --text-h5--line-height: 1.1;
+  --text-h5--font-weight: 700;
+
+  --text-h6: clamp(1.25rem, 1.67vw, 1.5rem);
+  --text-h6--line-height: 1.1;
+  --text-h6--font-weight: 700;
+
+  --text-body: clamp(1.125rem, 1.39vw, 1.25rem);
+  --text-body--line-height: 1.5;
+  --text-body--font-weight: 400;
+
+  --text-body-bold: clamp(1rem, 1.25vw, 1.125rem);
+  --text-body-bold--line-height: 1.4;
+  --text-body-bold--font-weight: 700;
+
+  --text-body-sm: 1.125rem;
+  --text-body-sm--line-height: 1.5;
+  --text-body-sm--font-weight: 400;
+
+  --text-button: clamp(1rem, 1.25vw, 1.125rem);
+  --text-button--line-height: 1.4;
+  --text-button--font-weight: 700;
+
+  --text-caption: 0.9375rem;
+  --text-caption--line-height: 1.4;
+  --text-caption--font-weight: 700;
+
+  --text-tag: 0.875rem;
+  --text-tag--line-height: 1.1;
+  --text-tag--font-weight: 700; */
+}
+
+
+/* ==========================================================================
+   Content grid
+   Overrides the content grid from app.css if needed.
+   ========================================================================== */
+
+@utility content {
+  --gap: var(--content-gap);
+  --full: minmax(var(--gap), 1fr);
+  --content: min(1280px, 100% - var(--gap) * 2);
+  --content-inner: min(1260px, 100% - var(--gap) * 2);
+  --popout: minmax(0, 2rem);
+  --feature: minmax(0, 5rem);
+
+  display: grid;
+  grid-template-columns:
+    [full-start] var(--full) [feature-start] var(--feature) [popout-start] var(--popout) [content-start] var(--content) [content-end] var(--popout) [popout-end] var(--feature) [feature-end] var(--full) [full-end];
+
+  &>* {
+    grid-column: content;
+  }
+
+  &>.content {
+    grid-column: full;
+    grid-template-columns: inherit;
+  }
+}
+
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
+
+@utility no-scrollbar {
+  & {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility text-trim {
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+@utility text-notrim {
+  text-box-trim: none;
+  text-box-edge: auto;
+}
+
+
+/* ==========================================================================
+   Custom variants
+   ========================================================================== */
+
+@custom-variant group-hover-focus {
+  .group:is(:hover, :focus-visible) & {
+    @slot
+  }
+}
+
+@custom-variant hover-focus (&:is(:hover, :focus-visible));
+
+/* ==========================================================================
+   Base styles
+   ========================================================================== */
+
+[x-cloak] {
+  @apply hidden;
+}
+
+button,
+[type="button"],
+[type="submit"],
+[type="reset"],
+a {
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   WordPress image alignment classes
+   ========================================================================== */
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alignleft {
+  float: left;
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.alignright {
+  float: right;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.alignnone {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.wp-caption {
+  max-width: 100%;
+}
+
+.wp-caption-text {
+  font-size: 0.875rem;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   Gravity Forms styles
+   Add project-specific GF overrides below.
+   ========================================================================== */

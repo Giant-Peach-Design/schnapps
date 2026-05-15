@@ -1,0 +1,14 @@
+@import "tailwindcss" theme(static);
+@source "../views/";
+@source "../../app/";
+@import "./fonts.css";
+@import "./rt.css";
+@import "./theme.css";
+
+body {
+  @apply font-sans;
+}
+
+a:where(:not(.wp-element-button)) {
+  text-decoration: none;
+}
