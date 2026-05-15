@@ -6,3 +6,8 @@ config:
   webroot: web
   database: mariadb
   xdebug: true
+services:
+  appserver_nginx:
+    overrides:
+      ports:
+        - "8080:80"
