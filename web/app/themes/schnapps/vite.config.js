@@ -22,6 +22,7 @@ export default defineConfig({
         "resources/js/editor.js",
       ],
       refresh: true,
+      assets: ['resources/images/**', 'resources/fonts/**'],
       url: process.env.APP_URL || "http://localhost",
     }),
 
