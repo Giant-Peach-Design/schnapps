@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52a778462e418450047228a81318f877",
+    "content-hash": "beee19a79f232897df8e33452c55acf1",
     "packages": [
         {
             "name": "composer/installers",
@@ -1679,7 +1679,7 @@
         },
         {
             "name": "wpackagist-plugin/duplicate-page",
-            "version": "4.5.6",
+            "version": "4.5.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/duplicate-page/",
@@ -1687,7 +1687,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/duplicate-page.zip?timestamp=1760613961"
+                "url": "https://downloads.wordpress.org/plugin/duplicate-page.zip?timestamp=1778238819"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1697,15 +1697,15 @@
         },
         {
             "name": "wpackagist-plugin/post-types-order",
-            "version": "2.4.3",
+            "version": "2.4.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/post-types-order/",
-                "reference": "tags/2.4.3"
+                "reference": "tags/2.4.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/post-types-order.2.4.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/post-types-order.2.4.6.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1715,15 +1715,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "5.7.3",
+            "version": "5.7.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/5.7.3"
+                "reference": "tags/5.7.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.5.7.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/redirection.5.7.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1733,15 +1733,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
-            "version": "4.7.1",
+            "version": "4.8.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
-                "reference": "tags/4.7.1"
+                "reference": "tags/4.8.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.7.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.8.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
