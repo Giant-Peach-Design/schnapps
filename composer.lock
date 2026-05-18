@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "21709764d2021d549c196481b6c67b83",
+    "content-hash": "6fa7d34b218a4311eb4b46fe005a3e1e",
     "packages": [
         {
             "name": "composer/installers",
@@ -1643,15 +1643,15 @@
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields-font-awesome",
-            "version": "6.0.2",
+            "version": "6.0.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/advanced-custom-fields-font-awesome/",
-                "reference": "tags/6.0.2"
+                "reference": "tags/6.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields-font-awesome.6.0.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields-font-awesome.6.0.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
