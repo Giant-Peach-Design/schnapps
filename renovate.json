@@ -3,5 +3,11 @@
   "extends": [
     "github>giant-peach-design/renovate-config",
     "github>giant-peach-design/renovate-config//bedrock"
-  ]
+  ],
+  "packageRules": [
+      {
+        "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+        "automerge": true
+      }
+    ]
 }
