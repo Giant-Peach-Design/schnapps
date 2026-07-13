@@ -244,4 +244,32 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#customize-selective-refresh-widgets
      */
     add_theme_support('customize-selective-refresh-widgets');
+
+    /**
+     * Grant editors access to menus, privacy policy settings, and Gravity Forms.
+     */
+    $editor = get_role('editor');
+
+    if ($editor) {
+        $editorCaps = [
+            'edit_theme_options',
+            'manage_privacy_options',
+            'gravityforms_view_forms',
+            'gravityforms_edit_forms',
+            'gravityforms_create_form',
+            'gravityforms_delete_forms',
+            'gravityforms_view_entries',
+            'gravityforms_edit_entries',
+            'gravityforms_delete_entries',
+            'gravityforms_view_entry_notes',
+            'gravityforms_edit_entry_notes',
+            'gravityforms_export_entries',
+        ];
+
+        foreach ($editorCaps as $cap) {
+            if (! $editor->has_cap($cap)) {
+                $editor->add_cap($cap);
+            }
+        }
+    }
 }, 20);
