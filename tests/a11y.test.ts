@@ -34,6 +34,71 @@ const CRAWL_LIMIT = 5;
 const NAV_SELECTOR =
   '.nav-primary, nav[aria-label*="Main"], nav[aria-label*="Primary"], header nav, nav';
 
+/**
+ * Animations distort what axe measures, in two opposite directions.
+ *
+ * Reveal utilities (`.fade-in-up` and friends) rest at `opacity: 0` and only
+ * settle once Motion's `inView` adds `.is-visible` — and its cleanup strips the
+ * class again when the element scrolls out, so nothing below the fold is ever
+ * settled during a scan. axe treats transparent text as invisible and skips it,
+ * so a page whose content sits inside reveals scans clean regardless of its
+ * actual contrast. That is the whole reason the `motion-reduce` scan used to find
+ * more than the default one: reduced motion disables the reveal, leaving the text
+ * opaque and therefore actually evaluated.
+ *
+ * The scroll-driven word fill (`.fill-word`, see resources/js/scroll-fill.js) is
+ * the mirror image: it rests at `opacity: 0.18`, which axe does NOT skip, so its
+ * headings get scanned mid-animation and reported at ~1.4:1 — 22 phantom nodes on
+ * /about-us/ alone. Those are not failures; the words fill as the page scrolls and
+ * reduced-motion users get them filled outright. Settling it removes the noise.
+ *
+ * Forced with `!important` rather than by adding `.is-visible`: that class is
+ * under `inView`'s control and can be removed again mid-scan, a stylesheet
+ * cannot.
+ *
+ * Extend this list when a project adds an animation hook of its own — the
+ * "no text is left faint" test below fails when one is missed.
+ */
+const REVEAL_SELECTORS = [
+  '[class*="fade-in"]', // .fade-in, .fade-in-up, .fade-in-left/right, *-blur
+  '[class*="slide-in"]',
+  '.reveal',
+  '[data-reveal]',
+  '.fill-word', // scroll-driven word fill; rests faint rather than transparent
+];
+
+/**
+ * Cumulative opacity below which text counts as mid-animation rather than styled.
+ *
+ * Chosen from what this theme actually renders: animation resting states sit at 0
+ * (reveals) and 0.18 (word fill), while every deliberate dim is 0.7 (sector-row
+ * tags) or 0.8 (testimonial attribution). Those two ARE the colour a reader sees,
+ * so they must keep being scanned — the 2.31:1 sector tags are a real finding, not
+ * an artefact. 0.5 sits in the gap with room either side.
+ */
+const FAINT_TEXT_THRESHOLD = 0.5;
+
+const REVEAL_SETTLED_CSS = `
+${REVEAL_SELECTORS.join(',\n')} {
+  opacity: 1 !important;
+  translate: none !important;
+  transform: none !important;
+  filter: none !important;
+  transition: none !important;
+  animation: none !important;
+}
+`;
+
+/**
+ * Put reveals in their settled state so axe evaluates the text inside them.
+ * Called from `scan()` rather than the test bodies: a stylesheet only lives as
+ * long as the document, so every navigation needs it again and a per-test call
+ * is one `page.goto()` away from being forgotten.
+ */
+async function settleReveals(page: Page) {
+  await page.addStyleTag({ content: REVEAL_SETTLED_CSS });
+}
+
 function formatViolations(violations: Awaited<ReturnType<AxeBuilder['analyze']>>['violations']) {
   return violations
     .map((violation) => {
@@ -51,6 +116,7 @@ function formatViolations(violations: Awaited<ReturnType<AxeBuilder['analyze']>>
 }
 
 async function scan(page: Page) {
+  await settleReveals(page);
   const { violations } = await new AxeBuilder({ page }).withTags(WCAG_AA_TAGS).analyze();
   return violations;
 }
@@ -76,6 +142,71 @@ test.describe('axe scans', () => {
       await expectNoViolations(page);
     });
   }
+
+  /**
+   * Guards REVEAL_SETTLED_CSS. An animation hook the selector list does not cover
+   * leaves its text faint, and either direction corrupts the scans above: at
+   * `opacity: 0` axe skips the text without comment and the scans go green while
+   * covering less and less of the page; anywhere between that and opaque, axe
+   * measures a transitional colour the reader never actually sees and reports
+   * contrast failures that are not real. This turns both into a failure here,
+   * where the message can name the hook, instead of a silent gap or phantom
+   * findings scattered across every route.
+   *
+   * Closed overlays — hover dropdowns, collapsed mobile menus, cursor followers —
+   * also sit at `opacity: 0`, and they are not what this test is looking for. They
+   * are told apart by `pointer-events: none`: a reveal that has not fired yet is
+   * still interactive, which is precisely why it reads as live content to
+   * everything except axe's visibility check.
+   */
+  test('no text is left faint enough to distort the scans', async ({ page }) => {
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+    await settleReveals(page);
+
+    const faint = await page.evaluate((threshold) => {
+      const describe = (node: Element) => {
+        const classes = typeof node.className === 'string' ? node.className.trim() : '';
+        return `<${node.tagName.toLowerCase()}>${classes ? `.${classes.split(/\s+/).join('.')}` : ''}`;
+      };
+
+      return Array.from(document.querySelectorAll('body *'))
+        .filter((node) => {
+          // Only elements that render their own text: a faint wrapper is already
+          // reported through whichever descendant holds the text.
+          const ownText = Array.from(node.childNodes)
+            .filter((child) => child.nodeType === Node.TEXT_NODE)
+            .map((child) => child.textContent?.trim() ?? '')
+            .join('');
+
+          if (!ownText) return false;
+          if (node.closest('[aria-hidden="true"], [hidden], [inert]')) return false;
+
+          // Opacity multiplies down the ancestor chain, so a parent at 0.5 halves
+          // text the element itself computes as fully opaque.
+          let effective = 1;
+
+          for (let el: Element | null = node; el; el = el.parentElement) {
+            const style = getComputedStyle(el);
+            if (style.display === 'none' || style.visibility !== 'visible') return false;
+            if (style.pointerEvents === 'none') return false;
+            effective *= parseFloat(style.opacity);
+          }
+
+          return effective < threshold;
+        })
+        .map(describe);
+    }, FAINT_TEXT_THRESHOLD);
+
+    const unique = [...new Set(faint)];
+
+    expect(
+      unique,
+      `${unique.length} elements render text below ${FAINT_TEXT_THRESHOLD} opacity, so the ` +
+        `scans above either skip it or measure a colour no reader sees. If these are ` +
+        `animations, add their hook to REVEAL_SELECTORS:\n${unique.join('\n')}`,
+    ).toEqual([]);
+  });
 
   test('pages linked from the primary nav have no WCAG 2.1 AA violations', async ({ page }) => {
     // Each page costs a navigation, a networkidle wait and a full axe run, so
@@ -141,11 +272,16 @@ test.describe('document structure', () => {
       const topLevel = (tag: string) =>
         Array.from(document.querySelectorAll(tag)).filter((node) => !node.parentElement?.closest(SECTIONING));
 
+      // Union, not sum: an element can be both a top-level <header> and carry an
+      // explicit role="banner" — this theme's site header is exactly that — and
+      // summing the two sets counts the one landmark twice, failing a correct page.
+      const countLandmarks = (tag: string, role: string) =>
+        new Set([...topLevel(tag), ...document.querySelectorAll(`[role="${role}"]`)]).size;
+
       return {
-        banner: topLevel('header').length + document.querySelectorAll('[role="banner"]').length,
+        banner: countLandmarks('header', 'banner'),
         main: document.querySelectorAll('main, [role="main"]').length,
-        contentinfo:
-          topLevel('footer').length + document.querySelectorAll('[role="contentinfo"]').length,
+        contentinfo: countLandmarks('footer', 'contentinfo'),
       };
     });
 
