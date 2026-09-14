@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5aff5fcb77693616aebda7771eb9143c",
+    "content-hash": "72d6e08be14908213d59c8db5657fcd7",
     "packages": [
         {
             "name": "composer/installers",
@@ -1697,15 +1697,15 @@
         },
         {
             "name": "wpackagist-plugin/post-types-order",
-            "version": "2.5.1",
+            "version": "2.5.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/post-types-order/",
-                "reference": "tags/2.5.1"
+                "reference": "tags/2.5.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/post-types-order.2.5.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/post-types-order.2.5.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
