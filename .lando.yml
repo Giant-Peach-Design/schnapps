@@ -1,7 +1,7 @@
 name: schnapps
 recipe: wordpress
 config:
-  php: "8.2"
+  php: "8.4"
   via: nginx
   webroot: web
   database: mariadb
