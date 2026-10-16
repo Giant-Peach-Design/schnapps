@@ -56,6 +56,11 @@ Accessibility is a top priority. All markup, components, and blocks must meet **
 ## ACF Composer Notes
 
 - Consecutive uppercase letters in class names get split individually by ACF Composer's auto-slug generator (e.g. `ContentCta` → `content-c-t-a`). For acronyms like CTA, URL, FAQ etc., set `public $slug = 'content-cta'` explicitly.
+- **All blocks must use v3.** ACF Composer defaults both versions to 2 and the `acf:block` stub doesn't include them, so every new block class must add (after `$mode`):
+  ```php
+  public $apiVersion = 3;   // WP block API v3 — keeps the editor in iframe mode
+  public $blockVersion = 3; // ACF Blocks v3 — enables the pencil/expanded field editor (ACF 6.6+)
+  ```
 
 ## Images — Always Use `@gpImage`
 

@@ -71,6 +71,20 @@ class Hero extends Block
     public $mode = 'preview';
 
     /**
+     * The block API version.
+     *
+     * @var int
+     */
+    public $apiVersion = 3;
+
+    /**
+     * The internal ACF block version.
+     *
+     * @var int
+     */
+    public $blockVersion = 3;
+
+    /**
      * The default block alignment.
      *
      * @var string
