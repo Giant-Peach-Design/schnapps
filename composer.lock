@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "49a837ce31f8808cfba379f414e159ff",
+    "content-hash": "d0b88b19cf646b70c7dfd740ba400d8a",
     "packages": [
         {
             "name": "composer/installers",
@@ -1661,15 +1661,15 @@
         },
         {
             "name": "wpackagist-plugin/autodescription",
-            "version": "5.1.4",
+            "version": "5.2.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autodescription/",
-                "reference": "tags/5.1.4"
+                "reference": "tags/5.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.5.1.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/autodescription.5.2.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1697,15 +1697,15 @@
         },
         {
             "name": "wpackagist-plugin/post-types-order",
-            "version": "2.5.6",
+            "version": "2.5.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/post-types-order/",
-                "reference": "tags/2.5.6"
+                "reference": "tags/2.5.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/post-types-order.2.5.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/post-types-order.2.5.7.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1733,15 +1733,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
-            "version": "4.10.0",
+            "version": "4.10.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
-                "reference": "tags/4.10.0"
+                "reference": "tags/4.10.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.10.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.10.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
