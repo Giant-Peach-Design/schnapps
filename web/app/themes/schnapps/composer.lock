@@ -223,7 +223,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-08-10T19:31:58+00:00"
+            "time": "2025-08-10T19:31:58+00:00",
+            "published-time": "2025-08-10T19:33:33+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -1214,7 +1215,8 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2026-05-05T20:55:51+00:00"
+            "time": "2026-05-05T20:55:51+00:00",
+            "published-time": "2026-05-13T15:39:01+00:00"
         },
         {
             "name": "illuminate/conditionable",
@@ -1260,7 +1262,8 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2026-02-25T16:07:55+00:00"
+            "time": "2026-02-25T16:07:55+00:00",
+            "published-time": "2026-05-13T15:39:01+00:00"
         },
         {
             "name": "illuminate/config",
@@ -1484,7 +1487,8 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2026-05-06T18:50:26+00:00"
+            "time": "2026-05-06T18:50:26+00:00",
+            "published-time": "2026-05-13T15:39:10+00:00"
         },
         {
             "name": "illuminate/cookie",
@@ -1991,7 +1995,8 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2026-04-29T09:35:06+00:00"
+            "time": "2026-04-29T09:35:06+00:00",
+            "published-time": "2026-05-13T15:39:27+00:00"
         },
         {
             "name": "illuminate/pagination",
@@ -2698,7 +2703,8 @@
                 "issues": "https://github.com/laravel/prompts/issues",
                 "source": "https://github.com/laravel/prompts/tree/v0.3.13"
             },
-            "time": "2026-02-06T12:17:10+00:00"
+            "time": "2026-02-06T12:17:10+00:00",
+            "published-time": "2026-02-10T18:43:43+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -2951,16 +2957,16 @@
         },
         {
             "name": "log1x/acf-composer",
-            "version": "v3.4.7",
+            "version": "v3.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Log1x/acf-composer.git",
-                "reference": "0bb270e8ffd7ff896bb22a4336bf1a2fb8986cce"
+                "reference": "bd4c2b8752c6b45f0e4aafdec3624d5b4da45a38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Log1x/acf-composer/zipball/0bb270e8ffd7ff896bb22a4336bf1a2fb8986cce",
-                "reference": "0bb270e8ffd7ff896bb22a4336bf1a2fb8986cce",
+                "url": "https://api.github.com/repos/Log1x/acf-composer/zipball/bd4c2b8752c6b45f0e4aafdec3624d5b4da45a38",
+                "reference": "bd4c2b8752c6b45f0e4aafdec3624d5b4da45a38",
                 "shasum": ""
             },
             "require": {
@@ -2998,7 +3004,7 @@
             "description": "Create fields, blocks, option pages, and widgets using ACF Builder and Sage 10",
             "support": {
                 "issues": "https://github.com/Log1x/acf-composer/issues",
-                "source": "https://github.com/Log1x/acf-composer/tree/v3.4.7"
+                "source": "https://github.com/Log1x/acf-composer/tree/v3.4.8"
             },
             "funding": [
                 {
@@ -3006,7 +3012,8 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-08-20T15:30:06+00:00"
+            "time": "2026-11-06T17:26:40+00:00",
+            "published-time": "2026-11-06T17:27:34+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3477,7 +3484,8 @@
                 "issues": "https://github.com/php-fig/container/issues",
                 "source": "https://github.com/php-fig/container/tree/2.0.2"
             },
-            "time": "2021-11-05T16:47:00+00:00"
+            "time": "2021-11-05T16:47:00+00:00",
+            "published-time": "2021-11-05T16:53:27+00:00"
         },
         {
             "name": "psr/event-dispatcher",
@@ -3788,7 +3796,8 @@
             "support": {
                 "source": "https://github.com/php-fig/simple-cache/tree/3.0.0"
             },
-            "time": "2021-10-29T13:26:27+00:00"
+            "time": "2021-10-29T13:26:27+00:00",
+            "published-time": "2021-10-29T13:27:19+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -4195,7 +4204,8 @@
                 "issues": "https://github.com/StoutLogic/acf-builder/issues",
                 "source": "https://github.com/StoutLogic/acf-builder/tree/v1.12.0"
             },
-            "time": "2021-09-17T17:32:44+00:00"
+            "time": "2021-09-17T17:32:44+00:00",
+            "published-time": "2021-09-17T18:12:05+00:00"
         },
         {
             "name": "symfony/clock",
@@ -4370,7 +4380,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-02-25T17:02:47+00:00"
+            "time": "2026-02-25T17:02:47+00:00",
+            "published-time": "2026-02-26T08:41:47+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -4437,7 +4448,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-25T14:21:43+00:00"
+            "time": "2024-09-25T14:21:43+00:00",
+            "published-time": "2025-05-25T20:28:15+00:00"
         },
         {
             "name": "symfony/error-handler",
@@ -5102,7 +5114,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-09T11:45:10+00:00"
+            "time": "2024-09-09T11:45:10+00:00",
+            "published-time": "2025-08-19T20:34:36+00:00"
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
@@ -5184,7 +5197,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-27T09:58:17+00:00"
+            "time": "2025-06-27T09:58:17+00:00",
+            "published-time": "2025-08-19T20:34:36+00:00"
         },
         {
             "name": "symfony/polyfill-intl-idn",
@@ -5356,7 +5370,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-09T11:45:10+00:00"
+            "time": "2024-09-09T11:45:10+00:00",
+            "published-time": "2025-08-19T20:34:34+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -5441,7 +5456,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-23T08:48:59+00:00"
+            "time": "2024-12-23T08:48:59+00:00",
+            "published-time": "2025-08-19T20:34:35+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
@@ -5525,7 +5541,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-01-02T08:10:11+00:00"
+            "time": "2025-01-02T08:10:11+00:00",
+            "published-time": "2025-08-19T20:34:35+00:00"
         },
         {
             "name": "symfony/polyfill-php84",
@@ -5605,7 +5622,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-04-10T18:47:49+00:00"
+            "time": "2026-04-10T18:47:49+00:00",
+            "published-time": "2026-04-26T14:44:54+00:00"
         },
         {
             "name": "symfony/polyfill-php85",
@@ -5685,7 +5703,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-04-26T13:10:57+00:00"
+            "time": "2026-04-26T13:10:57+00:00",
+            "published-time": "2026-04-26T14:44:55+00:00"
         },
         {
             "name": "symfony/polyfill-php86",
@@ -5765,7 +5784,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-04-26T13:13:48+00:00"
+            "time": "2026-04-26T13:13:48+00:00",
+            "published-time": "2026-04-26T14:44:49+00:00"
         },
         {
             "name": "symfony/process",
@@ -5997,7 +6017,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-07-15T11:30:57+00:00"
+            "time": "2025-07-15T11:30:57+00:00",
+            "published-time": "2025-11-07T09:49:53+00:00"
         },
         {
             "name": "symfony/string",
@@ -6087,7 +6108,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-02-09T10:14:57+00:00"
+            "time": "2026-02-09T10:14:57+00:00",
+            "published-time": "2026-02-26T09:13:18+00:00"
         },
         {
             "name": "symfony/translation",
@@ -6591,5 +6613,5 @@
         "php": ">=8.2"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.11.0"
 }
