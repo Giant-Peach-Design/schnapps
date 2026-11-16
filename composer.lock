@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "735f45cb11e7dd17ca37e1eedbbf45b3",
+    "content-hash": "20a3e01b448970b5a24314be48421b34",
     "packages": [
         {
             "name": "composer/installers",
@@ -1652,15 +1652,15 @@
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields-font-awesome",
-            "version": "6.2.0",
+            "version": "6.2.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/advanced-custom-fields-font-awesome/",
-                "reference": "tags/6.2.0"
+                "reference": "tags/6.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields-font-awesome.6.2.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields-font-awesome.6.2.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1670,15 +1670,15 @@
         },
         {
             "name": "wpackagist-plugin/autodescription",
-            "version": "5.2.0",
+            "version": "5.2.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autodescription/",
-                "reference": "tags/5.2.0"
+                "reference": "tags/5.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.5.2.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/autodescription.5.2.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1742,15 +1742,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
-            "version": "4.10.3",
+            "version": "4.10.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
-                "reference": "tags/4.10.3"
+                "reference": "tags/4.10.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.10.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.10.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
